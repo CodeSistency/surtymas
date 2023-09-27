@@ -68,7 +68,7 @@ async function page() {
 
     {products?.cartProducts?.map(product => {
         return (
-            <div className='py-1'>
+            <div  key={product._id} className='py-1'>
                 <ListItem  product={product}>
                     <ModalBuy product={product} />
                 </ListItem>

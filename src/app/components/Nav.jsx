@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import {IoCartOutline, IoCartSharp} from "react-icons/io5"
-import {AiOutlineMan, AiOutlineWoman} from 'react-icons/ai'
-import {BiMenu, BiUser} from 'react-icons/bi'
-import {LiaSearchSolid} from 'react-icons/lia'
-import {BsInstagram} from 'react-icons/bs'
-import { signOut } from "next-auth/react";
-import { Button } from "@nextui-org/button";
+// import {IoCartOutline, IoCartSharp} from "react-icons/io5"
+// import {AiOutlineMan, AiOutlineWoman} from 'react-icons/ai'
+// import {BiMenu, BiUser} from 'react-icons/bi'
+// import {LiaSearchSolid} from 'react-icons/lia'
+// import {BsInstagram} from 'react-icons/bs'
+// import { signOut } from "next-auth/react";
+// import { Button } from "@nextui-org/button";
 import { options } from "../api/auth/[...nextauth]/options"
 import { getServerSession } from "next-auth/next"
 import {CartIcon} from "./icon/cartIcon";
@@ -27,7 +27,7 @@ export default async function Nav({children}) {
                 src='logo3.svg'
                 width={140}
                 height={140}
-                // alt={user?.name ?? "Profile Pic"}
+                alt={"Logo"}
                 priority={true}
                 
                 />

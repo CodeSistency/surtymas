@@ -27,7 +27,7 @@ export default function CardItem({product, children}) {
 
                         <CardHeader className="overflow-visible py-2" >
                             <Link href={`/productos/${product._id}`}>
-                                <Image isZoomed src={product.imagenes[0]}  className="object-cover rounded-xl w-full h-60" style={{width: '270px'}}/>
+                                <Image alt="card" isZoomed src={product.imagenes[0]}  className="object-cover rounded-xl w-full h-60" style={{width: '270px'}}/>
                             </Link>
                             
                         </CardHeader>
