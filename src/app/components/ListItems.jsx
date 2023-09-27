@@ -6,8 +6,8 @@ function ListItems({products}) {
     <div>
         {products.map(product => {
             return (
-                <div className='py-1'>
-                <ListItem key={product._id} product={product}/>
+                <div  key={product._id} className='py-1'>
+                <ListItem product={product}/>
                 </div>
             )
         })}
