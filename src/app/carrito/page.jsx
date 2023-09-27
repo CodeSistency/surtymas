@@ -60,7 +60,7 @@ async function page() {
     <>
     <div className='cart-container'>
     <div  className='cart-icon-container'>
-        <img src='/shopping.png'/>
+        <img src='/shopping.png' alt="cart"/>
 
         
     </div>

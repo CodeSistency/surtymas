@@ -37,9 +37,7 @@ function ModalBuy({product}) {
     
   };
 
-  useEffect(() =>{
-    applyChangesModal()
-  },[quantityChangesModal])
+ 
 
   const applyChangesModal = () => {
     
@@ -63,9 +61,13 @@ function ModalBuy({product}) {
       
     };
 
+    useEffect(() =>{
+      applyChangesModal()
+    },[quantityChangesModal])
+
   return (
     <>
-     <Image style={{cursor: 'pointer'}} onClick={onOpen} src='/edit1.svg' width={50}/>
+     <Image style={{cursor: 'pointer'}} onClick={onOpen} src='/edit1.svg' alt="edit" width={50}/>
      <Modal
      style={{zIndex: '100'}}
       className='mt-36 z-50'
@@ -78,7 +80,7 @@ function ModalBuy({product}) {
             <>
               <ModalHeader className="flex flex-col gap-1" style={{color:'black'}}>
               <div className='modal-info' style={{padding:'10px', border: 'none'}}>
-      <img style={{width: '50px', height: '50px'}} src={`${product.imagenes ? product.imagenes[0] : product.imagen}`}/>
+      <img alt="producto" style={{width: '50px', height: '50px'}} src={`${product.imagenes ? product.imagenes[0] : product.imagen}`}/>
       <p >Producto: {product.titulo}{product.nombre}</p>
     </div>
               </ModalHeader>

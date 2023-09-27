@@ -31,7 +31,7 @@ function ProductsAll() {
     
         fetchTotalPages();
         // getProducts(currentPage);
-        console.log(currentPage, totalPages)
+        console.log(currentPage)
       }, [currentPage]);
 
   return (
