@@ -12,7 +12,7 @@ declare module "next-auth" {
     }
 
     interface User extends DefaultUser {
-        role: Object,
+        roles: Object,
     }
 }
 
