@@ -1,7 +1,7 @@
 // import { options } from "../api/auth/[...nextauth]/options"
 import { options } from "../api/auth/[...nextauth]/options"
 import { getServerSession } from "next-auth/next"
-import UserCard from "../components/UserCard"
+// import UserCard from "../components/UserCard"
 import { redirect } from "next/navigation"
 import axios from "../../../api/axios"
 import ListItem from "../components/ListItem"
