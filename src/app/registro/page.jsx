@@ -4,7 +4,7 @@ import Link from 'next/link';
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
-async function page() {
+async function Registro() {
 
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
@@ -149,4 +149,4 @@ async function page() {
   )
 }
 
-export default page
+export default Registro

@@ -70,7 +70,7 @@ async function Productos({pageNumber}) {
       
             return (
 
-                <CardItem3 product={product}>
+                <CardItem3 key={product._id} product={product}>
                     <ButtonCta product={[product]}/>
                 </CardItem3>
             )

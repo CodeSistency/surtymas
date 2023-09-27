@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import React from 'react'
 
-function page() {
+function Login() {
 
     const [username, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -118,4 +118,4 @@ function page() {
   )
 }
 
-export default page
+export default Login

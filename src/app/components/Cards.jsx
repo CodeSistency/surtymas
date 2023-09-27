@@ -47,7 +47,7 @@ export default async function Cards() {
             // <Card product={product}/>
             return (
 
-                <CardItem product={product}>
+                <CardItem key={product._id} product={product}>
                     <ButtonCta product={[product]}/>
                     
                 </CardItem>

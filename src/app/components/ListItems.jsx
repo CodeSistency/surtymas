@@ -7,7 +7,7 @@ function ListItems({products}) {
         {products.map(product => {
             return (
                 <div className='py-1'>
-                <ListItem product={product}/>
+                <ListItem key={product._id} product={product}/>
                 </div>
             )
         })}

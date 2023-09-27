@@ -39,7 +39,7 @@ async function Gallery() {
       
             return (
 
-                <CardItem2 product={product}>
+                <CardItem2 key={product._id} product={product}>
                     <ButtonCta product={product}/>
                 </CardItem2>
             )

@@ -44,7 +44,7 @@ async function Genero({params}) {
       
             return (
 
-                <CardItem3 product={product}/>
+                <CardItem3 key={product._id} product={product}/>
             )
         })}
     
