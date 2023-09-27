@@ -14,19 +14,19 @@ interface Credentials {
 
 export const options: NextAuthOptions = {
     providers: [
-        GitHubProvider({
-            profile(profile: GithubProfile) {
-                //console.log(profile)
-                return {
-                    ...profile,
-                    role: profile.role ?? "user",
-                    id: profile.id.toString(),
-                    image: profile.avatar_url,
-                }
-            },
-            clientId: process.env.GITHUB_ID as string,
-            clientSecret: process.env.GITHUB_SECRET as string,
-        }),
+        // GitHubProvider({
+        //     profile(profile: GithubProfile) {
+        //         //console.log(profile)
+        //         return {
+        //             ...profile,
+        //             role: profile.role ?? "user",
+        //             id: profile.id.toString(),
+        //             image: profile.avatar_url,
+        //         }
+        //     },
+        //     clientId: process.env.GITHUB_ID as string,
+        //     clientSecret: process.env.GITHUB_SECRET as string,
+        // }),
         CredentialsProvider({
             name: "Credentials",
             credentials: {
