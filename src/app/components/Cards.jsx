@@ -2,6 +2,7 @@ import { Button } from "@nextui-org/button";
 import axios from "../../../api/axios"
 import CardItem from './CardItem'
 import ButtonCta from "./Button";
+import Cart from './Cart'
 
 
 async function getProducts(){
@@ -49,6 +50,7 @@ export default async function Cards() {
 
                 <CardItem key={product._id} product={product}>
                     <ButtonCta product={[product]}/>
+                    <Cart product={[product]}/>
                     
                 </CardItem>
             )
