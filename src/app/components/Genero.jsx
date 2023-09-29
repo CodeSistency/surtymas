@@ -39,7 +39,7 @@ async function Genero({params}) {
 
   return (
     <>
-    <div style={{marginTop: '110px'}} class="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
+    <div style={{marginTop: '110px'}} className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
       {products?.map((product) =>{
       
             return (

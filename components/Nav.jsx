@@ -13,7 +13,7 @@ export default function Nav() {
                 width={200}
                 height={200}
                 // alt={user?.name ?? "Profile Pic"}
-                priority={true}
+                priority='true'
                 
                 />
               {/* <Menu toggleMenu={toggleMenu} onClick={toggleMenu} isOpen={menuVisible}></Menu>

@@ -35,7 +35,7 @@ async function page({params}) {
     console.log('search', products)
 
   return (
-    <div  class="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
+    <div  className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
 
         {products.length ?
             products?.map((product) =>{

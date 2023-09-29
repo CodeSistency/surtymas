@@ -20,7 +20,7 @@ export default function Grid() {
           alt="Card background"
           className="z-0 w-full h-full object-cover"
           src="/ropa-mujeres.jpg"
-          priority={true}
+          priority='true'
         />
       </Link>
     </Card>
@@ -36,7 +36,7 @@ export default function Grid() {
           alt="Card background"
           className="z-0 w-full h-full object-cover"
           src="/ropa-hombre.jpg"
-          priority={true}
+          priority='true'
         />
       
       </Link>
@@ -55,7 +55,7 @@ export default function Grid() {
           alt="Card background"
           className="z-0 w-full h-full object-cover"
           src="/zapatoss.jpg"
-          priority={true}
+          priority='true'
         />
       </Link>
     </Card>
@@ -69,7 +69,7 @@ export default function Grid() {
         alt="Card example background"
         className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
         src="/yuri-shirota-p0hDztR46cw-unsplash.jpg"
-        priority={true}
+        priority='true'
       />
       <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
         <div>

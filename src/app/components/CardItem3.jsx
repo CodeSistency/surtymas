@@ -5,19 +5,19 @@ import Link from "next/link";
 function CardItem3({product, children}) {
   return (
     
-<div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <Link href={`/productos/${product._id}`}>
     
-        <img class=" rounded-t-lg h-[270px] w-full" src={product.imagenes[0]} alt="product image" />
+        <img className=" rounded-t-lg h-[270px] w-full" src={product.imagenes[0]} alt="product image" />
     
     </Link>
-    <div class="px-5 pt-1 pb-5">
+    <div className="px-5 pt-1 pb-5">
         <a href="#">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text- h-[60px] overflow-y-auto">{product.titulo}</h5>
+            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text- h-[60px] overflow-y-auto">{product.titulo}</h5>
         </a>
        
-        <div class="flex items-center justify-between">
-            <span class="text-3xl font-bold text-gray-900 dark:text-white">${product.precio}</span>
+        <div className="flex items-center justify-between">
+            <span className="text-3xl font-bold text-gray-900 dark:text-white">${product.precio}</span>
             
         </div>
         {/* <Button color="primary" className="w-full" variant="shadow">Comprar</Button> */}

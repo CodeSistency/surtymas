@@ -49,7 +49,7 @@ export default function Hero() {
                             className="hero2"
                             width={1000}
                             height={1000}
-                            priority={true}
+                            
                             />
                                 <div>
 

@@ -29,7 +29,7 @@ export default async function Nav({children}) {
                 width={140}
                 height={140}
                 alt={"Logo"}
-                priority={true}
+                priority='true'
                 
                 />
             
