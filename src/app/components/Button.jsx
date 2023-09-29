@@ -16,6 +16,7 @@ import ReactWhatsapp from 'react-whatsapp';
 
 import React, { useState, useMemo } from "react";
 import CartDrawer from "./CartDrawer";
+import ModalBuy from "./ModalBuy";
 
 
 function ButtonCta({product, products}) {
@@ -67,7 +68,7 @@ function ButtonCta({product, products}) {
 
   return (
     <>
-        <Button onPress={onOpen} radius="full" className="w-full  self-end justify-self-end bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
+        <Button onPress={onOpen} radius="full" style={{marginBottom: '-10px'}} className="w-full  self-end justify-self-end bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
                                 Comprar
         </Button>
         {/* <RadioGroup
@@ -298,7 +299,10 @@ function ButtonCta({product, products}) {
             
             <div >
 
-              <ListItem product={product} />
+            <ListItem product={product} >
+                  <ModalBuy product={product} />
+                </ListItem>
+
             </div>
 
 {/* Metodo de Pago */}
@@ -373,7 +377,12 @@ function ButtonCta({product, products}) {
 
               <div className='h-[300px]'>
 
-                <ListItem product={product} />
+                <ListItem product={product} >
+                  <ModalBuy product={product} />
+                </ListItem>
+
+{/* <ListItem product={product} /> */}
+                
               </div>
 
               <h4 className="text-black">Datos: {nombre} {apellido}</h4>
@@ -399,9 +408,65 @@ function ButtonCta({product, products}) {
               </div>
 
               <h2 className="text-black">Total: 0</h2>
-              <Button color='success' className="w-full p-4" variant="shadow" onPress={onClose}>
-                    Comprar
-                  </Button>
+              {products ? <ReactWhatsapp
+                      //  style={{borderRadius: '10px', backgroundColor:'rgb(5, 248, 78)', border: '1px solid rgb(5, 248, 78)'}} 
+                       number='+58 4124668486'
+                       message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
+Mi usuario es: 
+Direccion: ${direccion}
+Metodo de Pago: ${pago} 
+Mi compra es la siguiente:
+                       
+${products?.map((product) => {
+                         let message = `"${product.nombre}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
+                         if (product.tallas) {
+                           const tallasMessage = Object.entries(product.tallas)
+                             .map(([size, colors]) => {
+                               const deseos = colors.filter((color) => color.deseo !== 0);
+                               if (deseos.length > 0) {
+                                 const deseosMessage = deseos
+                                   .map((color) => `${size}: ${color.deseo}`)
+                                   // .join(", ");
+                                 return deseosMessage;
+                               }
+                               return null;
+                             })
+                             .filter((message) => message !== null)
+                             .join("\n");
+                           if (tallasMessage !== "") {
+                             message += `\nTallas: \n${tallasMessage} piezas\n`;
+                           }
+                         }
+                         return message;
+                       })}
+Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
+
+                    >Comprar</ReactWhatsapp> :
+                    
+                    <ReactWhatsapp
+                    number='+58 4124668486'
+                    message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
+Mi usuario es: 
+Direccion: ${direccion}
+Metodo de Pago: ${pago} 
+
+Mi compra es la siguiente:
+"${product[0]?.titulo}". Precio: $${product[0]?.precio}, Precio al mayor: $${product[0]?.precio_mayor}, Codigo: ${product[0]?.codigo}
+${product[0]?.tallas ? `Tallas: \n${Object.entries(product[0].tallas)
+    .map(([size, colors]) => {
+      const deseos = colors.filter((color) => color.deseo !== 0);
+      if (deseos.length > 0) {
+        return deseos
+          .map((color) => `${size}: ${color.deseo || 'No seleccionado'}`)
+          .join(", ");
+      }
+      return null;
+    })
+    .filter((message) => message !== null)
+    .join("\n") || ''} piezas` : ''}
+Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
+                    >Comprar</ReactWhatsapp>}
+
 
 
               
@@ -411,7 +476,7 @@ function ButtonCta({product, products}) {
 
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>
-                  Close
+                  Cerrar
                 </Button>
 
                 {step1 &&

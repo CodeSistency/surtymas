@@ -43,19 +43,44 @@ export const options: NextAuthOptions = {
             },
             async authorize(credentials) {
                 // This is where you need to retrieve user data 
-                const { username, password } = credentials as {
+                let { username, password } = credentials as {
                     username: string;
                     password: string;
                   };
 
                 await db.connect()
                                 
-                const user = await User.findOne({ username })
-                console.log(user)
+                let user = await User.findOne({ username })
+                // user = await User.create({ username, password });
+                // console.log(`new user: ${JSON.stringify(user)}, ${username} ${password}`)
 
                 if(!user){
-                    throw new Error("Invalid input")
+                    console.log('user not found')
+
+                    try {
+                        const hashedPwd = await bcrypt.hash(password, 10);
+                    password = hashedPwd;
+                    console.log(`new password: ${hashedPwd}`)
+
+                    user = await User.create({ username, password: hashedPwd });
+                    console.log(`User created, but not saved: ${JSON.stringify(user)}`);
+                
+
+                    //save user
+                    await user.save();
+
+                    console.log(`New user: ${JSON.stringify(user)}`);
+                    return user; // Return the user object
+                    
+                    } catch (error) {
+                        console.log(error)
+                    }
+
+                    // throw new Error("Invalid input")
+                    
                 }
+
+                console.log('datos user', user)
 
                 const comparePass = await bcrypt.compare(password, user.password) 
 

@@ -11,6 +11,7 @@ import { options } from "../api/auth/[...nextauth]/options"
 import { getServerSession } from "next-auth/next"
 import {CartIcon} from "./icon/cartIcon";
 import InputNav from './InputNav'
+import IconSession from './IconSession'
 
 export default async function Nav({children}) {
 
@@ -53,14 +54,16 @@ export default async function Nav({children}) {
                   session 
                   ? 
                   <div className="flex items-center gap-1">
-                    {children}
+                    <IconSession user={session.user.name}/>
+                    {/* {children} */}
                     <Link href={`/carrito`}><CartIcon size={50}/></Link>
                   
                   </div>
                   // ? <Link href="/api/auth/signout">Cerrar sesion</Link> 
                   : <div className="flex items-center gap-1"> 
-                      <Link href="/login">Iniciar sesion</Link>
-                      <Link href="/registro">Registro</Link>
+                      <IconSession />
+                      {/* <Link href="/login">Iniciar sesion</Link>
+                      <Link href="/registro">Registro</Link> */}
                       <Link href={`/carrito`}><CartIcon size={50} /></Link>
                     </div>
 
@@ -72,7 +75,7 @@ export default async function Nav({children}) {
 
             <ul className="navbar">
               
-                <li className='nav-admins'><Link href="/admin">Admin</Link></li>
+                {/* <li className='nav-admins'><Link href="/admin">Admin</Link></li> */}
 
                 <li className='nav-mujer'><Link href="/productos/genero/mujer">Mujer</Link></li>
                 <li className='nav-hombre'><Link href="/productos/genero/hombre">Hombre</Link></li>
@@ -80,21 +83,12 @@ export default async function Nav({children}) {
                 <li className='nav-admin'><Link href="/productos/tipo/pantalon">Pantalones</Link></li>
                 <li className='nav-admin'><Link href="/productos/tipo/franela">Franelas</Link></li>
                 
-                {/* {auth.user ? <button className='logout' onClick={signOut}>Salir de sesion</button> : <li><Link className='login-button' to={"/inicio"}>Login</Link></li>}
-                {!auth.user && <li><Link className='login-button' to={"/register"}>Registro</Link></li>} */}
+               
 
             </ul>
 
-            {/* <div className='nav-link-search'>
-                  <div className="search-nav">
-                    <form style={{paddingBottom: '0'}} name="search search-relative" className=" search-relative-nav">
-                        <input type="text" className="input-search-nav " name="txt"  />
-                       
-                        <LiaSearchSolid fontSize={25} style={{top:'50%'}}className="search-button-nav" />
-                    </form>
-                  </div>
-              </div> */}
-              <InputNav />
+          
+              {/* <InputNav /> */}
           </section>
         
 

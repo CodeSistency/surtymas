@@ -36,7 +36,7 @@ function ProductsAll() {
 
   return (
     <>
-        <Productos pageNumber={currentPage}/>
+        {/* <Productos pageNumber={currentPage}/> */}
         <div className='flex justify-center w-full gap-1 items-center'>
         <Button
           size="sm"

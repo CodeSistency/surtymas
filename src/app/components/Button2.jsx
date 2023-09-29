@@ -440,13 +440,14 @@ function ButtonCta2({product, products}) {
                   <Button color="primary" variant="light" onPress={stepTwo}>
                     Atras
                   </Button>
-                  <Button color='success' variant="solid" onPress={onClose}>
+                  {/* <Button color='success' variant="solid" onPress={onClose}> */}
                    {products ? <ReactWhatsapp
                       //  style={{borderRadius: '10px', backgroundColor:'rgb(5, 248, 78)', border: '1px solid rgb(5, 248, 78)'}} 
                        number='+58 4124668486'
                        message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
-Mi correo es: 
-Mi compra es la siguiente:
+Mi usuario es: 
+Direccion: ${direccion}
+Metodo de Pago: ${pago}
                        
 ${products?.map((product) => {
                          let message = `"${product.nombre}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
@@ -476,9 +477,28 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
                     
                     <ReactWhatsapp
                     number='+58 4124668486'
-                    message={`Hola`}
-                    />}
-                  </Button>
+                    message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
+Mi usuario es: 
+Direccion: ${direccion}
+Metodo de Pago: ${pago} 
+
+Mi compra es la siguiente:
+"${product[0]?.titulo}". Precio: $${product[0]?.precio}, Precio al mayor: $${product[0]?.precio_mayor}, Codigo: ${product[0]?.codigo}
+${product[0]?.tallas ? `Tallas: \n${Object.entries(product[0].tallas)
+    .map(([size, colors]) => {
+      const deseos = colors.filter((color) => color.deseo !== 0);
+      if (deseos.length > 0) {
+        return deseos
+          .map((color) => `${size}: ${color.deseo || 'No seleccionado'}`)
+          .join(", ");
+      }
+      return null;
+    })
+    .filter((message) => message !== null)
+    .join("\n") || ''} piezas` : ''}
+Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
+                    >Comprar</ReactWhatsapp>}
+                  {/* </Button> */}
                 </div>
                 }
                 {/* <Button color="primary" onPress={onClose}>

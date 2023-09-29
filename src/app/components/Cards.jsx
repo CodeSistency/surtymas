@@ -3,6 +3,8 @@ import axios from "../../../api/axios"
 import CardItem from './CardItem'
 import ButtonCta from "./Button";
 import Cart from './Cart'
+import { getServerSession } from "next-auth/next"
+import { options } from "../api/auth/[...nextauth]/options"
 
 
 async function getProducts(){
@@ -38,23 +40,29 @@ async function getProducts(){
 
 export default async function Cards() {
 
+    const session = await getServerSession(options)
+
     const products = await getProducts()
     // console.log(products);
   return (
     <>
     <div className="flex gap-2 items-center min-h-45 px-4 py-8">
+    {
+        products && 
 
-        {products?.map((product) =>{
+        products?.map((product) =>{
             // <Card product={product}/>
             return (
 
                 <CardItem key={product._id} product={product}>
-                    <ButtonCta product={[product]}/>
-                    <Cart product={[product]}/>
+                    <ButtonCta user={session.user.name} product={[product]}/>
+                    {/* <Cart user={session.user.name} product={[product]}/> */}
                     
                 </CardItem>
             )
-        })}
+        })
+    }
+        
 
         </div>
     </>

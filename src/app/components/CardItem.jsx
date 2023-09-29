@@ -33,11 +33,11 @@ export default function CardItem({product, children}) {
                         </CardHeader>
                         <CardBody className="pb-0 pt-2 px-4 flex-col items-start h-24">
                             <h4 className="font-bold text-large ">{product.titulo}</h4>
-                            <p className="text-tiny uppercase font-bold">{product.precio}</p>
+                            <p style={{fontSize: '20px '}} className="text-tiny uppercase font-bold">{product.precio}</p>
                             <small className="text-default-500">{product.codigo}</small>
                             
                         </CardBody>
-                        <div className="px-2">
+                        <div className="w-full flex flex-col ">
                             {children}
                             {/* <Button  radius="full" className="w-full  self-end justify-self-end bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
                             Comprar

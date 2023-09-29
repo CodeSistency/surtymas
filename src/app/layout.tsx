@@ -12,8 +12,8 @@ const inter = Inter({ weight: ['200','300','400','500','700', '800'], subsets: [
 
 
 export const metadata = {
-  title: 'NextAuth Tutorial',
-  description: 'Learn NextAuth.js by Dave Gray',
+  title: 'Surtymas',
+  description: 'Tienda Online surtymas',
 }
 
 export default function RootLayout({

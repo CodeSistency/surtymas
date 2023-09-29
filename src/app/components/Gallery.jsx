@@ -2,6 +2,8 @@ import React from 'react'
 import CardItem2 from './CardItem2';
 import axios from '../../../api/axios';
 import ButtonCta from './Button';
+import { getServerSession } from "next-auth/next"
+import { options } from "../api/auth/[...nextauth]/options"
 
 async function getProducts(pageNumber){
     let isMounted = true;
@@ -31,19 +33,24 @@ async function getProducts(pageNumber){
 async function Gallery() {
 
     const products = await getProducts()
+    const session = await getServerSession(options)
     // console.log('item2', products)
 
   return (
     <div class="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
-      {products?.map((product) =>{
-      
-            return (
 
-                <CardItem2 key={product._id} product={product}>
-                    <ButtonCta product={product}/>
-                </CardItem2>
-            )
-        })}
+        {products &&
+            products?.map((product) =>{
+      
+                return (
+    
+                    <CardItem2 key={product._id} product={product}>
+                        <ButtonCta user={session.user.name} product={product}/>
+                    </CardItem2>
+                )
+            })}
+        
+      
     {/* <div>
         <img class="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt=""/>
     </div>
