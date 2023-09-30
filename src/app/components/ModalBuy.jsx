@@ -153,14 +153,14 @@ let isMounted = true;
 
 
 
-    // useEffect(() =>{
+    useEffect(() =>{
 
     //   // applyChangesModal()
     //   // handleApplyChanges()
-    //   setResults(producto)
+      setResults(producto)
     //   console.log('results', results)
       
-    // },[])
+    },[])
 
    
 
