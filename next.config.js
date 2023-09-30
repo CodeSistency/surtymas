@@ -3,11 +3,18 @@ const nextConfig = {
     // experimental: {
     //     serverActions: true,
     //   },
-    webpack: (
-      config,
-      { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
-    ) => {
-      // Important: return the modified config
+    webpack: (config, options) => {
+      config.module.rules.push({
+        test: /\.mdx/,
+        use: [
+          options.defaultLoaders.babel,
+          {
+            loader: '@mdx-js/loader',
+            options: pluginOptions.options,
+          },
+        ],
+      })
+   
       return config
     },
   
