@@ -12,8 +12,8 @@ export default async function Home() {
       <Hero />
       <Cards />                      
       <Categories />
-      {/* <Gallery /> */}
-      <Grid />
+      <Gallery />
+      {/* <Grid /> */}
       
     </>
   )
