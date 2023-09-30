@@ -14,50 +14,12 @@ import ListItem from './ListItem'
 import ReactWhatsapp from 'react-whatsapp';
 
 
-
-
-
 import React, { useState, useMemo } from "react";
 import CartDrawer from "./CartDrawer";
 import ModalBuy from "./ModalBuy";
-// import { user } from "@nextui-org/react";
 
 
-async function Cart({product, products}) {
-
-  
-//   const handleCart = async (username, nombre, precio, precio_mayor, imagen, id, codigo, tallas, tallas_zapatos) => {
-
-//     // console.log(username, nombre, precio, precio_mayor)
-// let isMounted = true;
-//     const controller = new AbortController();
-//     const quantity = 0
-
-//     console.log(username, nombre, precio, precio_mayor, codigo)
-
-  
-//       try {
-//           const response = await axios.put('cart', { username, nombre, precio, precio_mayor, quantity, imagen, id, codigo, tallas, tallas_zapatos},
-//         //   JSON.stringify({username, nombre, precio, precio_mayor, quantity}),
-//           { 
-//               signal: controller.signal,
-              
-//           });
-//           console.log(JSON.stringify(response?.data));
-//         //   isMounted && setCart(response.data);
-          
-//       } catch (err) {
-//           console.error(err);
-
-//       }
-  
-//       return () => {
-//           isMounted = false;
-//           controller.abort();
-//       }
-
-    
-// }
+function Button3({product, products}) {
 
   console.log(product)
 
@@ -106,10 +68,18 @@ async function Cart({product, products}) {
 
   return (
     <>
-        <Button onPress={onOpen} radius="full" color="primary" variant="solid" className="w-full  self-end justify-self-end text-white shadow-lg">
+        <Button onPress={onOpen} radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">
                                 Carrito
         </Button>
-        
+        {/* <RadioGroup
+        label="Select scroll behavior"
+        orientation="horizontal"
+        value={scrollBehavior}
+        onValueChange={setScrollBehavior}
+      >
+        <Radio value="inside">inside</Radio>
+        <Radio value="outside">outside</Radio>
+      </RadioGroup> */}
       <Modal
       style={{zIndex: '100'}}
         isOpen={isOpen}
@@ -121,61 +91,102 @@ async function Cart({product, products}) {
             <>
               <ModalHeader className="flex flex-col gap-1" style={{color:'black'}}>
                 
-                Agregar al carro
+                Comprar
                 
+
+                {/* <div className="space-y-1">
+                  <h4 style={{color:'black'}} className="text-medium font-medium">Info de Envio</h4>
+                  <p className="text-small text-default-400">Rellene todos sus datos, para concretar la compra</p>
+              </div>
+              <Divider className="my-4" /> */}
      
               </ModalHeader>
-
+         
 
               {step1 && <ModalBody >
-{/* 
+
                 <div className="flex items-center justify-between flex-wrap gap-2">
                   <div className="flex items-center gap-2">
                     <Avatar name="1"
                             classNames={{
-                              
+                              // base: `${step1 && 'blue'}`,
                               icon: "text-black/80",
                             }}
                     />
-                    <p style={{color:'black'}}>Selecciona Cantidad</p>
+                    <p style={{color:'black'}}>Agregar al carro</p>
                   </div>
 
+                
 
                 </div>
               
                 
               
 
-            
-            
 
             <Divider />
             
             <div >
 
-            
-                <ListItem product={product} />
-            </div> */}
+            <ListItem product={product} >
+                  <ModalBuy product={product} />
+                </ListItem>
 
+            </div>
 
+{/* Metodo de Pago */}
+
+    {/* <Dropdown>
+      <DropdownTrigger>
+        <Button 
+          variant="bordered" 
+          className="capitalize"
+        >
+          {selectedValue}
+        </Button>
+      </DropdownTrigger>
+      <DropdownMenu 
+        aria-label="Single selection example"
+        variant="flat"
+        disallowEmptySelection
+        selectionMode="single"
+        selectedKeys={selectedKeys}
+        onSelectionChange={setSelectedKeys}
+      >
+        <DropdownItem key="pago movil">Pago Movil</DropdownItem>
+        <DropdownItem key="transferencia">Transferencia</DropdownItem>
+        <DropdownItem key="divisa">Divisa</DropdownItem>
+        
+      </DropdownMenu>
+    </Dropdown> */}
 
    
     
-              {/* <Button variant="solid" color="primary" className="w-full" size='md' onPress={handleCart(user, product.titulo, product.precio, product.precio_mayor, product.imagenes[0], product._id, product.codigo, product.tallas, product.tallas_zapatos)}>Agregar al carro</Button> */}
+    
               </ModalBody>}
 
+             
 
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>
                   Cerrar
                 </Button>
 
-                
-                   
-                
-                
-                
+                {step1 &&
+
+                  <div>
+                    <Button color='primary' onPress={stepTwo}>
+                      Siguiente
+                    </Button>
+                  </div>
+                  }
+
                
+
+                
+                {/* <Button color="primary" onPress={onClose}>
+                  Action
+                </Button> */}
               </ModalFooter>
             </>
           )}
@@ -185,4 +196,4 @@ async function Cart({product, products}) {
   )
 }
 
-export default Cart
+export default Button3

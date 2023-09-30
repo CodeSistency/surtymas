@@ -1,7 +1,8 @@
-import { Button } from "@nextui-org/button";
+
 import axios from "../../../api/axios"
 import CardItem from './CardItem'
 import ButtonCta from "./Button";
+import Button3 from "./Button3";
 import Cart from './Cart'
 import { getServerSession } from "next-auth/next"
 import { options } from "../api/auth/[...nextauth]/options"
@@ -46,7 +47,7 @@ export default async function Cards() {
     // console.log(products);
   return (
     <>
-    <div className="flex gap-2 items-center min-h-45 px-4 py-8">
+    <div className="flex gap-2 items-center min-h-45 px-4 py-8 card-container">
     {
         products && 
 
@@ -55,8 +56,9 @@ export default async function Cards() {
             return (
 
                 <CardItem key={product._id} product={product}>
-                    <ButtonCta user={session.user.name} product={[product]}/>
-                    {/* <Cart user={session.user.name} product={[product]}/> */}
+                    <ButtonCta user={session?.user?.name} product={[product]}/>
+                    {/* <Cart user={session?.user?.name} product={[product]}/> */}
+                    <Button3 user={session?.user?.name} product={[product]}/>
                     
                 </CardItem>
             )
