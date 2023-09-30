@@ -7,6 +7,7 @@ import Cart from './Cart'
 import { getServerSession } from "next-auth/next"
 import { options } from "../api/auth/[...nextauth]/options"
 import { Button } from "@nextui-org/button";
+import { Suspense } from "react";
 
 
 async function getProducts(){
@@ -56,8 +57,11 @@ export default async function Cards() {
         products?.map((product) =>{
             // <Card product={product}/>
             return (
+                <Suspense fallback={<p>Cargando...</p>}>
+
 
                 <CardItem key={product._id} product={product}>
+                    
                     <ButtonCta user={session?.user} product={[product]}/>
                     
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
@@ -65,6 +69,7 @@ export default async function Cards() {
                     }
                     
                 </CardItem>
+                </Suspense>
             )
         })
     }

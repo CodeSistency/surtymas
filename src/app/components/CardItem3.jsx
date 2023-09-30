@@ -1,6 +1,7 @@
 
 import {Button} from "@nextui-org/button";
 import Link from "next/link";
+import { Suspense } from "react";
 
 function CardItem3({product, children}) {
   return (
@@ -22,7 +23,10 @@ function CardItem3({product, children}) {
         </div>
         {/* <Button color="primary" className="w-full" variant="shadow">Comprar</Button> */}
         <div >
+        <Suspense fallback={<p>Cargando...</p>}>
+
                             {children}
+        </Suspense>
                             {/* <Button  radius="full" className="w-full  self-end justify-self-end bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
                             Comprar
                             </Button> */}

@@ -5,6 +5,7 @@ import Button from './Button'
 import {Badge} from "@nextui-org/badge";
 import {CartIcon} from "./icon/cartIcon";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function CardItem({product, children}) {
 
@@ -38,7 +39,10 @@ export default function CardItem({product, children}) {
                             
                         </CardBody>
                         <div className="w-full flex flex-col ">
-                            {children}
+                            <Suspense fallback={<p>Cargando...</p>}>
+
+                                {children}
+                            </Suspense>
                             {/* <Button  radius="full" className="w-full  self-end justify-self-end bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
                             Comprar
                             </Button> */}

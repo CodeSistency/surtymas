@@ -13,6 +13,7 @@ import {CartIcon} from "./icon/cartIcon";
 import InputNav from './InputNav'
 import IconSession from './IconSession'
 import { Button } from "@nextui-org/button";
+import { Suspense } from "react";
 
 export default async function Nav({children}) {
 
@@ -51,12 +52,16 @@ export default async function Nav({children}) {
               <div className='cart-icon'>{cartIcon()}</div>
               <Link to={'/Login2'}><BiUser className='user-icon' fontSize={35}/></Link> */}
             {/* </div> */}
+
             {
                   session 
                   ? 
                   <div className="flex items-center gap-1">
                     {/* <IconSession user={session.user.name}/> */}
-                    {children}
+                    <Suspense fallback={<Button>Cerrar sesion</Button>}>
+
+                      {children}
+                    </Suspense>
                     {/* <Button onClick={signOut}>Cerrar sesion</Button> */}
                     <Link href={`/carrito`}><CartIcon size={50}/></Link>
                   
