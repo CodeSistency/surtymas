@@ -45,7 +45,7 @@ async function Gallery() {
                 return (
     
                     <CardItem2 key={product._id} product={product}>
-                        <ButtonCta user={session.user.name} product={product}/>
+                        <ButtonCta user={session?.user?.name} product={product}/>
                     </CardItem2>
                 )
             })}
@@ -64,13 +64,13 @@ async function Gallery() {
         <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt=""/>
     </div>
     <div>
-        <img Name="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt=""/>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt=""/>
     </div>
     <div>
         <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt=""/>
     </div>
     <div>
-        <img Name="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt=""/>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt=""/>
     </div>
     <div>
         <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" alt=""/>

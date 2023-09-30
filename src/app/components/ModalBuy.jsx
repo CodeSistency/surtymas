@@ -16,18 +16,91 @@ import ListItem from './ListItem'
 import React, { useState, useMemo, useEffect } from "react";
 import CartDrawer from "./CartDrawer";
 import { Image } from "@nextui-org/image";
+import axios from "../../../api/axios";
 
-function ModalBuy({product}) {
+function ModalBuy({producto, user}) {
 
+  
+    console.log(producto)
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const [scrollBehavior, setScrollBehavior] = useState("inside");
 
     const [quantityChangesModal, setQuantityChangesModal] = useState({});
   const [results, setResults] = useState()
+
+  const [product, setProduct] = useState()
+
+  async function getProduct(){
+    let isMounted = true;
+    const controller = new AbortController();
+
+    try {
+        const response = await axios.get(`/productos/${producto[0]._id}`, {
+            signal: controller.signal
+        });
+        // console.log(response.data);
+        setProduct(response.data)
+        return response.data
+      
+    } catch (err) {
+        console.log(err);
+        
+    }
+
+    return () => {
+        isMounted = false;
+        controller.abort();
+    }
+
+    
+}
+
+// useEffect(() =>{
+//   getProduct()
+//   console.log(product)
+// }, [producto])
+
+
+const handleCart = async (username, nombre, precio, precio_mayor, imagen, id, codigo, tallas, tallas_zapatos) => {
+
+  // console.log(username, nombre, precio, precio_mayor)
+let isMounted = true;
+  const controller = new AbortController();
+  const quantity = 0
+
+  console.log(username, nombre, precio, precio_mayor, codigo)
+
+
+    try {
+        const response = await axios.put('cart', { username, nombre, precio, precio_mayor, quantity, imagen, id, codigo, tallas, tallas_zapatos},
+      //   JSON.stringify({username, nombre, precio, precio_mayor, quantity}),
+        { 
+            signal: controller.signal,
+            
+        });
+        console.log(JSON.stringify(response?.data));
+      //   isMounted && setCart(response.data);
+        
+    } catch (err) {
+        console.error(err);
+
+    }
+
+    return () => {
+        isMounted = false;
+        controller.abort();
+    }
+
+  
+}
+
+
+
+
   
   const onChangeModal = (size, index, value) => {
     // applyChangesModal()
-    const changeKey = `${product.codigo}-${size}-${index}`;
+    const changeKey = `${producto[0].codigo}-${size}-${index}`;
     setQuantityChangesModal((prevChanges) => ({
       ...prevChanges,
       [changeKey]: parseInt(value, 10),
@@ -37,33 +110,41 @@ function ModalBuy({product}) {
     
   };
 
- 
-
-  const applyChangesModal = () => {
-    
-      
-          const updatedTallas = { ...product.tallas };
-          Object.keys(updatedTallas).forEach((size) => {
-            updatedTallas[size].forEach((color, index) => {
-              const changeKey = `${product.codigo}-${size}-${index}`;
-              const changeValue = parseInt(quantityChangesModal[changeKey], 10) || 0;
-              const desireDifference = changeValue - color.deseo;
-              color.deseo = changeValue
-              color.quantity -= desireDifference;
-              
-              
-            });
-            setResults([{...product, tallas: updatedTallas}])
-            return { ...product, tallas: updatedTallas };
-          });
-         
+  const onChange = (productCode, size, index, value) => {
+    const intValue = parseInt(value, 10);
+    setResults((prevResults) => {
+      console.log(prevResults)
+      const updatedResults = prevResults.map((product) => {
+        if (producto[0].codigo === productCode) {
+          const colors = producto[0].tallas[size];
+          if (!colors || index >= colors.length) return product;
+  
+          if (!isNaN(intValue)) {
+            // If the input is a number, update the sold property
+            const newSoldValue = Math.max(0, intValue);
+            const quantityChange = newSoldValue - (colors[index].sold || 0); // Calculate the change in sold quantity
+            colors[index].sold = intValue;
+            colors[index].quantity -= quantityChange; // Decrease the quantity
+          }
+        }
+        return product;
+      });
+      return updatedResults;
+    });
     console.log(results)
-      
-    };
+  };
+
+
 
     useEffect(() =>{
-      applyChangesModal()
-    },[quantityChangesModal])
+
+      // applyChangesModal()
+      // handleApplyChanges()
+      setResults(producto)
+      
+    },[producto])
+
+   
 
   return (
     <>
@@ -78,13 +159,13 @@ function ModalBuy({product}) {
         <ModalContent>
         {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1" style={{color:'black'}}>
+            {producto[0] &&  <ModalHeader className="flex flex-col gap-1" style={{color:'black'}}>
               <div className='modal-info' style={{padding:'10px', border: 'none'}}>
-      <img alt="producto" style={{width: '50px', height: '50px'}} src={`${product.imagenes ? product.imagenes[0] : product.imagen}`}/>
-      <p >Producto: {product.titulo}{product.nombre}</p>
+      <img alt="producto" style={{width: '50px', height: '50px'}} src={`${producto[0].imagenes ? producto[0].imagenes[0] : producto[0].imagen}`}/>
+      <p >Producto: {producto[0].titulo}{producto[0].nombre}</p>
     </div>
-              </ModalHeader>
-              <ModalBody>
+              </ModalHeader>}
+              {producto[0] && <ModalBody>
               <div>
 
     
@@ -147,51 +228,34 @@ function ModalBuy({product}) {
       
     )} */}
 
-    {Object.entries(product.tallas).map(([size, colors]) =>
-    colors.map((color, index) =>
-    color.quantity > 0 &&
-
-    <div key={`${product.codigo}-${size}`} className="size-section">
-         <h3>{size}</h3>
+{Object.entries(producto[0].tallas).map(([size, colors]) =>
+  colors.map((color, index) =>
+    (color.quantity > 0 || color.sold > 0) && (
+      <div key={`${producto[0].codigo}-${size}`} className="size-section">
+        <h3>{size}</h3>
         <div className="color-input lista-productos" key={color._id}>
-            <div
-              style={{
-                backgroundColor: color.color,
-                borderRadius: "50%",
-                border: "1px solid gray",
-                height: "30px",
-                width: "30px",
-                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.305)'
-              }}
-            ></div>
-             <Input
-                type="number"
-                label="Agregue Cantidad"
-                style={{fontSize: '14px', marginTop:'12px', color:'black'}}
-                // defaultValue="junior@nextui.org"
-                // className="w-full"
-                value={quantityChangesModal[`${product.codigo}-${size}-${index}`] || ""}
-                onChange={(e) =>
-                  onChangeModal(size, index, e.target.value)
-                }
-                
-                
-              />
-             {/* <input
-            style={{width: "70%", color: 'black'}}
-              type="number"
-              value={quantityChangesModal[`${product.codigo}-${size}-${index}`] || ""}
-              onChange={(e) =>
-                onChangeModal(size, index, e.target.value)
-              }
-            />  */}
-           
-          
-          </div>
-    </div>
-
+          <div
+            style={{
+              backgroundColor: color.color,
+              borderRadius: "50%",
+              border: "1px solid gray",
+              height: "30px",
+              width: "30px",
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.305)'
+            }}
+          ></div>
+          <Input
+            type="number"
+            label="Agregue Cantidad"
+            style={{ fontSize: '14px', marginTop: '12px', color: 'black' }}
+            value={color.sold || 0}
+            onChange={(e) => onChange(producto[0].codigo, size, index, e.target.value)}
+          />
+        </div>
+      </div>
     )
-    )}
+  )
+)}
 
     
     </div>
@@ -237,11 +301,14 @@ Mi compra es la siguiente:
   </div>
 </div>
 </div>
-                </ModalBody>
+                </ModalBody>}
                 <ModalFooter>
                     <Button color="danger" variant="light" onPress={onClose}>
-                    Close
+                    Cerrar
                     </Button>
+                    <button onClick={() => handleCart(user, results[0].titulo, results[0].precio, results[0].precio_mayor, results[0].imagenes[0], results[0]._id, results[0].codigo, results[0].tallas, results[0].tallas_zapatos)}>
+                    Agregar
+                    </button>
                 </ModalFooter>
               </>
           )}

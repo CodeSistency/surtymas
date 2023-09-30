@@ -14,7 +14,7 @@ import ListItem from './ListItem'
 import ReactWhatsapp from 'react-whatsapp';
 
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import CartDrawer from "./CartDrawer";
 import ModalBuy from "./ModalBuy";
 
@@ -48,13 +48,13 @@ function ButtonCta({product, products}) {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const [scrollBehavior, setScrollBehavior] = useState("inside");
 
-  const [selectedKeys, setSelectedKeys] = React.useState(new Set(["Recoger en Tienda"]));
-  console.log(selectedKeys)
+  // const [selectedKeys, setSelectedKeys] = React.useState(new Set(["Recoger en Tienda"]));
+  // console.log(selectedKeys)
 
-  const selectedValue = React.useMemo(
-    () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
-    [selectedKeys]
-  );
+  // const selectedValue = React.useMemo(
+  //   () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
+  //   [selectedKeys]
+  // );
 
   const [check, toggleCheck] = useToggle('info', true);
   const [nombre, resetNombre, nombreAttribs] = useInput('nombre', '')
@@ -63,8 +63,14 @@ function ButtonCta({product, products}) {
   const [direccionOpcional, resetDireccionOpcional, direccionOpcionalAttribs] = useInput('direccionOpcional', '')
   const [ciudad, resetCiudad, ciudadAttribs] = useInput('ciudad', '')
   const [estado, resetEstado, estadoAttribs] = useInput('estado', '')
+  const [options, setOptions] = useState('Recoger en Tienda')
 
   const [pago, resetPago, pagoAttribs] = useInput('pago', '')
+
+  useEffect(() => {
+    console.log(options)
+  }, [options])
+  
 
   return (
     <>
@@ -137,7 +143,7 @@ function ButtonCta({product, products}) {
 
                 </div>
                 
-              <Dropdown
+              {/* <Dropdown
                 // style={{marginTop: '-20px'}}
                 style={{paddingTop: '-20px'}}
                       >
@@ -163,9 +169,25 @@ function ButtonCta({product, products}) {
                 <DropdownItem style={{color:'black'}} key="Envio Nacional">Envio Nacional</DropdownItem>
                 
               </DropdownMenu>
-            </Dropdown>
+            </Dropdown> */}
 
-            {selectedValue != 'Recoger en Tienda' &&
+<Select
+              items={['Recoger en Tienda', 'Envio Nacional', 'Delivery']}
+              onChange={(e) => setOptions(e.target.value)}
+              label="Metodo de pago"
+              placeholder="Seleccione un metodo"
+              className="max-w-xs"
+              variant='bordered'
+              color="primary"
+              style={{color:'black'}}
+            >
+              {/* {(animal) => <SelectItem key={animal.value}>{animal.label}</SelectItem>} */}
+              <SelectItem style={{color:'black'}} key={'Recoger en Tienda'}>Recoger en Tienda</SelectItem>
+              <SelectItem style={{color:'black'}} key={'Envio Nacional'}>Envio Nacional</SelectItem>
+              <SelectItem style={{color:'black'}} key={'Delivery'}>Delivery</SelectItem>
+            </Select>
+
+            {options != 'Recoger en Tienda' &&
               <div className="flex flex-col gap-2">
 
               
@@ -391,10 +413,10 @@ function ButtonCta({product, products}) {
                 <div className="w-[70%]">
                   <h4 className="py-1">Direccion:</h4>
                   <Divider/>
-                  <div>
+{          options != 'Recoger en tienda' &&        <div>
                     <p>Direccion 1: {direccion}</p>
                     <p>Direccion 2: {direccionOpcional}</p>
-                  </div>
+                  </div>}
                 </div>
 
                 <div className="w-[70%]">

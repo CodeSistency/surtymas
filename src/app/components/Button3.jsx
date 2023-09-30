@@ -16,12 +16,14 @@ import ReactWhatsapp from 'react-whatsapp';
 
 import React, { useState, useMemo } from "react";
 import CartDrawer from "./CartDrawer";
+import ModalBuy2 from "./ModalBuy2";
 import ModalBuy from "./ModalBuy";
 
 
-function Button3({product, products}) {
 
-  console.log(product)
+function Button3({product, products, user}) {
+
+  console.log(user)
 
   const [step1, setStep1] = useState(true)
   const [step2, setStep2] = useState(false)
@@ -48,13 +50,13 @@ function Button3({product, products}) {
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
   const [scrollBehavior, setScrollBehavior] = useState("inside");
 
-  const [selectedKeys, setSelectedKeys] = React.useState(new Set(["Recoger en Tienda"]));
-  console.log(selectedKeys)
+  // const [selectedKeys, setSelectedKeys] = React.useState(new Set(["Recoger en Tienda"]));
+  // console.log(selectedKeys)
 
-  const selectedValue = React.useMemo(
-    () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
-    [selectedKeys]
-  );
+  // const selectedValue = React.useMemo(
+  //   () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
+  //   [selectedKeys]
+  // );
 
   const [check, toggleCheck] = useToggle('info', true);
   const [nombre, resetNombre, nombreAttribs] = useInput('nombre', '')
@@ -129,7 +131,7 @@ function Button3({product, products}) {
             <div >
 
             <ListItem product={product} >
-                  <ModalBuy product={product} />
+                  <ModalBuy producto={product} user={user} tallas={product[0].tallas} />
                 </ListItem>
 
             </div>
@@ -172,14 +174,7 @@ function Button3({product, products}) {
                   Cerrar
                 </Button>
 
-                {step1 &&
-
-                  <div>
-                    <Button color='primary' onPress={stepTwo}>
-                      Siguiente
-                    </Button>
-                  </div>
-                  }
+                
 
                
 

@@ -62,7 +62,7 @@ async function page({params}) {
               <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400"><strong className='font-extrabold text-gray-900'>Descripcion:</strong> {product?.descripcion}</p>
             {/* <a href="#" className="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
                 Comprar
-                <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <svg className="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
             </a> */}
 
 <h4 className='font-extrabold text-gray-900'>Tallas disponibles:</h4>
@@ -111,7 +111,7 @@ async function page({params}) {
 
     <section className="bg-white dark:bg-gray-900 py-8 lg:py-16 antialiased">
   <div className="max-w-2xl mx-auto px-4">
-      <div Name="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-6">
         <h2 className="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Comentarios ({product.comentarios.length})</h2>
     </div>
     {/* <form className="mb-6">
@@ -135,10 +135,10 @@ async function page({params}) {
             return(
                 <article key={comentario.fecha} className="p-6 border-1 text-base min-h-[80px] bg-white rounded-lg dark:bg-gray-900">
         <footer className="flex justify-between items-center mb-2">
-            <div Name="flex items-center">
+            <div className="flex items-center">
                 <p className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold">
                     {/* <img
-                        class="mr-2 w-6 h-6 rounded-full"
+                        className="mr-2 w-6 h-6 rounded-full"
                         src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
                         alt="Michael Gough"/> */}
                         
@@ -174,7 +174,7 @@ async function page({params}) {
                 </ul>
             </div> */}
         </footer>
-        <p class="text-gray-500 dark:text-gray-400">{comentario.comentario}</p>
+        <p className="text-gray-500 dark:text-gray-400">{comentario.comentario}</p>
         {/* <div className="flex items-center mt-4 space-x-4">
             <button type="button"
                 className="flex items-center text-sm text-gray-500 hover:underline dark:text-gray-400 font-medium">

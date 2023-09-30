@@ -5,8 +5,13 @@ import { Avatar } from '@nextui-org/avatar'
 import React from 'react'
 import { signOut } from "next-auth/react";
 import Link from 'next/link'
+import { redirect } from "next/navigation"
 
 function IconSession({user}) {
+
+  function login() {
+    redirect('/login')
+  }
   return (
     <div className="flex items-center gap-4">
     <Dropdown placement="bottom-end">
@@ -32,8 +37,9 @@ function IconSession({user}) {
       <DropdownMenu aria-label="Profile Actions" variant="flat">
         
         
-        <DropdownItem key="login" color="primary">
-        <Link href={`/login`}>Iniciar Sesion</Link>
+        <DropdownItem key="login" onPress={login} color="primary">
+        <p className="font-semibold text-gray-900">Login</p>
+        {/* <Link href={`/login`}>Iniciar Sesion</Link> */}
         </DropdownItem>
       </DropdownMenu>}
     </Dropdown>

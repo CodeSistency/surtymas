@@ -3,6 +3,10 @@ import CardItem3 from './CardItem3';
 import axios from '../../../api/axios';
 import {Pagination} from "@nextui-org/pagination";
 import ButtonCta from './Button';
+import Button3 from './Button3';
+import { getServerSession } from "next-auth/next"
+import { options } from "../api/auth/[...nextauth]/options"
+import { Button } from "@nextui-org/button";
 
 
 
@@ -61,18 +65,25 @@ async function Productos({pageNumber}) {
     
     }
 
+    const session = await getServerSession(options)
+    console.log(`session cart:  ${session}`)
+
     const products = await getProducts()
     // console.log('item2', products)
 
   return (
     <>
-    <div  class="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
+    <div  className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
       {products?.map((product) =>{
       
             return (
 
                 <CardItem3 key={product._id} product={product}>
-                    <ButtonCta product={[product]}/>
+                      <ButtonCta user={session?.user} product={[product]}/>
+                    
+                    {session ? <Button3 user={session?.user?.name} product={[product]}/> 
+                    :   <Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button>
+                    }
                 </CardItem3>
             )
         })}

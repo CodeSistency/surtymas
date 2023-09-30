@@ -9,11 +9,11 @@ export default async function Home() {
 
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
       <Cards />                      
-      <Categories />
+      {/* <Categories />
       <Gallery />
-      {/* <Grid /> */}
+      <Grid /> */}
       
     </>
   )

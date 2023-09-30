@@ -6,6 +6,7 @@ import Button3 from "./Button3";
 import Cart from './Cart'
 import { getServerSession } from "next-auth/next"
 import { options } from "../api/auth/[...nextauth]/options"
+import { Button } from "@nextui-org/button";
 
 
 async function getProducts(){
@@ -42,6 +43,7 @@ async function getProducts(){
 export default async function Cards() {
 
     const session = await getServerSession(options)
+    console.log(`session cart:  ${session}`)
 
     const products = await getProducts()
     // console.log(products);
@@ -56,9 +58,11 @@ export default async function Cards() {
             return (
 
                 <CardItem key={product._id} product={product}>
-                    <ButtonCta user={session?.user?.name} product={[product]}/>
-                    {/* <Cart user={session?.user?.name} product={[product]}/> */}
-                    <Button3 user={session?.user?.name} product={[product]}/>
+                    <ButtonCta user={session?.user} product={[product]}/>
+                    
+                    {session ? <Button3 user={session?.user?.name} product={[product]}/> 
+                    :   <Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button>
+                    }
                     
                 </CardItem>
             )

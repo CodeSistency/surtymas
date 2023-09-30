@@ -5,13 +5,14 @@ import Link from "next/link";
 // import {BiMenu, BiUser} from 'react-icons/bi'
 // import {LiaSearchSolid} from 'react-icons/lia'
 // import {BsInstagram} from 'react-icons/bs'
-// import { signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 // import { Button } from "@nextui-org/button";
 import { options } from "../api/auth/[...nextauth]/options"
 import { getServerSession } from "next-auth/next"
 import {CartIcon} from "./icon/cartIcon";
 import InputNav from './InputNav'
 import IconSession from './IconSession'
+import { Button } from "@nextui-org/button";
 
 export default async function Nav({children}) {
 
@@ -28,7 +29,7 @@ export default async function Nav({children}) {
                 src='logo3.svg'
                 width={140}
                 height={140}
-                alt={"Logo"}
+                alt="Logo"
                 priority='true'
                 
                 />
@@ -54,16 +55,17 @@ export default async function Nav({children}) {
                   session 
                   ? 
                   <div className="flex items-center gap-1">
-                    <IconSession user={session.user.name}/>
-                    {/* {children} */}
+                    {/* <IconSession user={session.user.name}/> */}
+                    {children}
+                    {/* <Button onClick={signOut}>Cerrar sesion</Button> */}
                     <Link href={`/carrito`}><CartIcon size={50}/></Link>
                   
                   </div>
                   // ? <Link href="/api/auth/signout">Cerrar sesion</Link> 
                   : <div className="flex items-center gap-1"> 
-                      <IconSession />
-                      {/* <Link href="/login">Iniciar sesion</Link>
-                      <Link href="/registro">Registro</Link> */}
+                      {/* <IconSession /> */}
+                      <Link href="/login">Iniciar sesion</Link>
+                      {/* <Link href="/registro">Registro</Link>  */}
                       <Link href={`/carrito`}><CartIcon size={50} /></Link>
                     </div>
 
