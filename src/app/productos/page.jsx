@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Productos from '../components/Products'
 import ProductsAll from '../components/ProductsAll'
 
 function page() {
   return (
     <>
+    {/* <Suspense fallback={<p>Cargando...</p>}>
+
         <Productos/>
+    </Suspense> */}
+    <p>Productos</p>
     </>
   )
 }
