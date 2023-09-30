@@ -18,6 +18,12 @@ const nextConfig = {
    
     //   return config
     // },
+
+    webpack: (config) => {
+      config.externals = [...config.externals, 'bcrypt'];
+       return config;
+     },
+      
   
       eslint: {
         ignoreDuringBuilds: true,
