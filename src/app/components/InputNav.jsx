@@ -16,7 +16,7 @@ function InputNav() {
                     <form style={{paddingBottom: '0'}} name="search search-relative" className=" search-relative-nav">
                         <input type="text" className="input-search-nav "  onChange={(e) => setSearch(e.target.value)}/>
                         {/* <input type="text" className="input-search-nav " onChange={(e) => setSearchQuery(e.target.value)} name="txt"  /> */}
-                        <LiaSearchSolid fontSize={25} style={{top:'50%'}}className="search-button-nav" />
+                        {/* <LiaSearchSolid fontSize={25} style={{top:'50%'}}className="search-button-nav" /> */}
                     </form>
                   </div>
               </form>

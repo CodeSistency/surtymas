@@ -5,11 +5,11 @@ import ProductsAll from '../components/ProductsAll'
 function page() {
   return (
     <>
-    {/* <Suspense fallback={<p>Cargando...</p>}>
+    <Suspense fallback={<p>Cargando...</p>}>
 
         <Productos/>
-    </Suspense> */}
-    <p>Productos</p>
+    </Suspense>
+    {/* <p>Productos</p> */}
     </>
   )
 }

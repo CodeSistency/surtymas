@@ -18,17 +18,26 @@ import CartDrawer from "./CartDrawer";
 import { Image } from "@nextui-org/image";
 import axios from "../../../api/axios";
 
-function ModalBuy({producto, user}) {
+function ModalBuy({producto, user, cart}) {
 
   
     console.log(producto)
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const [scrollBehavior, setScrollBehavior] = useState("inside");
 
+    const [abierto, setAbierto] = useState(false)
+
     const [quantityChangesModal, setQuantityChangesModal] = useState({});
   const [results, setResults] = useState()
 
   const [product, setProduct] = useState()
+
+  function open() {
+    setAbierto(prev => !prev)
+    console.log(abierto)
+  }
+
+  setResults(producto)
 
   async function getProduct(){
     let isMounted = true;
@@ -99,6 +108,7 @@ let isMounted = true;
 
   
   const onChangeModal = (size, index, value) => {
+
     // applyChangesModal()
     const changeKey = `${producto[0].codigo}-${size}-${index}`;
     setQuantityChangesModal((prevChanges) => ({
@@ -111,48 +121,56 @@ let isMounted = true;
   };
 
   const onChange = (productCode, size, index, value) => {
-    const intValue = parseInt(value, 10);
-    setResults((prevResults) => {
-      console.log(prevResults)
-      const updatedResults = prevResults.map((product) => {
-        if (producto[0].codigo === productCode) {
-          const colors = producto[0].tallas[size];
-          if (!colors || index >= colors.length) return product;
-  
-          if (!isNaN(intValue)) {
-            // If the input is a number, update the sold property
-            const newSoldValue = Math.max(0, intValue);
-            const quantityChange = newSoldValue - (colors[index].sold || 0); // Calculate the change in sold quantity
-            colors[index].sold = intValue;
-            colors[index].quantity -= quantityChange; // Decrease the quantity
+    
+    if(producto[0]){
+
+      const intValue = parseInt(value, 10);
+      setResults((prevResults) => {
+        console.log(prevResults)
+        const updatedResults = prevResults.map((product) => {
+          if (producto[0].codigo === productCode) {
+            const colors = producto[0].tallas[size];
+            if (!colors || index >= colors.length) return product;
+    
+            if (!isNaN(intValue)) {
+              // If the input is a number, update the sold property
+              const newSoldValue = Math.max(0, intValue);
+              const quantityChange = newSoldValue - (colors[index].sold || 0); // Calculate the change in sold quantity
+              colors[index].sold = intValue;
+              colors[index].quantity -= quantityChange; // Decrease the quantity
+            }
           }
-        }
-        return product;
+          return product;
+        });
+        return updatedResults;
       });
-      return updatedResults;
-    });
+    } else{
+      setResults(producto)
+    }
+
     console.log(results)
   };
 
 
 
-    useEffect(() =>{
+    // useEffect(() =>{
 
-      // applyChangesModal()
-      // handleApplyChanges()
-      setResults(producto)
+    //   // applyChangesModal()
+    //   // handleApplyChanges()
+    //   setResults(producto)
+    //   console.log('results', results)
       
-    },[producto])
+    // },[])
 
    
 
   return (
     <>
-     <Image style={{cursor: 'pointer'}} onClick={onOpen} src='/edit1.svg' alt="edit" width={50}/>
+     <Image style={{cursor: 'pointer'}} onClick={open} src='/edit1.svg' alt="edit" width={50}/>
      <Modal
      style={{zIndex: '100'}}
       className='mt-36 z-50'
-        isOpen={isOpen}
+        isOpen={abierto}
         onOpenChange={onOpenChange}
         scrollBehavior={scrollBehavior}
       >
@@ -303,12 +321,12 @@ Mi compra es la siguiente:
 </div>
                 </ModalBody>}
                 <ModalFooter>
-                    <Button color="danger" variant="light" onPress={onClose}>
+                    <Button color="danger" variant="light" onPress={open}>
                     Cerrar
                     </Button>
-                    <button onClick={() => handleCart(user, results[0].titulo, results[0].precio, results[0].precio_mayor, results[0].imagenes[0], results[0]._id, results[0].codigo, results[0].tallas, results[0].tallas_zapatos)}>
+                  { cart && <button onClick={() => handleCart(user, results[0].titulo, results[0].precio, results[0].precio_mayor, results[0].imagenes[0], results[0]._id, results[0].codigo, results[0].tallas, results[0].tallas_zapatos)}>
                     Agregar
-                    </button>
+                    </button>}
                 </ModalFooter>
               </>
           )}

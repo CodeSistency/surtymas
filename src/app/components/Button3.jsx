@@ -131,7 +131,7 @@ function Button3({product, products, user}) {
             <div >
 
             <ListItem product={product} >
-                  <ModalBuy producto={product} user={user} tallas={product[0].tallas} />
+                  <ModalBuy cart={true} producto={product} user={user}  />
                 </ListItem>
 
             </div>

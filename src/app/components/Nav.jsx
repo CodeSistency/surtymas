@@ -95,7 +95,7 @@ export default async function Nav({children}) {
             </ul>
 
           
-              {/* <InputNav /> */}
+              <InputNav />
           </section>
         
 

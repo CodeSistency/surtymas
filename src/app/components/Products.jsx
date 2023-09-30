@@ -82,7 +82,7 @@ async function Productos({pageNumber}) {
                       <ButtonCta user={session?.user} product={[product]}/>
                     
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
-                    :   <Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button>
+                    :  <Link href='/login'><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link> 
                     }
                 </CardItem3>
             )

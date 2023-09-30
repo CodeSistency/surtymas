@@ -19,7 +19,7 @@ import CartDrawer from "./CartDrawer";
 import ModalBuy from "./ModalBuy";
 
 
-function ButtonCta({product, products}) {
+function ButtonCta({product, products, user}) {
 
   console.log(product)
 
@@ -70,6 +70,8 @@ function ButtonCta({product, products}) {
   useEffect(() => {
     console.log(options)
   }, [options])
+
+  useEffect
   
 
   return (
@@ -175,7 +177,7 @@ function ButtonCta({product, products}) {
               items={['Recoger en Tienda', 'Envio Nacional', 'Delivery']}
               onChange={(e) => setOptions(e.target.value)}
               label="Metodo de pago"
-              placeholder="Seleccione un metodo"
+              placeholder="Seleccione tipo de envio"
               className="max-w-xs"
               variant='bordered'
               color="primary"
@@ -322,7 +324,7 @@ function ButtonCta({product, products}) {
             <div >
 
             <ListItem product={product} >
-                  <ModalBuy product={product} />
+                  <ModalBuy producto={product} />
                 </ListItem>
 
             </div>
@@ -434,7 +436,7 @@ function ButtonCta({product, products}) {
                       //  style={{borderRadius: '10px', backgroundColor:'rgb(5, 248, 78)', border: '1px solid rgb(5, 248, 78)'}} 
                        number='+58 4124668486'
                        message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
-Mi usuario es: 
+Mi usuario es: ${user}
 Direccion: ${direccion}
 Metodo de Pago: ${pago} 
 Mi compra es la siguiente:
@@ -468,7 +470,7 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
                     <ReactWhatsapp
                     number='+58 4124668486'
                     message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
-Mi usuario es: 
+Mi usuario es: ${user}
 Direccion: ${direccion}
 Metodo de Pago: ${pago} 
 
