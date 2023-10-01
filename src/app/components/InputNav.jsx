@@ -1,7 +1,7 @@
 'use client'
 import React, {useState} from 'react'
 import {LiaSearchSolid} from 'react-icons/lia'
-import { useRouter } from 'next/navigation'
+import { useRouter, redirect } from 'next/navigation'
 import Search from '../actions/Search'
 
 
@@ -9,6 +9,10 @@ function InputNav() {
 
     const [search, setSearch] = useState()
     const router = useRouter()
+
+    function searchProduct(){
+      redirect(`/productos/search/${search}`)
+    }
   return (
     <form onSubmit={() => router.push(`productos/search/${search}`)} className='nav-link-search'>
     {/* // <form action={Search(search)} className='nav-link-search'> */}

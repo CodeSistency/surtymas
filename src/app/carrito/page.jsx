@@ -48,9 +48,7 @@ async function page() {
     const products = await getProducts()
     console.log(products)
 
-    // if (!session) {
-    //     redirect('/api/auth/signin?callbackUrl=/carrito')
-    // }
+   
 
     if (!session) {
         redirect('/login')
