@@ -26,7 +26,7 @@ function InputNav() {
                             {/* <input type="text" className="input-search-nav " onChange={(e) => setSearchQuery(e.target.value)} name="txt"  /> */}
                             {/* <LiaSearchSolid fontSize={25} style={{top:'50%'}}className="search-button-nav" /> */}
                         </form>
-                        <Button className='m-0' onClick={() => router.push(`/productos/search/${search}`)} color='warning' variant='ghost'>Buscar</Button>
+                        <Button className='m-0' onClick={() => router.push(`/productos/search/${search}`)} color='warning' variant='faded' >Buscar</Button>
                       </div>
                   </div>
   )
