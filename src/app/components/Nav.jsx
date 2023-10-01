@@ -52,30 +52,30 @@ export default async function Nav({children}) {
               <div className='cart-icon'>{cartIcon()}</div>
               <Link to={'/Login2'}><BiUser className='user-icon' fontSize={35}/></Link> */}
             {/* </div> */}
-
+{/* 
             {
                   session 
                   ? 
                   <div className="flex items-center gap-1">
-                    {/* <IconSession user={session.user.name}/> */}
+                    
                     <Suspense fallback={<Button>Cerrar sesion</Button>}>
 
                       {children}
                     </Suspense>
-                    {/* <Button onClick={signOut}>Cerrar sesion</Button> */}
+                    
                     <Link href={`/carrito`}><CartIcon size={50}/></Link>
                   
                   </div>
-                  // ? <Link href="/api/auth/signout">Cerrar sesion</Link> 
+                  
                   : <div className="flex items-center gap-1"> 
-                      {/* <IconSession /> */}
+                  
                       <Link href="/login">Iniciar sesion</Link>
-                      {/* <Link href="/registro">Registro</Link>  */}
+                    
                       <Link href={`/carrito`}><CartIcon size={50} /></Link>
                     </div>
 
                 }
-                
+                 */}
           </section>
 
           <section className='nav-bottom'>

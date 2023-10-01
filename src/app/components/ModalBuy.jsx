@@ -11,6 +11,7 @@ import {RadioGroup, Radio} from "@nextui-org/radio";
 import useInput from '../../../hooks/useInput'
 import useToggle from '../../../hooks/useToggle'
 import ListItem from './ListItem'
+import ReactWhatsapp from 'react-whatsapp';
 
 
 import React, { useState, useMemo, useEffect } from "react";
@@ -37,7 +38,7 @@ function ModalBuy({producto, user, cart}) {
     console.log(abierto)
   }
 
-  setResults(producto)
+  // setResults(producto)
 
   async function getProduct(){
     let isMounted = true;
@@ -122,12 +123,11 @@ let isMounted = true;
 
   const onChange = (productCode, size, index, value) => {
     
-    if(producto[0]){
+    
 
       const intValue = parseInt(value, 10);
-      setResults((prevResults) => {
-        console.log(prevResults)
-        const updatedResults = prevResults.map((product) => {
+      
+        const updatedResults = producto.map((product) => {
           if (producto[0].codigo === productCode) {
             const colors = producto[0].tallas[size];
             if (!colors || index >= colors.length) return product;
@@ -135,32 +135,31 @@ let isMounted = true;
             if (!isNaN(intValue)) {
               // If the input is a number, update the sold property
               const newSoldValue = Math.max(0, intValue);
-              const quantityChange = newSoldValue - (colors[index].sold || 0); // Calculate the change in sold quantity
-              colors[index].sold = intValue;
+              const quantityChange = newSoldValue - (colors[index].deseo || 0); // Calculate the change in sold quantity
+              colors[index].deseo = intValue;
               colors[index].quantity -= quantityChange; // Decrease the quantity
             }
           }
           return product;
         });
+        setResults(updatedResults)
         return updatedResults;
-      });
-    } else{
-      setResults(producto)
-    }
+    
+  
 
-    console.log(results)
+    // console.log(updatedResults)
   };
 
 
 
-    useEffect(() =>{
+    // useEffect(() =>{
 
-    //   // applyChangesModal()
-    //   // handleApplyChanges()
-      setResults(producto)
-    //   console.log('results', results)
+    // //   // applyChangesModal()
+    // //   // handleApplyChanges()
+    //   setResults(producto)
+    // //   console.log('results', results)
       
-    },[])
+    // },[])
 
    
 
@@ -248,7 +247,7 @@ let isMounted = true;
 
 {Object.entries(producto[0].tallas).map(([size, colors]) =>
   colors.map((color, index) =>
-    (color.quantity > 0 || color.sold > 0) && (
+    (color.quantity > 0 || color.deseo > 0) && (
       <div key={`${producto[0].codigo}-${size}`} className="size-section">
         <h3>{size}</h3>
         <div className="color-input lista-productos" key={color._id}>
@@ -266,7 +265,7 @@ let isMounted = true;
             type="number"
             label="Agregue Cantidad"
             style={{ fontSize: '14px', marginTop: '12px', color: 'black' }}
-            value={color.sold || 0}
+            value={color.deseo || 0}
             onChange={(e) => onChange(producto[0].codigo, size, index, e.target.value)}
           />
         </div>
@@ -278,44 +277,42 @@ let isMounted = true;
     
     </div>
     </div>
-    {/* <div className='modal-buy-buttons'>
+    <div className='modal-buy-buttons'>
 
     <ReactWhatsapp
-        className='modal-button'
-        style={{backgroundColor: 'rgb(0, 255, 64)', border: '1px solid rgb(0, 255, 64)'}}
-      number="+58 4124668486"
-      message={`¡Hola! 👋 ¡Bienvenido a Surtymas!
-Mi correo es: ${user}
+                      //  style={{borderRadius: '10px', backgroundColor:'rgb(5, 248, 78)', border: '1px solid rgb(5, 248, 78)'}} 
+                       number='+58 4124668486'
+                       message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
+
 Mi compra es la siguiente:
-                        
-                        ${results?.map((product) => {
-                          let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
-                          if (product.tallas) {
-                            const tallasMessage = Object.entries(product.tallas)
-                              .map(([size, colors]) => {
-                                const deseos = colors.filter((color) => color.deseo !== 0);
-                                if (deseos.length > 0) {
-                                  const deseosMessage = deseos
-                                    .map((color) => `${size}: ${color.deseo}`)
-                                    .join(", ");
-                                  return deseosMessage;
-                                }
-                                return null;
-                              })
-                              .filter((message) => message !== null)
-                              .join("\n");
-                            if (tallasMessage !== "") {
-                              message += `\nTallas: \n${tallasMessage} piezas`;
-                            }
-                          }
-                          return message;
-                        })}
-                        Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
-    >
-      Comprar por WhatsApp
-    </ReactWhatsapp>
-    <button className='modal-button' onClick={closeModal}>Cancelar</button>
-    </div> */}
+                       
+${results?.map((product) => {
+                         let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
+                         if (product.tallas) {
+                           const tallasMessage = Object.entries(product.tallas)
+                             .map(([size, colors]) => {
+                               const deseos = colors.filter((color) => color.deseo !== 0);
+                               if (deseos.length > 0) {
+                                 const deseosMessage = deseos
+                                   .map((color) => `${size}: ${color.deseo || 'No seleccionado'}`)
+                                   // .join(", ");
+                                 return deseosMessage;
+                               }
+                               return null;
+                             })
+                             .filter((message) => message !== null)
+                             .join("\n");
+                           if (tallasMessage !== "") {
+                             message += `\nTallas: \n${tallasMessage} piezas\n`;
+                           }
+                         }
+                         return message;
+                       })}
+Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
+
+                    >Comprar</ReactWhatsapp>
+    {/* <button className='modal-button' onClick={closeModal}>Cancelar</button> */}
+    </div>
   </div>
 </div>
 </div>

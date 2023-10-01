@@ -55,7 +55,7 @@ async function page({params}) {
            {/*    <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Flowbite helps you connect with friends and communities of people who share your interests. Connecting with your friends and family as well as discovering new ones is easy with features like Groups.</p> */}
             <hr style={{marginTop: '-10px', marginBottom: '5px'}}/>
 <div className='precios'>
-              <p style={{color: 'rgb(184, 11, 69)'}} className="producto precio dollars font-extrabold  text-black">{`${product?.precio_mayor}`}<span className='dolar'>$</span></p>
+              <p style={{color: 'rgb(184, 11, 69)'}} className="producto precio dollars font-extrabold  text-black">{`${product?.precio}`}<span className='dolar'>$</span></p>
               <p className="producto precio-mayor dollars text-black"><strong>Mayor</strong> {`${product?.precio_mayor}`} <span className='dolar'>$</span></p>
               </div>
 
@@ -105,7 +105,7 @@ async function page({params}) {
                 })()}
               </section>
 
-            <ButtonCta>Comprar</ButtonCta>
+              <ButtonCta user={session?.user} product={[product]}/>
         </div>
     </div>
 

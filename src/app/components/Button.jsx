@@ -76,7 +76,7 @@ function ButtonCta({product, products, user}) {
 
   return (
     <>
-        <Button onPress={onOpen} radius="full" style={{marginBottom: '-10px'}} className="w-full  self-end justify-self-end bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
+        <Button onPress={onOpen} radius="full"  className="w-full  self-end justify-self-end bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
                                 Comprar
         </Button>
         {/* <RadioGroup
@@ -518,9 +518,9 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
                     <Button color="primary" variant="light" onPress={stepOne}>
                       Atras
                     </Button>
-                    <Button color='primary' variant="solid" onPress={stepThree}>
+                    {/* <Button color='primary' variant="solid" onPress={stepThree}>
                       Siguiente
-                    </Button>
+                    </Button> */}
                   </div>
                   }
 

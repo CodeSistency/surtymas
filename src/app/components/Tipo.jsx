@@ -2,6 +2,9 @@ import React from 'react'
 import CardItem3 from './CardItem3';
 import axios from '../../../api/axios';
 import {Pagination} from "@nextui-org/pagination";
+import { getServerSession } from "next-auth/next"
+import { options } from "../api/auth/[...nextauth]/options"
+import ButtonCta from './Button';
 
 
 
@@ -34,6 +37,9 @@ async function Tipo({params}) {
     
     }
 
+    const session = await getServerSession(options)
+    console.log(`session cart:  ${session}`)
+
     const products = await getProducts()
     // console.log('item2', products)
 
@@ -44,14 +50,16 @@ async function Tipo({params}) {
       
             return (
 
-                <CardItem3 key={product._id} product={product}/>
+                <CardItem3 key={product._id} product={product}>
+                    <ButtonCta user={session?.user} product={[product]}/>
+                </CardItem3>
             )
         })}
     
 </div>
-<div className='flex justify-center w-full'>
+{/* <div className='flex justify-center w-full'>
     <Pagination isCompact showControls total={10} initialPage={1} />
-</div>
+</div> */}
 </>
 
   )
