@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import Footer from './components/Footer'
 import { Providers } from './providers'
 import CerrarSesion from './components/CerrarSesion'
+import { GlobalContextProvider } from './context/GlobalContext'
 
 
 const inter = Inter({ weight: ['200','300','400','500','700', '800'], subsets: ['latin'] })
@@ -27,7 +28,7 @@ export default function RootLayout({
       
         <AuthProvider>
         <Providers>
-          
+        <GlobalContextProvider>
 
             {/* <Navbar /> */}
             <Nav >
@@ -35,9 +36,14 @@ export default function RootLayout({
             </Nav>
             {/* <main className="flex justify-center items-start p-6 min-h-screen"> */}
             <main >
-              {children}
+              
+
+                {children}
+              
+              {/* {children} */}
             </main>
             <Footer />
+            </GlobalContextProvider>
             </Providers>
         </AuthProvider>
        

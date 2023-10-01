@@ -1,5 +1,6 @@
 import React from 'react'
 import ListItem from './ListItem'
+import DeleteCart from './DeleteCart'
 
 function ListItems({products}) {
   return (
@@ -7,7 +8,9 @@ function ListItems({products}) {
         {products.map(product => {
             return (
                 <div  key={product._id} className='py-1'>
-                <ListItem product={product}/>
+                <ListItem product={product}>
+                  <DeleteCart />
+                </ListItem>
                 </div>
             )
         })}

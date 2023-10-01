@@ -1,8 +1,12 @@
+'use client'
 import React from "react";
+import { useGlobalContext } from '../../context/GlobalContext'
 
 export const CartIcon = ({ size, height, width, ...props }) => {
+  const {carrito, color, setColor, isOpen, handleToggle} = useGlobalContext();
   return (
     <svg
+      onClick={handleToggle}
       fill="none"
       height={size || height || 24}
       viewBox="0 0 24 24"

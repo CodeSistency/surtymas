@@ -12,6 +12,7 @@ import useInput from '../../../hooks/useInput'
 import useToggle from '../../../hooks/useToggle'
 import ListItem from './ListItem'
 import ReactWhatsapp from 'react-whatsapp';
+import DeleteCart from './DeleteCart'
 
 
 import React, { useState, useMemo, useEffect } from "react";
@@ -325,6 +326,7 @@ function ButtonCta({product, products, user}) {
 
             <ListItem product={product} >
                   <ModalBuy producto={product} />
+                  {/* <DeleteCart /> */}
                 </ListItem>
 
             </div>

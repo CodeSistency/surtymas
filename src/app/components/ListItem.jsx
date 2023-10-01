@@ -1,6 +1,7 @@
 import { Card, CardBody } from '@nextui-org/card'
 import { Image } from '@nextui-org/image'
 import React from 'react'
+import { useGlobalContext } from '../context/GlobalContext'
 // import ff from '../../../public/'
 
 
@@ -34,7 +35,7 @@ function ListItem({children, product}) {
             <div className='flex items-center gap-2'>
                 {children}
                 {/* <Image src='/edit1.svg' width={50}/> */}
-                <Image src='/delete1.svg' alt='delete' width={50}/>
+                {/* <Image src='/delete1.svg' alt='delete' width={50}/> */}
             </div>
           {/* <div className="flex justify-between items-start flex-1">
             <div className="flex flex-col gap-0 w-full ">

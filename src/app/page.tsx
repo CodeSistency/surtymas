@@ -15,7 +15,7 @@ export default async function Home() {
 
         <Cards />                      
       </Suspense>
-      <Categories />
+       <Categories />
       <Gallery />
       <Grid /> 
       

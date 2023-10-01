@@ -22,7 +22,7 @@ import DeleteCart from "./DeleteCart";
 
 
 
-function Button3({product, products, user}) {
+function ButtonCart({product, products, user}) {
 
   console.log(user)
 
@@ -131,8 +131,12 @@ function Button3({product, products, user}) {
             
             <div >
 
-            <ListItem product={product} >
+            {/* <ListItem product={product} >
                   <ModalBuy cart={true} producto={product} user={user}  />
+                  <DeleteCart />
+                </ListItem> */}
+                <ListItem product={product} >
+                  <ModalBuy producto={product} />
                   <DeleteCart />
                 </ListItem>
 
@@ -193,4 +197,4 @@ function Button3({product, products, user}) {
   )
 }
 
-export default Button3
+export default ButtonCart

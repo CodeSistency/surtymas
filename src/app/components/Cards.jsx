@@ -8,7 +8,8 @@ import { getServerSession } from "next-auth/next"
 import { options } from "../api/auth/[...nextauth]/options"
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
-
+import ButtonCart from './ButtonCart'
+import ButtonCart2 from './ButtonCart2'
 
 async function getProducts(){
     let isMounted = true;
@@ -65,6 +66,8 @@ export default async function Cards() {
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
                     } */}
+                    {/* <ButtonCart product={[product]}/> */}
+                    <ButtonCart2 product={product}/>
                     
                 </CardItem>
             )

@@ -19,7 +19,7 @@ import CartDrawer from "./CartDrawer";
 import { Image } from "@nextui-org/image";
 import axios from "../../../api/axios";
 
-function ModalBuy({producto, user, cart}) {
+function ModalBuy3({producto, user, cart}) {
 
   
     console.log(producto)
@@ -167,7 +167,7 @@ let isMounted = true;
     <>
      <Image style={{cursor: 'pointer'}} onClick={open} src='/edit1.svg' alt="edit" width={50}/>
      <Modal
-     style={{zIndex: '1000'}}
+     style={{zIndex: '100'}}
       className='mt-36 z-50'
         isOpen={abierto}
         onOpenChange={onOpenChange}
@@ -333,4 +333,4 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
   )
 }
 
-export default ModalBuy
+export default ModalBuy3
