@@ -603,7 +603,7 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
                     Atras
                   </Button>
                   
-                   {results ? <ReactWhatsapp
+                   {/* {results ? <ReactWhatsapp
                       //  style={{borderRadius: '10px', backgroundColor:'rgb(5, 248, 78)', border: '1px solid rgb(5, 248, 78)'}} 
                        number='+58 4124668486'
                        message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
@@ -655,7 +655,7 @@ ${product[0]?.tallas ? `Tallas: \n${Object.entries(product[0].tallas)
     .filter((message) => message !== null)
     .join("\n") || ''} piezas` : ''}
 Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
-                    >Comprar</ReactWhatsapp>}
+                    >Comprar</ReactWhatsapp>} */}
                 
                 </div>
                 }
