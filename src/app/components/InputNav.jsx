@@ -11,9 +11,11 @@ function InputNav() {
     const [search, setSearch] = useState()
     const router = useRouter()
 
-    function searchProduct(){
-      redirect(`/productos/search/${search}`)
-    }
+    const handleSearch = (e) => {
+      e.preventDefault(); // Prevent the default form submission behavior
+      router.push(`/productos/search/${search}`);
+    };
+  
   return (
     
 
@@ -21,7 +23,7 @@ function InputNav() {
     <div  className='nav-link-search'>
         {/* // <form action={Search(search)} className='nav-link-search'> */}
                       <div className="search-nav flex items-center gap-2">
-                        <form onSubmit={() => router.push(`/productos/search/${search}`)} style={{paddingBottom: '0'}}  name="search search-relative" className=" search-relative-nav">
+                        <form onSubmit={handleSearch} style={{paddingBottom: '0'}}  name="search search-relative" className=" search-relative-nav">
                             <input type="text" className="input-search-nav "  onChange={(e) => setSearch(e.target.value)}/>
                             {/* <input type="text" className="input-search-nav " onChange={(e) => setSearchQuery(e.target.value)} name="txt"  /> */}
                             {/* <LiaSearchSolid fontSize={25} style={{top:'50%'}}className="search-button-nav" /> */}

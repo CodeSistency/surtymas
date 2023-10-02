@@ -12,12 +12,14 @@ import useInput from '../../../hooks/useInput'
 import useToggle from '../../../hooks/useToggle'
 import ListItem from './ListItem'
 import ReactWhatsapp from 'react-whatsapp';
+import HowtoPay from './HowToPay'
 
 
 import React, { useState, useMemo, useEffect } from "react";
 import CartDrawer from "./CartDrawer";
 import { Image } from "@nextui-org/image";
 import axios from "../../../api/axios";
+import { useGlobalContext } from '../context/GlobalContext'
 
 function ModalBuy({producto, user, cart}) {
 
@@ -29,9 +31,12 @@ function ModalBuy({producto, user, cart}) {
     const [abierto, setAbierto] = useState(false)
 
     const [quantityChangesModal, setQuantityChangesModal] = useState({});
-  const [results, setResults] = useState()
+  // const [results, setResults] = useState()
 
   const [product, setProduct] = useState()
+
+  const {carrito, handleToggle, results, setResults} = useGlobalContext();
+
 
   function open() {
     setAbierto(prev => !prev)
@@ -179,7 +184,7 @@ let isMounted = true;
             {producto[0] &&  <ModalHeader className="flex flex-col gap-1" style={{color:'black'}}>
               <div className='modal-info' style={{padding:'10px', border: 'none'}}>
       <img alt="producto" style={{width: '50px', height: '50px'}} src={`${producto[0].imagenes ? producto[0].imagenes[0] : producto[0].imagen}`}/>
-      <p >Producto: {producto[0].titulo}{producto[0].nombre}</p>
+      <p >Producto: {producto[0].titulo || producto[0].nombre || producto.titulo}</p>
     </div>
               </ModalHeader>}
               {producto[0] && <ModalBody>
@@ -261,6 +266,7 @@ let isMounted = true;
               boxShadow: '0 4px 8px rgba(0, 0, 0, 0.305)'
             }}
           ></div>
+          <div className='flex gap-2 items-center'>
           <Input
             type="number"
             label="Agregue Cantidad"
@@ -268,6 +274,8 @@ let isMounted = true;
             value={color.deseo || 0}
             onChange={(e) => onChange(producto[0].codigo, size, index, e.target.value)}
           />
+          {color.quantity === 0 && <p>Ese era el ultimo, no selecciones más</p>}
+            </div>
         </div>
       </div>
     )
@@ -310,7 +318,7 @@ ${results?.map((product) => {
                        })}
 Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
 
-                    >Comprar</ReactWhatsapp>
+                    >Comprar uno solo</ReactWhatsapp>
     {/* <button className='modal-button' onClick={closeModal}>Cancelar</button> */}
     </div>
   </div>

@@ -27,7 +27,7 @@ function ListItem({children, product}) {
           />
 
             <div className="flex flex-col gap-0 w-[50px] flex-1">
-              <h3 className="font-semibold text-foreground/90 w-full">{`${product[0]?.titulo || product.nombre}`}</h3>
+              <h3 className="font-semibold text-foreground/90 w-full">{`${product[0]?.titulo || product.nombre || product.titulo}`}</h3>
               <p className="text-small text-foreground/80 ">${`${product[0]?.precio || product.precio}`}</p>
               <h1 className="text-large font-medium mt-2">{`${product[0]?.codigo || product.codigo}`}</h1>
             </div>

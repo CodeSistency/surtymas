@@ -13,11 +13,14 @@ import useToggle from '../../../hooks/useToggle'
 import ListItem from './ListItem'
 import ReactWhatsapp from 'react-whatsapp';
 import DeleteCart from './DeleteCart'
+import { useGlobalContext } from '../context/GlobalContext'
 
 
 import React, { useState, useMemo, useEffect } from "react";
 import CartDrawer from "./CartDrawer";
 import ModalBuy from "./ModalBuy";
+import HowToPay from "./HowToPay";
+import ListItems from './ListItems'
 
 
 function ButtonCta({product, products, user}) {
@@ -57,6 +60,8 @@ function ButtonCta({product, products, user}) {
   //   [selectedKeys]
   // );
 
+  const {carrito, handleToggle, results, setResults} = useGlobalContext();
+
   const [check, toggleCheck] = useToggle('info', true);
   const [nombre, resetNombre, nombreAttribs] = useInput('nombre', '')
   const [apellido, resetApellido, apellidoAttribs] = useInput('apellido', '')
@@ -77,7 +82,7 @@ function ButtonCta({product, products, user}) {
 
   return (
     <>
-        <Button onPress={onOpen} radius="full"  className="w-full  self-end justify-self-end bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
+        <Button onPress={onOpen} radius="full" style={{marginBottom: '-10px'}} className="w-full  self-end justify-self-end bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
                                 Comprar
         </Button>
         {/* <RadioGroup
@@ -145,6 +150,8 @@ function ButtonCta({product, products, user}) {
                   </div>
 
                 </div>
+                <h1 style={{color: 'black'}}>Instrucciones para comprar</h1>
+                <HowToPay />
                 
               {/* <Dropdown
                 // style={{marginTop: '-20px'}}
@@ -177,7 +184,7 @@ function ButtonCta({product, products, user}) {
 <Select
               items={['Recoger en Tienda', 'Envio Nacional', 'Delivery']}
               onChange={(e) => setOptions(e.target.value)}
-              label="Metodo de pago"
+              label="Tipo de envio"
               placeholder="Seleccione tipo de envio"
               className="max-w-xs"
               variant='bordered'
@@ -326,8 +333,10 @@ function ButtonCta({product, products, user}) {
 
             <ListItem product={product} >
                   <ModalBuy producto={product} />
-                  {/* <DeleteCart /> */}
+                  
                 </ListItem>
+
+                {/* <ListItems products={product}/> */}
 
             </div>
 
@@ -434,11 +443,72 @@ function ButtonCta({product, products, user}) {
               </div>
 
               <h2 className="text-black">Total: 0</h2>
+
+
               {products ? <ReactWhatsapp
-                      //  style={{borderRadius: '10px', backgroundColor:'rgb(5, 248, 78)', border: '1px solid rgb(5, 248, 78)'}} 
+                     
+                     number='+58 4124668486'
+                     message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
+
+Direccion: ${direccion}
+Metodo de Pago: ${pago} 
+Mi compra es la siguiente:
+                     
+${results?.map((product) => {
+                       let message = `"${product.nombre}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
+                       if (product.tallas) {
+                         const tallasMessage = Object.entries(product.tallas)
+                           .map(([size, colors]) => {
+                             const deseos = colors.filter((color) => color.deseo !== 0);
+                             if (deseos.length > 0) {
+                               const deseosMessage = deseos
+                                 .map((color) => `${size}: ${color.deseo}`)
+                               
+                               return deseosMessage;
+                             }
+                             return null;
+                           })
+                           .filter((message) => message !== null)
+                           .join("\n");
+                         if (tallasMessage !== "") {
+                           message += `\nTallas: \n${tallasMessage} piezas\n`;
+                         }
+                       }
+                       return message;
+                     })}
+Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
+
+                  >Comprar</ReactWhatsapp> :
+                  
+                  <ReactWhatsapp
+                  number='+58 4124668486'
+                  message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
+Mi usuario es: ${user}
+Direccion: ${direccion}
+Metodo de Pago: ${pago} 
+
+Mi compra es la siguiente:
+"${results[0]?.titulo}". Precio: $${results[0]?.precio}, Precio al mayor: $${results[0]?.precio_mayor}, Codigo: ${results[0]?.codigo}
+${results[0]?.tallas ? `Tallas: \n${Object.entries(results[0].tallas)
+  .map(([size, colors]) => {
+    const deseos = colors.filter((color) => color.deseo !== 0);
+    if (deseos.length > 0) {
+      return deseos
+        .map((color) => `${size}: ${color.deseo || 'No seleccionado'}`)
+        .join(", ");
+    }
+    return null;
+  })
+  .filter((message) => message !== null)
+  .join("\n") || ''} piezas` : ''}
+Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
+                  >Comprar</ReactWhatsapp>}
+
+              {/* {products ? <ReactWhatsapp
+                     
                        number='+58 4124668486'
                        message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
-Mi usuario es: ${user}
+
 Direccion: ${direccion}
 Metodo de Pago: ${pago} 
 Mi compra es la siguiente:
@@ -452,7 +522,7 @@ ${products?.map((product) => {
                                if (deseos.length > 0) {
                                  const deseosMessage = deseos
                                    .map((color) => `${size}: ${color.deseo}`)
-                                   // .join(", ");
+                                 
                                  return deseosMessage;
                                }
                                return null;
@@ -491,7 +561,7 @@ ${product[0]?.tallas ? `Tallas: \n${Object.entries(product[0].tallas)
     .filter((message) => message !== null)
     .join("\n") || ''} piezas` : ''}
 Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
-                    >Comprar</ReactWhatsapp>}
+                    >Comprar</ReactWhatsapp>} */}
 
 
 
@@ -520,9 +590,9 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
                     <Button color="primary" variant="light" onPress={stepOne}>
                       Atras
                     </Button>
-                    {/* <Button color='primary' variant="solid" onPress={stepThree}>
+                    <Button color='primary' variant="solid" onPress={stepThree}>
                       Siguiente
-                    </Button> */}
+                    </Button>
                   </div>
                   }
 

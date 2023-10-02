@@ -3,6 +3,7 @@ import axios from '../../../../../api/axios';
 import CardItem3 from '../../../components/CardItem3';
 import ButtonCta from '../../../components/Button';
 import Categories2 from '../../../components/Categories2';
+import ButtonCart2 from '@/app/components/ButtonCart2';
 
 async function page({params}) {
     console.log(params)
@@ -48,6 +49,7 @@ async function page({params}) {
       
                     <CardItem3 key={product._id} product={product}>
                         <ButtonCta product={[product]}/>
+                        <ButtonCart2 product={product}/>
                     </CardItem3>
                 )
             })

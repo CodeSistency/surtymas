@@ -15,6 +15,8 @@ export const GlobalContextProvider = ({ children }) => {
 
     const [carrito, setCarrito] = useState([])
 
+    const [results, setResults] = useState()
+
     function newItemCarrito(item){
         console.log(item)
         setCarrito(prev => [...prev, item])
@@ -28,7 +30,7 @@ export const GlobalContextProvider = ({ children }) => {
     // console.log(color)
 
     return (
-        <GlobalContext.Provider value={{ carrito, color, isOpen, setColor, removeFromCart, newItemCarrito, handleToggle }}>
+        <GlobalContext.Provider value={{ carrito, color, isOpen, results, setResults, setColor, removeFromCart, newItemCarrito, handleToggle }}>
             {children}
         </GlobalContext.Provider>
     )

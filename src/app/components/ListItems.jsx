@@ -1,6 +1,7 @@
 import React from 'react'
 import ListItem from './ListItem'
 import DeleteCart from './DeleteCart'
+import ModalBuy from './ModalBuy'
 
 function ListItems({products}) {
   return (
@@ -9,7 +10,8 @@ function ListItems({products}) {
             return (
                 <div  key={product._id} className='py-1'>
                 <ListItem product={product}>
-                  <DeleteCart />
+                  <ModalBuy producto={product} />
+                  {/* <DeleteCart /> */}
                 </ListItem>
                 </div>
             )

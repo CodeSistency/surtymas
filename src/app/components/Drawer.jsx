@@ -6,10 +6,11 @@ import ListItem from './ListItem';
 import ModalBuy from './ModalBuy';
 import DeleteCart from './DeleteCart';
 import ReactWhatsapp from 'react-whatsapp';
+import ButtonCta from './Button';
 
 function Drawer() {
 
-    const {carrito, color, setColor, isOpen, handleToggle} = useGlobalContext();
+    const {carrito, color, results, setResults, setColor, isOpen, handleToggle} = useGlobalContext();
     console.log(useGlobalContext(), color)
 
     const [total, setTotal] = useState()
@@ -63,6 +64,8 @@ function Drawer() {
                               <h2>Subtotal:</h2>
                               <h1>{total} $</h1>
                             </div>
+                            {/* <ButtonCta product={carrito}r/> */}
+                            
                             <ReactWhatsapp
                       //  style={{borderRadius: '10px', backgroundColor:'rgb(5, 248, 78)', border: '1px solid rgb(5, 248, 78)'}} 
                        number='+58 4124668486'
@@ -70,7 +73,7 @@ function Drawer() {
 
 Mi compra es la siguiente:
                        
-${carrito?.map((product) => {
+${results?.map((product) => {
                          let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
                          if (product.tallas) {
                            const tallasMessage = Object.entries(product.tallas)
