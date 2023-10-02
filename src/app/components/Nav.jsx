@@ -120,7 +120,7 @@ export default async function Nav({children}) {
                 {/* <li className='nav-admin'><Link href="/productos/tipo/pantalon">Pantalones</Link></li>
                 <li className='nav-admin'><Link href="/productos/tipo/franela">Franelas</Link></li> */}
                 
-               
+               {/* hola */}
 
             </ul>
 
