@@ -2,6 +2,7 @@ import React from 'react'
 import axios from '../../../../../api/axios';
 import CardItem3 from '../../../components/CardItem3';
 import ButtonCta from '../../../components/Button';
+import Categories2 from '../../../components/Categories2';
 
 async function page({params}) {
     console.log(params)
@@ -35,6 +36,9 @@ async function page({params}) {
     console.log('search', products)
 
   return (
+    <>
+    
+   <Categories2 />
     <div  className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
 
         {products.length ?
@@ -55,6 +59,7 @@ async function page({params}) {
     
   
 </div>
+</>
   )
 }
 

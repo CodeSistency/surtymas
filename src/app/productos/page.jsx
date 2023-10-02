@@ -5,6 +5,7 @@ import ProductsAll from '../components/ProductsAll'
 function page() {
   return (
     <>
+    <Categories2 />
     <Suspense fallback={<p>Cargando...</p>}>
 
         <Productos/>

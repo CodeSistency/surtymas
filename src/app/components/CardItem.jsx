@@ -6,6 +6,7 @@ import {Badge} from "@nextui-org/badge";
 import {CartIcon} from "./icon/cartIcon";
 import Link from "next/link";
 import { Suspense } from "react";
+import CarouselProduct from './CarouselProduct'
 
 export default function CardItem({product, children}) {
 
@@ -27,7 +28,8 @@ export default function CardItem({product, children}) {
 
 
                         <CardHeader className="overflow-visible py-2" >
-                            <Link href={`/productos/${product._id}`}>
+                            <Link href={`/productos/${product._id}`} className='h-60'>
+                                {/* <CarouselProduct images={product.imagenes}/> */}
                                 <Image alt="card" isZoomed src={product.imagenes[0]}  className="object-cover rounded-xl w-full h-60" style={{width: '270px'}}/>
                             </Link>
                             

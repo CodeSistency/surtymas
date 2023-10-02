@@ -7,6 +7,7 @@ import Button3 from './Button3';
 import { getServerSession } from "next-auth/next"
 import { options } from "../api/auth/[...nextauth]/options"
 import { Button } from "@nextui-org/button";
+import ButtonCart2 from './ButtonCart2';
 
 
 
@@ -84,6 +85,7 @@ async function Productos({pageNumber}) {
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
                     :  <Link href='/login'><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link> 
                     } */}
+                    <ButtonCart2 product={product}/>
                 </CardItem3>
             )
         })}

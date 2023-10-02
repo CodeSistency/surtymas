@@ -116,9 +116,9 @@ export default async function Nav({children}) {
 
                 <li className='nav-mujer'><Link href="/productos/genero/mujer">Mujer</Link></li>
                 <li className='nav-hombre'><Link href="/productos/genero/hombre">Hombre</Link></li>
-                <li className='nav-admin'><Link href="/productos/tipo/faldas">Faldas</Link></li>
-                <li className='nav-admin'><Link href="/productos/tipo/pantalon">Pantalones</Link></li>
-                <li className='nav-admin'><Link href="/productos/tipo/franela">Franelas</Link></li>
+                <li className='nav-hombre'><Link href="/productos/tipo/faldas">Zapatos</Link></li>
+                {/* <li className='nav-admin'><Link href="/productos/tipo/pantalon">Pantalones</Link></li>
+                <li className='nav-admin'><Link href="/productos/tipo/franela">Franelas</Link></li> */}
                 
                
 

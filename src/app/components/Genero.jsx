@@ -5,6 +5,7 @@ import {Pagination} from "@nextui-org/pagination";
 import ButtonCta from './Button';
 import { getServerSession } from "next-auth/next"
 import { options } from "../api/auth/[...nextauth]/options"
+import ButtonCart2 from './ButtonCart2';
 
 
 async function Genero({params}) {
@@ -37,7 +38,7 @@ async function Genero({params}) {
     }
     const session = await getServerSession(options)
     console.log(`session cart:  ${session}`)
-    
+
     const products = await getProducts()
     // console.log('item2', products)
 
@@ -51,6 +52,7 @@ async function Genero({params}) {
                 
                 <CardItem3 key={product._id} product={product}>
                     <ButtonCta user={session?.user} product={[product]}/>
+                    <ButtonCart2 product={product}/>
                 </CardItem3>
             )
         })}

@@ -5,6 +5,7 @@ import {Pagination} from "@nextui-org/pagination";
 import { getServerSession } from "next-auth/next"
 import { options } from "../api/auth/[...nextauth]/options"
 import ButtonCta from './Button';
+import ButtonCart2 from './ButtonCart2'
 
 
 
@@ -52,6 +53,7 @@ async function Tipo({params}) {
 
                 <CardItem3 key={product._id} product={product}>
                     <ButtonCta user={session?.user} product={[product]}/>
+                    <ButtonCart2 product={product}/>
                 </CardItem3>
             )
         })}
