@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import Productos from '../components/Products'
 import ProductsAll from '../components/ProductsAll'
+import Categories2 from '../components/Categories2'
 
 function page() {
   return (
