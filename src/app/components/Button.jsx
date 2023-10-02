@@ -445,7 +445,7 @@ function ButtonCta({product, products, user}) {
               <h2 className="text-black">Total: 0</h2>
 
 
-              {products ? <ReactWhatsapp
+              {results ? <ReactWhatsapp
                      
                      number='+58 4124668486'
                      message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
@@ -455,7 +455,7 @@ Metodo de Pago: ${pago}
 Mi compra es la siguiente:
                      
 ${results?.map((product) => {
-                       let message = `"${product.nombre}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
+                       let message = `"${product.titulo || product.nombre}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
                        if (product.tallas) {
                          const tallasMessage = Object.entries(product.tallas)
                            .map(([size, colors]) => {
@@ -488,8 +488,8 @@ Direccion: ${direccion}
 Metodo de Pago: ${pago} 
 
 Mi compra es la siguiente:
-"${results[0]?.titulo}". Precio: $${results[0]?.precio}, Precio al mayor: $${results[0]?.precio_mayor}, Codigo: ${results[0]?.codigo}
-${results[0]?.tallas ? `Tallas: \n${Object.entries(results[0].tallas)
+"${product[0]?.titulo}". Precio: $${product[0]?.precio}, Precio al mayor: $${product[0]?.precio_mayor}, Codigo: ${product[0]?.codigo}
+${product[0]?.tallas ? `Tallas: \n${Object.entries(product[0].tallas)
   .map(([size, colors]) => {
     const deseos = colors.filter((color) => color.deseo !== 0);
     if (deseos.length > 0) {
@@ -603,14 +603,14 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
                     Atras
                   </Button>
                   
-                   {products ? <ReactWhatsapp
+                   {results ? <ReactWhatsapp
                       //  style={{borderRadius: '10px', backgroundColor:'rgb(5, 248, 78)', border: '1px solid rgb(5, 248, 78)'}} 
                        number='+58 4124668486'
                        message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
 Mi correo es: 
 Mi compra es la siguiente:
                        
-${products?.map((product) => {
+${results?.map((product) => {
                          let message = `"${product.nombre}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
                          if (product.tallas) {
                            const tallasMessage = Object.entries(product.tallas)
