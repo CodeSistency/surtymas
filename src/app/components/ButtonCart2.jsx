@@ -13,7 +13,7 @@ function ButtonCart2({product}) {
   }
 
   return (
-    <Button radius="full" color="primary" onPress={addToCart} className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button>
+    <Button radius="full" color="primary" onPress={addToCart} className="w-full  self-end justify-self-end  text-white shadow-lg">Agregar al carrito</Button>
   )
 }
 
