@@ -8,7 +8,7 @@ export default function CarouselHero({images}) {
 
 {images?.map(image => {
         console.log(image)
-        return <img src={image} alt='...'/>
+        return <img src={image} style={{objectFit: 'contain', height: '100%'}} alt='...'/>
       })}
         
 {/* 

@@ -29,7 +29,7 @@ export default async function Nav({children}) {
             <Link href={`/`}>
                 <Image 
                 className='logo'
-                src='logo3.svg'
+                src='/logo3.svg'
                 width={140}
                 height={140}
                 alt="Logo"
@@ -105,7 +105,7 @@ export default async function Nav({children}) {
 
                 }
                  */}
-                 <CartIcon size={50} />
+                 {/* <CartIcon size={50} /> */}
           </section>
 
           <section className='nav-bottom'>

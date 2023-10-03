@@ -126,10 +126,25 @@ let isMounted = true;
     
   };
 
+  function totalItems(){
+    let total = 0
+    
+    const items = producto.map(product => {
+      let total = 0
+      Object.entries(product.tallas).map(([size, colors]) =>
+      colors.map((color, index) =>{
+      console.log(total, color)
+    })
+    )
+    return total
+    })
+    
+  }
+
   const onChange = (productCode, size, index, value) => {
     
     
-
+      let total = 0
       const intValue = parseInt(value, 10);
       
         const updatedResults = producto.map((product) => {
@@ -144,10 +159,27 @@ let isMounted = true;
               colors[index].deseo = intValue;
               colors[index].quantity -= quantityChange; // Decrease the quantity
             }
+
+            let total = 0;
+            Object.entries(product.tallas).forEach(([size, colors]) => {
+              colors.forEach((color) => {
+                total += color.deseo || 0;
+              });
+            });
+      
+            return {
+              ...product,
+              total,
+            };
+
           }
+
           return product;
+
+          
         });
         setResults(updatedResults)
+        console.log(updatedResults)
         return updatedResults;
     
   
@@ -170,7 +202,7 @@ let isMounted = true;
 
   return (
     <>
-     <Image style={{cursor: 'pointer'}} onClick={open} src='/edit1.svg' alt="edit" width={50}/>
+     <Image style={{cursor: 'pointer'}} onClick={open} src='/edit1.svg' alt="edit" width={40}/>
      <Modal
      style={{zIndex: '1000'}}
       className='mt-36 z-50'
@@ -275,6 +307,7 @@ let isMounted = true;
             onChange={(e) => onChange(producto[0].codigo, size, index, e.target.value)}
           />
           {color.quantity === 0 && <p>Ese era el ultimo, no selecciones más</p>}
+          {color.quantity < 0 && <p>Ese era el ultimo, no selecciones más</p>}
             </div>
         </div>
       </div>

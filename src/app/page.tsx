@@ -16,8 +16,8 @@ export default async function Home() {
         <Cards />                      
       </Suspense>
        <Categories />
-      <Gallery />
-      <Grid /> 
+      {/* <Gallery />
+      <Grid />  */}
       
     </>
   )

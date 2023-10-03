@@ -413,7 +413,7 @@ function ButtonCta({product, products, user}) {
               <div className='h-[300px]'>
 
                 <ListItem product={product} >
-                  <ModalBuy product={product} />
+                  <ModalBuy producto={product} />
                 </ListItem>
 
 {/* <ListItem product={product} /> */}

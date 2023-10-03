@@ -14,7 +14,7 @@ export default function Hero() {
   return (
 
     // <div className="embla" ref={emblaRef}>
-                <div style={{height: '70vh'}}>
+                <div style={{height: '70vh', padding: "3px"}}>
                     <CarouselHero />
                 </div>
 

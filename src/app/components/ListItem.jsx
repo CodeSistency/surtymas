@@ -7,7 +7,20 @@ import { useGlobalContext } from '../context/GlobalContext'
 
 function ListItem({children, product}) {
 
-    console.log(product)
+  // function totalItems(){
+  //   let total = 0
+    
+  //   Object.entries(product.tallas).map(([size, colors]) =>
+  //   colors.map((color, index) =>{
+  //     console.log(total, color)
+  //   })
+  //   )
+  //   return total
+  // }
+
+  
+
+    // console.log(totalItems())
   return (
     <Card
     // style={{padding: '-10px'}}
@@ -22,12 +35,16 @@ function ListItem({children, product}) {
             className="object-cover h-full w-16"
             // height='100%'
             shadow="md"
-            src={`${product[0]?.imagenes[0] || product.imagen}`}
+            src={`${product[0]?.imagenes[0] || product?.imagenes[0] || product.imagen}`}
             // width="100%"
           />
 
             <div className="flex flex-col gap-0 w-[50px] flex-1">
+              <div className='flex items-center gap-2'>
               <h3 className="font-semibold text-foreground/90 w-full">{`${product[0]?.titulo || product.nombre || product.titulo}`}</h3>
+              {/* <p>()</p> */}
+              </div>
+              {/* <h3 className="font-semibold text-foreground/90 w-full">{`${product[0]?.titulo || product.nombre || product.titulo}`}</h3> */}
               <p className="text-small text-foreground/80 ">${`${product[0]?.precio || product.precio}`}</p>
               <h1 className="text-large font-medium mt-2">{`${product[0]?.codigo || product.codigo}`}</h1>
             </div>

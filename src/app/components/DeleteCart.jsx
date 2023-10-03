@@ -9,7 +9,7 @@ function DeleteCart({product}) {
     console.log(product)
   return (
     
-        <Image src='/delete1.svg' style={{cursor: 'pointer'}} onClick={() => removeFromCart(product._id)} width={50}/>
+        <Image src='/delete1.svg' style={{cursor: 'pointer'}} onClick={() => removeFromCart(product._id)} width={40}/>
     
   )
 }
