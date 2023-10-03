@@ -9,7 +9,7 @@ function Categories() {
         <div className='flex flex-col gap-10 w-full'>
             <div className="w-full card-container">
                 <Link href='/productos/tipo/pantalon' className='foto-category '><Avatar className='lg:w-24 lg:h-24 sm:w-16 sm:h-16' isBordered src="/pantalon.jpg" /><p>Pantalon</p></Link>
-                <Link href='/productos/tipo/crop-top' className='foto-category '><Avatar className='lg:w-24 lg:h-24 sm:w-16 sm:h-16' isBordered src="/crop-top.jpg" /><p>Crop Top</p></Link>
+                <Link href='/productos/tipo/crop top' className='foto-category '><Avatar className='lg:w-24 lg:h-24 sm:w-16 sm:h-16' isBordered src="/crop-top.jpg" /><p>Crop Top</p></Link>
                 <Link href='/productos/tipo/pijama' className='foto-category '><Avatar className='lg:w-24 lg:h-24 sm:w-16 sm:h-16' isBordered src="/pijama.jpg" /><p>Pijama</p></Link>
                 <Link href='/productos/tipo/falda' className='foto-category '><Avatar className='lg:w-24 lg:h-24 sm:w-16 sm:h-16' isBordered src="/falda.jpg" /><p>Falda</p></Link>
                 <Link href='/productos/tipo/vestido' className='foto-category '><Avatar className='lg:w-24 lg:h-24 sm:w-16 sm:h-16' isBordered src="/vestido.jpg" /><p>Vestido</p></Link>
