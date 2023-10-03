@@ -102,7 +102,21 @@ body {
 
 @media (max-width: 600px){
 
-  
+    /* Hide scrollbar for WebKit browsers */
+.card-container::-webkit-scrollbar, .lista-colores::-webkit-scrollbar, .navbar::-webkit-scrollbar, .container-skeleton::-webkit-scrollbar {
+  width: 0 !important; /* Set the width to 0 to hide the scrollbar */
+}
+
+/* Optional: Style for the scrollbar track (background) */
+.card-container::-webkit-scrollbar-track, .lista-colores::-webkit-scrollbar-track, .navbar::-webkit-scrollbar-track {
+  background-color: transparent !important; /* Set the background color of the track */
+}
+
+/* Optional: Style for the scrollbar thumb (handle) */
+.card-container::-webkit-scrollbar-thumb {
+  background-color: transparent !important; /* Set the color of the thumb */
+}
+
 
   .image-container-3 > div > h1, .image-container-2 > div > h1{
     font-size: 1.7rem !important;
@@ -1445,20 +1459,6 @@ li {
   white-space: nowrap; 
   }
 
-  /* Hide scrollbar for WebKit browsers */
-.card-container::-webkit-scrollbar, .lista-colores::-webkit-scrollbar, .navbar::-webkit-scrollbar, .container-skeleton::-webkit-scrollbar {
-  width: 0; /* Set the width to 0 to hide the scrollbar */
-}
-
-/* Optional: Style for the scrollbar track (background) */
-.card-container::-webkit-scrollbar-track, .lista-colores::-webkit-scrollbar-track, .navbar::-webkit-scrollbar-track {
-  background-color: transparent; /* Set the background color of the track */
-}
-
-/* Optional: Style for the scrollbar thumb (handle) */
-.card-container::-webkit-scrollbar-thumb {
-  background-color: transparent; /* Set the color of the thumb */
-}
 
 
   .something{
