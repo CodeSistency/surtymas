@@ -81,7 +81,7 @@ export default async function Nav({children}) {
               <div className='cart-icon'>{cartIcon()}</div>
               <Link to={'/Login2'}><BiUser className='user-icon' fontSize={35}/></Link> */}
             {/* </div> */}
-
+{/* 
             {
                   session 
                   ? 
@@ -103,7 +103,7 @@ export default async function Nav({children}) {
                       <Link href={`/carrito`}><CartIcon size={50} /></Link>
                     </div>
 
-                }
+                } */}
                 
                  {/* <CartIcon size={50} /> */}
           </section>
