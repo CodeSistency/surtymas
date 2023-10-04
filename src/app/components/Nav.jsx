@@ -69,8 +69,8 @@ export default async function Nav({children}) {
                 
                 {/* <Link href="/api/auth/signout">Cerrar sesion</Link> */}
                 {/* <Button onClick={signOut}/> */}
-                {/* <Link href="/login">Iniciar sesion</Link>
-                <Link href="/registro">Registro</Link> */}
+                {/* <Link href="/login">Iniciar sesion</Link> */}
+                {/* <Link href="/registro">Registro</Link> */}
               {/* <Menu toggleMenu={toggleMenu} onClick={toggleMenu} isOpen={menuVisible}></Menu>
               {auth?.user ? <Link to={'home/genero/hombre'}><AiOutlineMan className='gender-icon' color='#0d3f71' fontSize={35}/></Link> : <Link to={'genero/hombre'}><AiOutlineMan className='gender-icon' color='#0d3f71' fontSize={35}/></Link>}
               {auth?.user ? <Link to={'home/genero/mujer'}><AiOutlineWoman className='gender-icon' color='pink' fontSize={35}/></Link> : <Link to={'genero/mujer'}><AiOutlineWoman className='gender-icon' color='pink' fontSize={35}/></Link>}
@@ -81,7 +81,7 @@ export default async function Nav({children}) {
               <div className='cart-icon'>{cartIcon()}</div>
               <Link to={'/Login2'}><BiUser className='user-icon' fontSize={35}/></Link> */}
             {/* </div> */}
-{/* 
+
             {
                   session 
                   ? 
@@ -104,7 +104,7 @@ export default async function Nav({children}) {
                     </div>
 
                 }
-                 */}
+                
                  {/* <CartIcon size={50} /> */}
           </section>
 

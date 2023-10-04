@@ -35,7 +35,7 @@ function ModalBuy({producto, user, cart}) {
 
   const [product, setProduct] = useState()
 
-  const {carrito, handleToggle, results, setResults} = useGlobalContext();
+  const {carrito, setCarrito, handleToggle, results, setResults} = useGlobalContext();
 
 
   function open() {
@@ -179,6 +179,7 @@ let isMounted = true;
           
         });
         setResults(updatedResults)
+        // setCarrito(prev => [...prev, ...updatedResults])
         console.log(updatedResults)
         return updatedResults;
     

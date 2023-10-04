@@ -1,11 +1,16 @@
+'use client'
 import { Card, CardBody } from '@nextui-org/card'
 import { Image } from '@nextui-org/image'
 import React from 'react'
 import { useGlobalContext } from '../context/GlobalContext'
+
 // import ff from '../../../public/'
 
 
 function ListItem({children, product}) {
+
+  const {carrito, color, results, setResults, setColor, isOpen, handleToggle} = useGlobalContext();
+    // console.log(useGlobalContext(), color)
 
   // function totalItems(){
   //   let total = 0
@@ -17,6 +22,52 @@ function ListItem({children, product}) {
   //   )
   //   return total
   // }
+
+  function totalItems(){
+    
+    let total = 0;
+    carrito.map(carro => {
+      if (carro._id == product._id){
+      
+        Object.entries(carro.tallas).forEach(([size, colors]) => {
+          colors.forEach((color) => {
+            total += color.deseo || 0;
+          });
+        });
+      } 
+    })
+    console.log(total)
+    
+    return total
+  }
+
+  function Colors(){
+    
+    carrito.map(carro => {
+      if (carro._id == product._id){
+      
+        Object.entries(carro.tallas).forEach(([size, colors]) => {
+          colors.forEach((color) => {
+            color.deseo > 0 &&
+
+            <div
+            style={{
+              backgroundColor: color.color,
+              borderRadius: "50%",
+              border: "1px solid gray",
+              height: "30px",
+              width: "30px",
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.305)'
+            }}
+          ></div>
+            
+
+          });
+        });
+      } 
+    })
+    
+  }
 
   
 
@@ -42,12 +93,40 @@ function ListItem({children, product}) {
             <div className="flex flex-col gap-0 w-[50px] flex-1">
               <div className='flex items-center gap-2'>
               <h3 className="font-semibold text-foreground/90 w-full">{`${product[0]?.titulo || product.nombre || product.titulo}`}</h3>
-              {/* <p>()</p> */}
+              <p>({totalItems()})</p>
               </div>
               {/* <h3 className="font-semibold text-foreground/90 w-full">{`${product[0]?.titulo || product.nombre || product.titulo}`}</h3> */}
               <p className="text-small text-foreground/80 ">${`${product[0]?.precio || product.precio}`}</p>
-              <h1 className="text-large font-medium mt-2">{`${product[0]?.codigo || product.codigo}`}</h1>
+              {/* <h1 className="text-large font-medium mt-2">{`${product[0]?.codigo || product.codigo}`}</h1> */}
+              <section className="lista-colores">
+  {carrito.map((carro) => {
+    if (carro._id === product._id) {
+      return Object.entries(carro.tallas).map(([size, colors]) => {
+        return colors.map((color) => {
+          if (color.deseo > 0) {
+            return (
+              <div
+                key={color.id} // Add a unique key for each rendered element
+                style={{
+                  backgroundColor: color.color,
+                  borderRadius: "50%",
+                  border: "1px solid gray",
+                  height: "15px",
+                  width: "15px",
+                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.305)",
+                }}
+              ></div>
+            );
+          }
+          return null; // Return null if the condition is not met (optional)
+        });
+      });
+    }
+    return null; // Return null if the condition is not met (optional)
+  })}
+</section>
             </div>
+           
 
             <div className='flex items-center gap-2'>
                 {children}

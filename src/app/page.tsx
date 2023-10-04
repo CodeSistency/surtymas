@@ -1,5 +1,6 @@
 import Hero from './components/Hero'
-import Cards from './components/Cards'
+// import Cards from './components/Cards'
+import Cards2 from './components/Cards2'
 import Grid from './components/Grid'
 import Gallery from './components/Gallery'
 import Categories from './components/Categories'
@@ -13,7 +14,8 @@ export default async function Home() {
       <Hero />
       <Suspense fallback={<div>Cargando...</div>}>
 
-        <Cards />                      
+        {/* <Cards />                       */}
+        <Cards2 />   
       </Suspense>
        <Categories />
       {/* <Gallery />

@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const GlobalContext = createContext({})
 
@@ -17,20 +17,30 @@ export const GlobalContextProvider = ({ children }) => {
 
     const [results, setResults] = useState()
 
-    function newItemCarrito(item){
-        console.log(item)
-        setCarrito(prev => [...prev, item])
-    }
+    function newItemCarrito(item) {
+        console.log(item);
+        
+        // Check if an object with the same ._id already exists in the carrito array
+        const isDuplicate = carrito.some(obj => obj._id === item._id);
+        
+        if (!isDuplicate) {
+          setCarrito(prev => [...prev, item]);
+        }
+      }
 
     function removeFromCart(id) {
         console.log(id)
         setCarrito(prevItems => prevItems.filter(item => item._id !== id))
         
     }
-    // console.log(color)
+    
+    useEffect(() => {
+        console.log(carrito)
+        console.log(results)
+    }, [carrito, results])
 
     return (
-        <GlobalContext.Provider value={{ carrito, color, isOpen, results, setResults, setColor, removeFromCart, newItemCarrito, handleToggle }}>
+        <GlobalContext.Provider value={{ carrito, color, isOpen, results, setCarrito, setResults, setColor, removeFromCart, newItemCarrito, handleToggle }}>
             {children}
         </GlobalContext.Provider>
     )

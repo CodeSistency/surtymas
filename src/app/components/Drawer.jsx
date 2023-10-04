@@ -10,7 +10,7 @@ import ButtonCta from './Button';
 
 function Drawer() {
 
-    const {carrito, color, results, setResults, setColor, isOpen, handleToggle} = useGlobalContext();
+    const {carrito, color, results, setCarrito, setResults, setColor, isOpen, handleToggle} = useGlobalContext();
     console.log(useGlobalContext(), color)
 
     const [total, setTotal] = useState()
@@ -20,9 +20,9 @@ function Drawer() {
         setTotal(carrito.reduce((totalSum, sum) => totalSum = totalSum + sum.precio, 0).toFixed(2))
       }, [carrito])
 
-  useEffect(() => {
-    console.log(carrito)
-  }, [carrito])
+  // useEffect(() => {
+  //   console.log(carrito)
+  // }, [carrito])
 
   return (
     <div>
@@ -65,15 +65,51 @@ function Drawer() {
                               <h1>{total} $</h1>
                             </div>
                             {/* <ButtonCta product={carrito}r/> */}
-                            
+
                             <ReactWhatsapp
-                      //  style={{borderRadius: '10px', backgroundColor:'rgb(5, 248, 78)', border: '1px solid rgb(5, 248, 78)'}} 
+  number="+58 4124668486"
+  message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
+
+  Mi compra es la siguiente:
+  
+  ${carrito
+    ?.map((product) => {
+      let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
+      if (product.tallas) {
+        const tallasMessage = Object.entries(product.tallas)
+          .map(([size, colors]) => {
+            const deseos = colors.filter((color) => color.deseo > 0);
+            if (deseos.length > 0) {
+              const deseosMessage = deseos
+                .map((color) => `${size}: ${color.deseo}`)
+                .join(", ");
+              return deseosMessage;
+            }
+            return null;
+          })
+          .filter((message) => message !== null)
+          .join("\n");
+        if (tallasMessage !== "") {
+          message += `\nTallas: \n${tallasMessage} piezas\n`;
+        }
+      }
+      return message;
+    })
+    .join("\n")}
+  
+  Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
+>
+  Comprar
+</ReactWhatsapp>
+                            
+                        {/* <ReactWhatsapp
+                      
                        number='+58 4124668486'
                        message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
 
 Mi compra es la siguiente:
                        
-${results?.map((product) => {
+${carrito?.map((product) => {
                          let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
                          if (product.tallas) {
                            const tallasMessage = Object.entries(product.tallas)
@@ -97,7 +133,7 @@ ${results?.map((product) => {
                        })}
 Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
 
-                    >Comprar</ReactWhatsapp>
+                    >Comprar</ReactWhatsapp> */}
 
                           </div>
                           </div>
