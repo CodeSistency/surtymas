@@ -852,6 +852,18 @@ select {
     width: 100%;
 }
 
+.lista-colores::-webkit-scrollbar, .navbar::-webkit-scrollbar, .container-skeleton::-webkit-scrollbar {
+  width: 0 !important; /* Set the width to 0 to hide the scrollbar */
+}
+
+/* Optional: Style for the scrollbar track (background) */
+ .lista-colores::-webkit-scrollbar-track, .navbar::-webkit-scrollbar-track {
+  background-color: transparent !important; /* Set the background color of the track */
+}
+
+/* Optional: Style for the scrollbar thumb (handle) */
+
+
 .qr{
   padding: 10px;
 }

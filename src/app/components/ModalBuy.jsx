@@ -203,7 +203,7 @@ let isMounted = true;
 
   return (
     <>
-     <Image style={{cursor: 'pointer'}} onClick={open} src='/edit1.svg' alt="edit" width={40}/>
+     <Image style={{cursor: 'pointer'}} onClick={open} src='/edit1.svg' alt="edit" width={30}/>
      <Modal
      style={{zIndex: '1000'}}
       className='mt-36 z-50'

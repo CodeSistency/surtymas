@@ -1498,7 +1498,7 @@ export default function Cards() {
             imagen={`https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696006898126Screenshot_20230626-204951_2.jpg?alt=media&token=7a757a60-d061-490d-b8fb-872fbd5078f5`}
         
         >
-             <ButtonCta user={session?.user?.name} product={[data[0]]}/>
+             <ButtonCta  product={[data[0]]}/>
 {/*                     
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
@@ -1515,7 +1515,7 @@ export default function Cards() {
             imagen={`https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696028824629Screenshot_20230627-220927_2.jpg?alt=media&token=61dca40d-67d2-474f-9339-81ccade35784`}
         
         >
-          <ButtonCta user={session?.user?.name} product={[data[1]]}/>
+          <ButtonCta  product={[data[1]]}/>
 {/*                     
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
@@ -1532,7 +1532,7 @@ export default function Cards() {
             imagen={`https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/16960909666161695930374219.jpg?alt=media&token=2b467ab5-d6ad-4fd6-8a4a-e1a4b97cd994`}
         
         >
-          <ButtonCta user={session?.user?.name} product={[data[2]]}/>
+          <ButtonCta product={[data[2]]}/>
 {/*                     
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
@@ -1550,7 +1550,7 @@ export default function Cards() {
             imagen={`https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/16960236998761695929879236.jpg?alt=media&token=707eb0f2-c1c3-42cc-b2b8-ca4818c9e929`}
         
         >
-          <ButtonCta user={session?.user?.name} product={[data[3]]}/>
+          <ButtonCta  product={[data[3]]}/>
 {/*                     
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
@@ -1568,7 +1568,7 @@ export default function Cards() {
             imagen={`https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696019097971Screenshot_20230630-081831_2.jpg?alt=media&token=191bd68f-331c-48d8-9a00-f874519d9a33`}
         
         >
-          <ButtonCta user={session?.user?.name} product={[data[4]]}/>
+          <ButtonCta product={[data[4]]}/>
 {/*                     
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
@@ -1586,7 +1586,7 @@ export default function Cards() {
             imagen={`https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696019097971Screenshot_20230630-081831_2.jpg?alt=media&token=191bd68f-331c-48d8-9a00-f874519d9a33`}
         
         >
-          <ButtonCta user={session?.user?.name} product={[data[5]]}/>
+          <ButtonCta product={[data[5]]}/>
 {/*                     
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>

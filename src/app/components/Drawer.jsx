@@ -6,7 +6,7 @@ import ListItem from './ListItem';
 import ModalBuy from './ModalBuy';
 import DeleteCart from './DeleteCart';
 import ReactWhatsapp from 'react-whatsapp';
-import ButtonCta from './Button';
+import ButtonCartBuy from './ButtonCartBuy';
 
 function Drawer() {
 
@@ -64,8 +64,8 @@ function Drawer() {
                               <h2>Subtotal:</h2>
                               <h1>{total} $</h1>
                             </div>
-                            {/* <ButtonCta product={carrito}r/> */}
-
+                            <ButtonCartBuy product={carrito}r/>
+{/* 
                             <ReactWhatsapp
   number="+58 4124668486"
   message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
@@ -100,7 +100,7 @@ function Drawer() {
   Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
 >
   Comprar
-</ReactWhatsapp>
+</ReactWhatsapp> */}
                             
                         {/* <ReactWhatsapp
                       

@@ -39,7 +39,7 @@ async function page({params}) {
 
     }
 
-    
+    const renderedColors = [];
 
     const product = await getProduct()
     console.log(product)
@@ -93,7 +93,7 @@ async function page({params}) {
 
               <h4 className='font-extrabold text-gray-900'>Colores disponibles:</h4>
               <section className='lista-colores px-1 py-4'>
-                {(() => {
+                {/* {(() => {
                   const allColors = [];
 
                   // Collect all colors from all sizes into a single array
@@ -109,7 +109,30 @@ async function page({params}) {
                   return allColors.map((color, index) => (
                     <div key={index} className="producto" style={{ backgroundColor: color, borderRadius: "50%", height: "20px", width: "20px", boxShadow: '0 0 5px 1px gray' }}></div>
                   ));
-                })()}
+                })()} */}
+
+
+     {
+     
+     Object.entries(product.tallas).map(([size, colors]) => {
+      
+
+      
+        return colors.map((color) => {
+        
+          if (color.quantity > 0 && !renderedColors.includes(color.color)) {
+            renderedColors.push(color.color);
+            console.log(renderedColors)
+
+            return (
+             
+              <div key={size} className="producto" style={{ backgroundColor: color.color, borderRadius: "50%", height: "20px", width: "20px", boxShadow: '0 0 5px 1px gray' }}></div>
+            );
+          }
+          return null; // Return null if the condition is not met (optional)
+        });
+      })}
+  
               </section>
 
               <ButtonCta user={session?.user} product={[product]}/>

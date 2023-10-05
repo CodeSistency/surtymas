@@ -23,7 +23,7 @@ import HowToPay from "./HowToPay";
 import ListItems from './ListItems'
 
 
-function ButtonCta({product, products, user}) {
+function ButtonCartBuy({product, products, user}) {
 
   console.log(product)
 
@@ -35,18 +35,23 @@ function ButtonCta({product, products, user}) {
     setStep1(true)
     setStep2(false)
     setStep3(false)
+    console.log(carrito)
   }
 
   function stepTwo(){
     setStep1(false)
     setStep2(true)
     setStep3(false)
+    console.log(carrito)
+
   }
 
   function stepThree(){
     setStep1(false)
     setStep2(false)
     setStep3(true)
+    console.log(carrito)
+
   }
        
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
@@ -77,12 +82,12 @@ function ButtonCta({product, products, user}) {
     console.log(options)
   }, [options])
 
-  useEffect
+console.log(carrito)
   
 
   return (
     <>
-        <Button onPress={onOpen} radius="full" style={{marginBottom: '-10px'}} className="w-full  self-end justify-self-end bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
+        <Button onPress={onOpen} color="success" variant="shadow" style={{borderRadius: '0'}}  className="w-full  self-end justify-self-end text-white shadow-lg">
                                 Comprar
         </Button>
         {/* <RadioGroup
@@ -214,8 +219,7 @@ function ButtonCta({product, products, user}) {
               <Input
                 type="text"
                 label="Apellido"
-                
-                style={{fontSize: '14px', outline: 'none', marginTop:'12px', color:'black'}}
+                style={{fontSize: '14px', marginTop:'12px', color:'black'}}
                 {...apellidoAttribs}
                 // defaultValue="junior@nextui.org"
                 // className="w-full"
@@ -332,12 +336,12 @@ function ButtonCta({product, products, user}) {
             
             <div >
 
-            <ListItem product={product} >
+            {/* <ListItem product={product} >
                   <ModalBuy producto={product} />
                   
-                </ListItem>
+                </ListItem> */}
 
-                {/* <ListItems products={product}/> */}
+                <ListItems products={product}/>
 
             </div>
 
@@ -413,9 +417,7 @@ function ButtonCta({product, products, user}) {
 
               <div className='h-[300px]'>
 
-                <ListItem product={product} >
-                  <ModalBuy producto={product} />
-                </ListItem>
+              <ListItems products={product}/>
 
 {/* <ListItem product={product} /> */}
                 
@@ -443,70 +445,44 @@ function ButtonCta({product, products, user}) {
                 </div>
               </div>
 
-              <h2 className="text-black">Total: 0</h2>
+              {/* <h2 className="text-black">Total: 0</h2> */}
 
 
-              {results ? <ReactWhatsapp
-                     
-                     number='+58 4124668486'
-                     message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
+                            <ReactWhatsapp
+  number="+58 4124668486"
+  message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
 
-Direccion: ${direccion}
-Metodo de Pago: ${pago} 
-Mi compra es la siguiente:
-                     
-${results
-  ?.map((product) => {
-    let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
-    if (product.tallas) {
-      const tallasMessage = Object.entries(product.tallas)
-        .map(([size, colors]) => {
-          const deseos = colors.filter((color) => color.deseo > 0);
-          if (deseos.length > 0) {
-            const deseosMessage = deseos
-              .map((color) => `${size}: ${color.deseo}`)
-              .join(", ");
-            return deseosMessage;
-          }
-          return null;
-        })
-        .filter((message) => message !== null)
-        .join("\n");
-      if (tallasMessage !== "") {
-        message += `\nTallas: \n${tallasMessage} piezas\n`;
+  Mi compra es la siguiente:
+  
+  ${carrito
+    ?.map((product) => {
+      let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
+      if (product.tallas) {
+        const tallasMessage = Object.entries(product.tallas)
+          .map(([size, colors]) => {
+            const deseos = colors.filter((color) => color.deseo > 0);
+            if (deseos.length > 0) {
+              const deseosMessage = deseos
+                .map((color) => `${size}: ${color.deseo}`)
+                .join(", ");
+              return deseosMessage;
+            }
+            return null;
+          })
+          .filter((message) => message !== null)
+          .join("\n");
+        if (tallasMessage !== "") {
+          message += `\nTallas: \n${tallasMessage} piezas\n`;
+        }
       }
-    }
-    return message;
-  })
-  .join("\n")}
-
-Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
-
-                  >Comprar</ReactWhatsapp> :
-                  
-                  <ReactWhatsapp
-                  number='+58 4124668486'
-                  message={`¡Hola! 👋 ¡Bienvenido a Surtymas! 
-Mi usuario es: ${user}
-Direccion: ${direccion}
-Metodo de Pago: ${pago} 
-
-Mi compra es la siguiente:
-"${product[0]?.titulo}". Precio: $${product[0]?.precio}, Precio al mayor: $${product[0]?.precio_mayor}, Codigo: ${product[0]?.codigo}
-${product[0]?.tallas ? `Tallas: \n${Object.entries(product[0].tallas)
-  .map(([size, colors]) => {
-    const deseos = colors.filter((color) => color.deseo !== 0);
-    if (deseos.length > 0) {
-      return deseos
-        .map((color) => `${size}: ${color.deseo || 'No seleccionado'}`)
-        .join(", ");
-    }
-    return null;
-  })
-  .filter((message) => message !== null)
-  .join("\n") || ''} piezas` : ''}
-Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
-                  >Comprar</ReactWhatsapp>}
+      return message;
+    })
+    .join("\n")}
+  
+  Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
+>
+  Comprar
+</ReactWhatsapp>
 
               {/* {products ? <ReactWhatsapp
                      
@@ -675,4 +651,4 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
   )
 }
 
-export default ButtonCta
+export default ButtonCartBuy

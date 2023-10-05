@@ -10,7 +10,7 @@ function ListItems({products}) {
             return (
                 <div  key={product._id} className='py-1'>
                 <ListItem product={product}>
-                  <ModalBuy producto={product} />
+                  <ModalBuy producto={[product]} />
                   {/* <DeleteCart /> */}
                 </ListItem>
                 </div>

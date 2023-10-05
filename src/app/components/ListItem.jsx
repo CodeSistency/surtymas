@@ -3,6 +3,7 @@ import { Card, CardBody } from '@nextui-org/card'
 import { Image } from '@nextui-org/image'
 import React from 'react'
 import { useGlobalContext } from '../context/GlobalContext'
+import {Badge} from "@nextui-org/badge";
 
 // import ff from '../../../public/'
 
@@ -73,14 +74,26 @@ function ListItem({children, product}) {
 
     // console.log(totalItems())
   return (
+    <div className='w-full flex relative'>
+
+    
+    
+    {/* <Badge content="5" color="primary" className='!flex' size='lg'> */}
+
+    <div style={{top: '-10px', right: '-10px', zIndex: '10', borderRadius: '50%'}} className='bg-blue-500 w-[30px] h-[30px] flex justify-center items-center absolute'>
+      <p style={{color: 'white'}}>{totalItems()}</p>
+    </div>
+
     <Card
     // style={{padding: '-10px'}}
+    fullWidth
     isBlurred
-    className="border-none bg-background/60 dark:bg-default-100/50 w-full "
+    className="border-none bg-background/60 dark:bg-default-100/50 w-full p-2"
     shadow="sm"
   >
-    <CardBody className=''>
-        <div className='flex items-center max-h-16  w-full gap-3'>
+  
+   
+        <div className='flex items-center min-h-18 max-h-25  w-full gap-1'>
         <Image
             alt="Album cover"
             className="object-cover h-full w-16"
@@ -92,8 +105,8 @@ function ListItem({children, product}) {
 
             <div className="flex flex-col gap-0 w-[50px] flex-1">
               <div className='flex items-center gap-2'>
-              <h3 className="font-semibold text-foreground/90 w-full">{`${product[0]?.titulo || product.nombre || product.titulo}`}</h3>
-              <p>({totalItems()})</p>
+              <h4 className="font-semibold text-foreground/90 w-full">{`${product[0]?.titulo || product.nombre || product.titulo}`}</h4>
+              {/* <p>({totalItems()})</p> */}
               </div>
               {/* <h3 className="font-semibold text-foreground/90 w-full">{`${product[0]?.titulo || product.nombre || product.titulo}`}</h3> */}
               <p className="text-small text-foreground/80 ">${`${product[0]?.precio || product.precio}`}</p>
@@ -128,7 +141,7 @@ function ListItem({children, product}) {
             </div>
            
 
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-0'>
                 {children}
                 {/* <Image src='/edit1.svg' width={50}/> */}
                 {/* <Image src='/delete1.svg' alt='delete' width={50}/> */}
@@ -168,8 +181,10 @@ function ListItem({children, product}) {
           
         </div>
       </div> */}
-    </CardBody>
+    
   </Card>
+  {/* </Badge> */}
+  </div>
   )
 }
 
