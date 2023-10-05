@@ -337,7 +337,7 @@ ${results
           const deseos = colors.filter((color) => color.deseo > 0);
           if (deseos.length > 0) {
             const deseosMessage = deseos
-              .map((color) => `${size}: ${color.deseo} ${color.color}`)
+              .map((color) => `${size}: ${color.deseo} ${color.color?.color}`)
               .join(", ");
             return deseosMessage;
           }
