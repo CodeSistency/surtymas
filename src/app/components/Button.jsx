@@ -495,11 +495,12 @@ Mi compra es la siguiente:
 "${product[0]?.titulo}". Precio: $${product[0]?.precio}, Precio al mayor: $${product[0]?.precio_mayor}, Codigo: ${product[0]?.codigo}
 ${product[0]?.tallas ? `Tallas: \n${Object.entries(product[0].tallas)
   .map(([size, colors]) => {
-    const deseos = colors.filter((color) => color.deseo !== 0);
-    if (deseos.length > 0) {
-      return deseos
-        .map((color) => `${size}: ${color.deseo || 'No seleccionado'}`)
-        .join(", ");
+    const deseos = colors.filter((color) => color.deseo > 0);
+          if (deseos.length > 0) {
+            const deseosMessage = deseos
+              .map((color) => `${size}: ${color.deseo} ${color.color}`)
+              .join(", ");
+            return deseosMessage;
     }
     return null;
   })
