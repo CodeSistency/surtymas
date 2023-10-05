@@ -188,6 +188,32 @@ let isMounted = true;
     // console.log(updatedResults)
   };
 
+  console.log(results
+    ?.map((product) => {
+      let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
+      if (product.tallas) {
+        const tallasMessage = Object.entries(product.tallas)
+          .map(([size, colors]) => {
+            const deseos = colors.filter((color) => color.deseo > 0);
+            if (deseos.length > 0) {
+              const deseosMessage = deseos
+                .map((color) => `${size}: ${color.deseo} ${color.color?.color}`)
+                .join(", ");
+              return deseosMessage;
+            }
+            return null;
+          })
+          .filter((message) => message !== null)
+          .join("\n");
+        if (tallasMessage !== "") {
+          message += `\nTallas: \n${tallasMessage} piezas\n`;
+        }
+      }
+      
+      return message;
+    })
+    .join("\n"))
+
 
 
     // useEffect(() =>{
@@ -337,7 +363,7 @@ ${results
           const deseos = colors.filter((color) => color.deseo > 0);
           if (deseos.length > 0) {
             const deseosMessage = deseos
-              .map((color) => `${size}: ${color.deseo} ${color.color}`)
+              .map((color) => `${size}: ${color.deseo} ${color.color?.color}`)
               .join(", ");
             return deseosMessage;
           }
