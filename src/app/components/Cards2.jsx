@@ -1577,23 +1577,7 @@ export default function Cards() {
                     <ButtonCart2 product={data[4]}/>
 
         </CardItem4>
-
-<CardItem4
-            titulo='Franela Oversize'
-            codigo="0003"
-            precio="10"
-            id={`651734cada0802c4393874c0`}
-            imagen={`https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696019097971Screenshot_20230630-081831_2.jpg?alt=media&token=191bd68f-331c-48d8-9a00-f874519d9a33`}
-        
-        >
-          <ButtonCta product={[data[5]]}/>
-{/*                     
-                    {session ? <Button3 user={session?.user?.name} product={[product]}/> 
-                    :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
-                    } */}
-                    {/* <ButtonCart product={[product]}/> */}
-                    <ButtonCart2 product={data[5]}/>
-        </CardItem4>
+{/*  */}
         
 
      </div>
