@@ -16,7 +16,7 @@ function Footer() {
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Direccion</h2>
                     <ul className="text-gray-600 dark:text-gray-400">
                         <li className="mb-4">
-                            <a href="https://flowbite.com" className="hover:underline">Surtymas</a>
+                            <a href="https://www.instagram.com/tiendasurtymas/" className="hover:underline">Showroom activo en Urb. Terrazas del mar</a>
                         </li>
                         {/* <li>
                             <a href="https://tailwindcss.com/" className="hover:underline">Tailwind CSS</a>
@@ -27,10 +27,13 @@ function Footer() {
                     <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Siguenos</h2>
                     <ul className="text-gray-600 dark:text-gray-400">
                         <li className="mb-4">
-                            <a href="https://github.com/themesberg/flowbite" className="hover:underline ">Instagram</a>
+                            <a href="https://www.instagram.com/tiendasurtymas/" className="hover:underline ">Instagram</a>
                         </li>
                         <li>
-                            <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">TikTok</a>
+                            <a href="https://www.tiktok.com/@tiendassurtymas" className="hover:underline">TikTok</a>
+                        </li>
+                        <li>
+                            <p className="hover:underline">04124668486</p>
                         </li>
                     </ul>
                 </div>
@@ -43,13 +46,14 @@ function Footer() {
                         <li>
                             <a href="#" className="hover:underline">Terminos &amp; Condiciones</a>
                         </li>
+                        
                     </ul>
                 </div>
             </div>
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com" className="hover:underline">Surtymas™</a>. Todos los derechos reservados.
+            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://www.instagram.com/tiendasurtymas/" className="hover:underline">Surtymas™</a>. Todos los derechos reservados.
             </span>
             <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                 <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
