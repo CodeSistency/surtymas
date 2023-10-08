@@ -2,9 +2,13 @@
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 
 import React from 'react'
+
+// toast.configure();
 
 function Login() {
 
@@ -22,6 +26,17 @@ function Login() {
         console.error("Fill all fields!");
       return;
     }
+
+    if (username.length < 5) {
+      toast.error("Username must be at least 5 characters long");
+      return;
+    }
+
+    if (password.length < 5 || !/\d/.test(password)) {
+      toast.error("Password must be at least 5 characters long and contain a number");
+      return;
+    }
+
 
     // if (password.length < 6) {
     //   toast.error("Password must be at least 6 characters long");
@@ -114,6 +129,7 @@ function Login() {
           </div>
       </div>
   </div>
+  <ToastContainer />
 </section>
   )
 }

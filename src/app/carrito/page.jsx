@@ -9,6 +9,7 @@ import ModalBuy from '../components/ModalBuy'
 import Comprar from "../components/Comprar"
 import ButtonCta from "../components/Button";
 import ButtonCta2 from "../components/Button2";
+import ListItemsCart from "../components/ListItemsCart"
 
 async function getProducts(pageNumber){
 
@@ -64,7 +65,7 @@ async function page() {
     </div>
     <div className="cart-products mt-7">
 
-    {products?.cartProducts?.map(product => {
+    {/* {products?.cartProducts?.map(product => {
         return (
             <div  key={product._id} className='py-1'>
                 <ListItem  product={product}>
@@ -72,7 +73,8 @@ async function page() {
                 </ListItem>
             </div>
         )
-    })}
+    })} */}
+    <ListItemsCart />
     </div>
 
     <div className='total'>
@@ -84,9 +86,9 @@ async function page() {
                             {/* <button className="buy-total" >
                                 Comprar
                               </button> */}
-                              <Comprar products={products.cartProducts}>
+                              {/* <Comprar products={products.cartProducts}>
                                 <ButtonCta2 products={products.cartProducts}/>
-                              </Comprar>
+                              </Comprar> */}
                                 
                               
                               {/* <ReactWhatsapp 

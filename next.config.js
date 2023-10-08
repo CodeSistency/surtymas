@@ -18,6 +18,9 @@ const nextConfig = {
    
     //   return config
     // },
+    experimental: {
+      serverComponentsExternalPackages: ['@bcrypt'],
+    },
 
     webpack: (config) => {
       config.externals = [...config.externals, 'bcrypt'];
