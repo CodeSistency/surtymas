@@ -3,7 +3,7 @@ import { options } from "../api/auth/[...nextauth]/options"
 import { getServerSession } from "next-auth/next"
 // import UserCard from "../components/UserCard"
 import { redirect } from "next/navigation"
-import axios from "../../../api/axios"
+import axios from "../../../axio/axios"
 import ListItem from "../components/ListItem"
 import ModalBuy from '../components/ModalBuy'
 import Comprar from "../components/Comprar"

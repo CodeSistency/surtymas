@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import axios from "../../../api/axios";
+import axios from "../../../axio/axios";
 import Productos from "./Products";
 import { Button } from "@nextui-org/button";
 import { Pagination } from "@nextui-org/pagination";
