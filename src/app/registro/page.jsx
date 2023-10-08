@@ -3,7 +3,7 @@ import React from 'react'
 import Registro from '../components/Registro'
 import RegistroForm from '../components/RegistroForm'
 import RegisterButton from '../components/RegisterButton'
-import axios from '../../../api/axios'
+import axios from '../../../axio/axios'
 
 async function page() {
 

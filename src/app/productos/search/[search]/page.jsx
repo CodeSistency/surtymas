@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from '../../../../../api/axios';
+import axios from '../../../../../axio/axios';
 import CardItem3 from '../../../components/CardItem3';
 import ButtonCta from '../../../components/Button';
 import Categories2 from '../../../components/Categories2';

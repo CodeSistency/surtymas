@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from '../../../../api/axios';
+import axios from '../../../../axio/axios';
 import ButtonCta from '@/app/components/Button';
 import { options } from "../../api/auth/[...nextauth]/options"
 import { getServerSession } from "next-auth/next"

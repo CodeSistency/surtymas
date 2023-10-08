@@ -1,6 +1,6 @@
 import React from 'react'
 import CardItem3 from './CardItem3';
-import axios from '../../../api/axios';
+import axios from '../../../axio/axios';
 import {Pagination} from "@nextui-org/pagination";
 import ButtonCta from './Button';
 import { getServerSession } from "next-auth/next"
