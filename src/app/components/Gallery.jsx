@@ -1,6 +1,6 @@
 import React from 'react'
 import CardItem2 from './CardItem2';
-import axios from '../../../api/axios';
+import axios from '../../../axio/axios';
 import ButtonCta from './Button';
 import { getServerSession } from "next-auth/next"
 import { options } from "../api/auth/[...nextauth]/options"

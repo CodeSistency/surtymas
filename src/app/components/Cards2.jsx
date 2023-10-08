@@ -1,5 +1,5 @@
 
-import axios from "../../../api/axios"
+import axios from "../../../axio/axios"
 import CardItem4 from './CardItem4'
 import ButtonCta from "./Button";
 import Button3 from "./Button3";
