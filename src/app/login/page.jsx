@@ -23,17 +23,17 @@ function Login() {
 
     if (password === "" || username === "") {
     //   toast.error("Fill all fields!");
-        console.error("Fill all fields!");
+        console.error("Llena todos los campos!");
       return;
     }
 
     if (username.length < 5) {
-      toast.error("Username must be at least 5 characters long");
+      toast.error("El usuario debe ser al menos de 5 caracteres");
       return;
     }
 
     if (password.length < 5 || !/\d/.test(password)) {
-      toast.error("Password must be at least 5 characters long and contain a number");
+      toast.error("La contraseña debe ser al menos de 5 caracteres y un múmero");
       return;
     }
 
@@ -47,7 +47,7 @@ function Login() {
       const res = await signIn("credentials", {
         username,
         password,
-        redirect: false,
+        redirect: true,
       });
 
       if (res?.error == null) {
@@ -122,9 +122,9 @@ function Login() {
                       <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Olvidaste tu contraseña?</a>
                   </div> */}
                   <button type="submit" className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Sign in</button>
-                  {/* <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                  <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                       No tienes cuenta aún? <Link href='/registro' className="font-medium text-primary-600 hover:underline dark:text-primary-500">Registrate</Link>
-                  </p> */}
+                  </p>
               </form>
           </div>
       </div>

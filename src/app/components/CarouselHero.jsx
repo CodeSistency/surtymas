@@ -1,5 +1,6 @@
 'use client';
 
+import { Button } from '@nextui-org/button';
 import { Carousel } from 'flowbite-react';
 import Link from 'next/link';
 import ReactWhatsapp from 'react-whatsapp';
@@ -71,7 +72,12 @@ export default function CarouselHero() {
                 Productos
                 <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </Link> */}
-            
+            <ReactWhatsapp number="+58 4124668486"
+  message={`¡Hola! 👋, Estoy interesad@ en la caja gran mayor`}
+  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 "
+  >
+Consultar
+  </ReactWhatsapp>
         </div>
         <div class=" lg:mt-0 lg:col-span-5 lg:flex">
             <img src="/1.png" alt="mockup" />
@@ -95,7 +101,10 @@ export default function CarouselHero() {
                 Productos
                 <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </Link> */}
-            
+            <ReactWhatsapp number="+58 4124668486"
+  message={`¡Hola! 👋, Estoy interesad@ en la caja premium`}
+  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 "
+  >Consultar</ReactWhatsapp>
         </div>
         <div class=" lg:mt-0 lg:col-span-5 lg:flex">
             <img src="/2.png" alt="mockup" />
@@ -119,7 +128,10 @@ export default function CarouselHero() {
                 Productos
                 <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </Link> */}
-            
+            <ReactWhatsapp number="+58 4124668486"
+  message={`¡Hola! 👋, Estoy interesad@ en la caja surtymas`}
+  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 "
+  >Consultar</ReactWhatsapp>
         </div>
         <div class=" lg:mt-0 lg:col-span-5 lg:flex">
             <img src="/3.png" alt="mockup" />
@@ -143,7 +155,10 @@ export default function CarouselHero() {
                 Productos
                 <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </Link> */}
-            
+            <ReactWhatsapp number="+58 4124668486"
+  message={`¡Hola! 👋, Estoy interesad@ en la caja para emprendedores`}
+  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 "
+  >Consultar</ReactWhatsapp>
         </div>
         <div class=" lg:mt-0 lg:col-span-5 lg:flex">
             <img src="/4.png" alt="mockup" />
@@ -168,7 +183,10 @@ export default function CarouselHero() {
                 Productos
                 <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
             </Link> */}
-            
+            <ReactWhatsapp number="+58 4124668486"
+  message={`¡Hola! 👋, Estoy interesad@ en las cajas en oferta`}
+  class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 "
+  >Consultar</ReactWhatsapp>
         </div>
         <div class=" lg:mt-0 lg:col-span-5 lg:flex">
             <img src="/5.png" alt="mockup" />

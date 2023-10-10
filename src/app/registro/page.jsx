@@ -1,11 +1,11 @@
-
+"use client"
 import React from 'react'
 import Registro from '../components/Registro'
 import RegistroForm from '../components/RegistroForm'
 import RegisterButton from '../components/RegisterButton'
 import axios from '../../../axio/axios'
 
-async function page() {
+function page() {
 
     const handleSubmit = async (e, nombre, apellido, email, user, pwd) => {
         e.preventDefault();
@@ -17,14 +17,13 @@ async function page() {
         //     return;
         // }
         try {
-            const response = await fetch('https://backend-5m1g.onrender.com/register/',{
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                withCredentials: true,
-                method: 'POST',
-                body: JSON.stringify({nombre, apellido, email, user, pwd})
-            })
+            const response = await axios.post("/register",
+                JSON.stringify({ user, pwd }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
+            );
             //     JSON.stringify({nombre, apellido, email, user, pwd }),
             //     {
             //         headers: { 'Content-Type': 'application/json' },

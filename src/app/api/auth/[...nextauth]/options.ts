@@ -42,30 +42,34 @@ export const options: NextAuthOptions = {
                 // user = await User.create({ username, password });
                 // console.log(`new user: ${JSON.stringify(user)}, ${username} ${password}`)
 
-                if(!user){
-                    console.log('user not found')
+                // if(!user){
+                //     console.log('user not found')
 
-                    try {
-                        const hashedPwd = await bcrypt.hash(password, 10);
-                    password = hashedPwd;
-                    console.log(`new password: ${hashedPwd}`)
+                //     try {
+                //         const hashedPwd = await bcrypt.hash(password, 10);
+                //     password = hashedPwd;
+                //     console.log(`new password: ${hashedPwd}`)
 
-                    user = await User.create({ username, password: hashedPwd });
-                    console.log(`User created, but not saved: ${JSON.stringify(user)}`);
+                //     user = await User.create({ username, password: hashedPwd });
+                //     console.log(`User created, but not saved: ${JSON.stringify(user)}`);
                 
 
-                    //save user
-                    await user.save();
+                //     //save user
+                //     await user.save();
 
-                    console.log(`New user: ${JSON.stringify(user)}`);
-                    return user; // Return the user object
+                //     console.log(`New user: ${JSON.stringify(user)}`);
+                //     return user; // Return the user object
                     
-                    } catch (error) {
-                        console.log(error)
-                    }
+                //     } catch (error) {
+                //         console.log(error)
+                //     }
 
-                    // throw new Error("Invalid input")
+                //     // throw new Error("Invalid input")
                     
+                // }
+
+                if(!user){
+                    throw new Error("User not found")
                 }
 
                 console.log('datos user', user)

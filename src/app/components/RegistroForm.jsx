@@ -1,8 +1,11 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
+import axios from '../../../axio/axios';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import axios from '../../../api/axios';
-import axios from 'axios';
+// import axios from 'axios';
 
 
 
@@ -15,7 +18,7 @@ function RegistroForm({children}) {
 
     const [nombre, setNombre] = useState("");
     const [apellido, setApellido] = useState("");
-    const [username, setEmail] = useState("");
+    const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCpassword] = useState("");
 
@@ -52,22 +55,31 @@ function RegistroForm({children}) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // if button enabled with JS hack
-        // const v1 = USER_REGEX.test(user);
-        // const v2 = PWD_REGEX.test(pwd);
-        // if (!v1 || !v2) {
-        //     setErrMsg("Invalid Entry");
-        //     return;
-        // }
+
+        if (pwd === "" || user === "") {
+            //   toast.error("Fill all fields!");
+                console.error("Llena todos los campos!");
+              return;
+            }
+        
+            if (user.length < 5) {
+              toast.error("El usuario debe ser al menos de 5 caracteres");
+              return;
+            }
+        
+            if (pwd.length < 5 || !/\d/.test(pwd)) {
+              toast.error("La contraseña debe ser al menos de 5 caracteres y un múmero");
+              return;
+            }
+        
         try {
-            const response = await fetch('https://backend-5m1g.onrender.com/register',{
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                withCredentials: true,
-                method: 'POST',
-                body: JSON.stringify({nombre, apellido, email, user, pwd})
-            })
+            const response = await axios.post("/register",
+                JSON.stringify({nombre, apellido, user, email, pwd }),
+                {
+                    headers: { 'Content-Type': 'application/json' },
+                    withCredentials: true
+                }
+            );
 
             // TODO: remove console.logs before deployment
             console.log(JSON.stringify(response?.data));
@@ -98,12 +110,13 @@ function RegistroForm({children}) {
 
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900 lg:mt-[80px] sm:mt-[180px]">
+    <section className="bg-gray-50 dark:bg-gray-900 ">
     <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
             <img className="w-8 h-8 mr-2" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/logo.svg" alt="logo"/>
             Surtymas  
         </a>
+        <ToastContainer />
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
@@ -157,6 +170,7 @@ function RegistroForm({children}) {
                 </div>
         </div>
     </div>
+
   </section>
   )
 }
