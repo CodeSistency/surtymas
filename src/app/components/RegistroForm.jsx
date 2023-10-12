@@ -4,6 +4,8 @@ import Link from 'next/link';
 import axios from '../../../axio/axios';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
+
 // import axios from '../../../api/axios';
 // import axios from 'axios';
 
@@ -13,6 +15,8 @@ import "react-toastify/dist/ReactToastify.css";
 // const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 function RegistroForm({children}) {
+
+    const router = useRouter()
 
     
 
@@ -66,6 +70,11 @@ function RegistroForm({children}) {
               toast.error("El usuario debe ser al menos de 5 caracteres");
               return;
             }
+
+            if (pwd !== matchPwd) {
+                toast.error("Las contraseñas no son iguales");
+                return;
+              }
         
             if (pwd.length < 5 || !/\d/.test(pwd)) {
               toast.error("La contraseña debe ser al menos de 5 caracteres y un múmero");
@@ -92,16 +101,21 @@ function RegistroForm({children}) {
             setApellido('')
             setEmail('')
             setMatchPwd('');
+
+            router.push("/login");
         } catch (err) {
             if (!err?.response) {
                 setErrMsg('No Server Response');
                 console.log('No serve Response')
+                toast.error("El registro fallo, servidor no responde");
             } else if (err.response?.status === 409) {
                 setErrMsg('Username Taken');
                 console.log('Username Taken')
+                toast.error("El registro fallo, usuario ya existente");
             } else {
                 setErrMsg('Registration Failed')
                 console.log('Registration Failed')
+                toast.error("El registro fallo, intentelo de nuevo");
             }
             // errRef.current.focus();
         }
@@ -162,7 +176,7 @@ function RegistroForm({children}) {
                         <a href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Olvidaste tu contraseña?</a>
                     </div> */}
                     {/* {children} */}
-                    <button type="submit" onClick={handleSubmit} className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Registrate</button>
+                    <button type="submit"  className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Registrate</button>
                     <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                         Ya tienes cuenta? <Link href='/login' className="font-medium text-primary-600 hover:underline dark:text-primary-500">Inicia Sesion</Link>
                     </p>

@@ -122,9 +122,9 @@ console.log(product, producto?.titulo, producto?.precio, producto?.imagenes, pro
     
     {/* <Badge content="5" color="primary" className='!flex' size='lg'> */}
 
-    <div style={{top: '-10px', right: '-10px', zIndex: '10', borderRadius: '50%'}} className='bg-blue-500 w-[30px] h-[30px] flex justify-center items-center absolute'>
-      {/* <p style={{color: 'white'}}>{totalItems()}</p> */}
-    </div>
+    {/* <div style={{top: '-10px', right: '-10px', zIndex: '10', borderRadius: '50%'}} className='bg-blue-500 w-[30px] h-[30px] flex justify-center items-center absolute'>
+      <p style={{color: 'white'}}>{totalItems()}</p>
+    </div> */}
 
     <Card
     // style={{padding: '-10px'}}
@@ -141,7 +141,7 @@ console.log(product, producto?.titulo, producto?.precio, producto?.imagenes, pro
             className="object-cover h-full w-16"
             
             shadow="md"
-            // src={`${producto?.imagenes[0]}`}
+            src={`${producto?.imagenes[0]}`}
             
           />
 

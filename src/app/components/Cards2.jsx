@@ -9,7 +9,7 @@ import { options } from "../api/auth/[...nextauth]/options"
 import { Button } from "@nextui-org/button";
 import Link from "next/link";
 import ButtonCart from './ButtonCart'
-import ButtonCart2 from './ButtonCart2'
+import ButtonCartAdd from './ButtonCartAdd'
 
 
 // async function getProducts(){
@@ -1483,9 +1483,9 @@ const data = [
 
 ]
 
-export default function Cards() {
+export default async function Cards() {
 
-   
+    const session = await getServerSession(options)
     // console.log(products);
   return (
     <>
@@ -1504,7 +1504,7 @@ export default function Cards() {
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
                     } */}
                     {/* <ButtonCart product={[product]}/> */}
-                    <ButtonCart2 product={data[0]}/>
+                    <ButtonCartAdd user={session?.user?.name} product={data[0]}/>
 
         </CardItem4>
                <CardItem4
@@ -1521,7 +1521,7 @@ export default function Cards() {
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
                     } */}
                     {/* <ButtonCart product={[product]}/> */}
-                    <ButtonCart2 product={data[1]}/>
+                    <ButtonCartAdd user={session?.user?.name} product={data[1]}/>
         </CardItem4>
 
 <CardItem4
@@ -1538,7 +1538,7 @@ export default function Cards() {
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
                     } */}
                     {/* <ButtonCart product={[product]}/> */}
-                    <ButtonCart2 product={data[2]}/>
+                    <ButtonCartAdd user={session?.user?.name} product={data[2]}/>
 
         </CardItem4>
 
@@ -1550,13 +1550,13 @@ export default function Cards() {
             imagen={`https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/16960236998761695929879236.jpg?alt=media&token=707eb0f2-c1c3-42cc-b2b8-ca4818c9e929`}
         
         >
-          <ButtonCta  product={[data[3]]}/>
+          <ButtonCta user={session?.user?.name} product={[data[3]]}/>
 {/*                     
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
                     } */}
                     {/* <ButtonCart product={[product]}/> */}
-                    <ButtonCart2 product={data[3]}/>
+                    <ButtonCartAdd product={data[3]}/>
 
         </CardItem4>
 
@@ -1574,7 +1574,8 @@ export default function Cards() {
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
                     } */}
                     {/* <ButtonCart product={[product]}/> */}
-                    <ButtonCart2 product={data[4]}/>
+                    {/* <ButtonCartAdd product={data[4]}/> */}
+                    <ButtonCartAdd  user={session?.user?.name} product={data[4]}/>
 
         </CardItem4>
 {/*  */}

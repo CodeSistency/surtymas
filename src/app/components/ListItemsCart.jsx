@@ -2,6 +2,7 @@ import React from 'react'
 import ListItemCart from './ListItemCart'
 import DeleteCart from './DeleteCart'
 import ModalBuy from './ModalBuy'
+import ModalBuyCart from './ModalBuyCart'
 import { options } from "../api/auth/[...nextauth]/options"
 import { getServerSession } from "next-auth/next"
 import axios from '../../../axio/axios'
@@ -56,8 +57,10 @@ async function ListItemsCart() {
             return (
                 <div  key={product._id} className='py-1'>
                 <ListItemCart product={product.product}>
-                  <ModalBuy producto={[product]} />
-                  <DeleteCart />
+                  {/* <ModalBuy producto={[product]} /> */}
+                  <ModalBuyCart id={product.product} />
+
+                  <DeleteCart user={session?.user?.name} id={product.product}/>
                 </ListItemCart>
                 </div>
             )
