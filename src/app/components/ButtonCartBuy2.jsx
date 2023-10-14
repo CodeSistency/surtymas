@@ -145,7 +145,7 @@ console.log(carrito)
                   </div> */}
 
                   <div className="flex items-center gap-2">
-                    <Avatar name="3"
+                    <Avatar name="2"
                             classNames={{
                               // base: "bg-gradient-to-br from-[#FFB457] to-[#FF705B]",
                               icon: "text-black/80",
@@ -320,7 +320,7 @@ console.log(carrito)
                   </div> */}
 
                   <div className="flex items-center gap-2">
-                    <Avatar name="3"
+                    <Avatar name="2"
                             classNames={{
                               // base: "bg-gradient-to-br from-[#FFB457] to-[#FF705B]",
                               icon: "text-black/80",
