@@ -10,6 +10,10 @@ import Comprar from "../components/Comprar"
 import ButtonCta from "../components/Button";
 import ButtonCta2 from "../components/Button2";
 import ListItemsCart from "../components/ListItemsCart"
+import ButtonCartBuy from '../components/ButtonCartBuy';
+import ButtonCartBuy2 from '../components/ButtonCartBuy2';
+
+
 
 async function getProducts(pageNumber){
 
@@ -49,7 +53,10 @@ async function page() {
     const products = await getProducts()
     console.log(products)
 
-   
+   function total() {
+    let totalPrice = products?.cartProducts?.reduce((totalSum, sum) => totalSum = totalSum + sum.precio, 0).toFixed(2)
+    return totalPrice
+   }
 
     if (!session) {
         redirect('/login')
@@ -80,9 +87,10 @@ async function page() {
     <div className='total'>
                           <div className='subtotal'>
                             <div className='result-total'>
-                              <h2>Subtotal:</h2>
-                              <h1>0 $</h1>
+                              <h2>Subtotal: {total()}</h2>
+                              {/* <h1>0 $</h1> */}
                             </div>
+                            <ButtonCartBuy2 product={products?.cartProducts}/>
                             {/* <button className="buy-total" >
                                 Comprar
                               </button> */}

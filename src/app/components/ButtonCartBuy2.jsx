@@ -133,7 +133,7 @@ console.log(carrito)
                     <p style={{color:'black'}}>Direccion</p>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <Avatar name="2"
                             classNames={{
                               // base: `${step2 && 'blue'}`,
@@ -142,7 +142,7 @@ console.log(carrito)
                     
                     />
                     <p style={{color:'black'}}>Metodo</p>
-                  </div>
+                  </div> */}
 
                   <div className="flex items-center gap-2">
                     <Avatar name="3"
@@ -202,6 +202,22 @@ console.log(carrito)
               <SelectItem style={{color:'black'}} key={'Delivery'}>Delivery</SelectItem>
             </Select>
 
+            <Select
+              items={['pago movil', 'transferencia', 'divisa']}
+              {...pagoAttribs}
+              label="Metodo de pago"
+              placeholder="Seleccione un metodo"
+              className="max-w-xs"
+              variant='bordered'
+              color="primary"
+              style={{color:'black'}}
+            >
+              {/* {(animal) => <SelectItem key={animal.value}>{animal.label}</SelectItem>} */}
+              <SelectItem style={{color:'black'}} key={'pago movil'}>Pago Movil</SelectItem>
+              <SelectItem style={{color:'black'}} key={'transferencia'}>Transferencia</SelectItem>
+              <SelectItem style={{color:'black'}} key={'divisa'}>Divisa</SelectItem>
+            </Select>
+
             {options != 'Recoger en Tienda' &&
               <div className="flex flex-col gap-2">
 
@@ -242,7 +258,9 @@ console.log(carrito)
                 // defaultValue="junior@nextui.org"
                 // className="w-full"
               />
+              
               </div>
+              
               }
 
 
@@ -276,106 +294,7 @@ console.log(carrito)
     
               </ModalBody>}
 
-              {step2 && <ModalBody >
-
-                <div className="flex items-center justify-between flex-wrap gap-2">
-                  <div className="flex items-center gap-2">
-                    <Avatar name="1"
-                            classNames={{
-                              // base: `${step1 && 'blue'}`,
-                              icon: "text-black/80",
-                            }}
-                    />
-                    <p style={{color:'black'}}>Direccion</p>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <Avatar name="2"
-                            classNames={{
-                              // base: `${step2 && 'blue'}`,
-                              icon: "text-black/80",
-                            }}
-                    
-                    />
-                    <p style={{color:'black'}}>Metodo</p>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    <Avatar name="3"
-                            classNames={{
-                              // base: "bg-gradient-to-br from-[#FFB457] to-[#FF705B]",
-                              icon: "text-black/80",
-                            }}
-                     />
-                    <p style={{color:'black'}}>Confirmar</p>
-                  </div>
-
-                </div>
-              
-                
-              
-
-            
-            <Select
-              items={['pago movil', 'transferencia', 'divisa']}
-              {...pagoAttribs}
-              label="Metodo de pago"
-              placeholder="Seleccione un metodo"
-              className="max-w-xs"
-              variant='bordered'
-              color="primary"
-              style={{color:'black'}}
-            >
-              {/* {(animal) => <SelectItem key={animal.value}>{animal.label}</SelectItem>} */}
-              <SelectItem style={{color:'black'}} key={'pago movil'}>Pago Movil</SelectItem>
-              <SelectItem style={{color:'black'}} key={'transferencia'}>Transferencia</SelectItem>
-              <SelectItem style={{color:'black'}} key={'divisa'}>Divisa</SelectItem>
-            </Select>
-
-            <Divider />
-            
-            <div >
-
-            {/* <ListItem product={product} >
-                  <ModalBuy producto={product} />
-                  
-                </ListItem> */}
-
-                <ListItems products={product}/>
-
-            </div>
-
-{/* Metodo de Pago */}
-
-    {/* <Dropdown>
-      <DropdownTrigger>
-        <Button 
-          variant="bordered" 
-          className="capitalize"
-        >
-          {selectedValue}
-        </Button>
-      </DropdownTrigger>
-      <DropdownMenu 
-        aria-label="Single selection example"
-        variant="flat"
-        disallowEmptySelection
-        selectionMode="single"
-        selectedKeys={selectedKeys}
-        onSelectionChange={setSelectedKeys}
-      >
-        <DropdownItem key="pago movil">Pago Movil</DropdownItem>
-        <DropdownItem key="transferencia">Transferencia</DropdownItem>
-        <DropdownItem key="divisa">Divisa</DropdownItem>
-        
-      </DropdownMenu>
-    </Dropdown> */}
-
-   
-    
-    
-              </ModalBody>}
-
+             
              {step3 && <ModalBody >
               
               <div className="flex items-center justify-between flex-wrap gap-2">
@@ -389,7 +308,7 @@ console.log(carrito)
                     <p style={{color:'black'}}>Direccion</p>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  {/* <div className="flex items-center gap-2">
                     <Avatar name="2"
                             classNames={{
                               // base: `${step2 && 'blue'}`,
@@ -398,7 +317,7 @@ console.log(carrito)
                     
                     />
                     <p style={{color:'black'}}>Metodo</p>
-                  </div>
+                  </div> */}
 
                   <div className="flex items-center gap-2">
                     <Avatar name="3"
@@ -417,7 +336,7 @@ console.log(carrito)
 
               <div >
 
-              <ListItems products={product}/>
+              {/* <ListItems products={product}/> */}
 
 {/* <ListItem product={product} /> */}
                 
@@ -560,7 +479,7 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
                 {step1 &&
 
                   <div>
-                    <Button color='primary' onPress={stepTwo}>
+                    <Button color='primary' onPress={stepThree}>
                       Siguiente
                     </Button>
                   </div>
@@ -581,7 +500,7 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
                 {step3 &&
 
                 <div className="flex items-center gap-2">
-                  <Button color="primary" variant="light" onPress={stepTwo}>
+                  <Button color="primary" variant="light" onPress={stepOne}>
                     Atras
                   </Button>
                   

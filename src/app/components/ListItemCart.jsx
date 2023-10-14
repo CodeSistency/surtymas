@@ -26,6 +26,12 @@ import axios from '../../../axio/axios'
         });
         console.log(response.data);
         setProducto(response.data)
+        const exists = carrito.some((item) => item._id === response.data._id);
+        console.log(exists)
+        // if (!exists) {
+        //   setCarrito((prev) => [...prev, response.data]);
+        // }
+        console.log("Carrito es updating", carrito)
         return response.data
         
       
@@ -43,7 +49,7 @@ import axios from '../../../axio/axios'
 
 useEffect(() => {
   getProduct()
-}, [product])
+}, [])
 
 const renderedColors = [];
 
@@ -52,7 +58,7 @@ console.log(product, producto?.titulo, producto?.precio, producto?.imagenes, pro
 
 // const session = await getServerSession(options)
 
-  const {carrito, color, results, setResults, setColor, isOpen, handleToggle} = useGlobalContext();
+  const {carrito, setCarrito, color, results, setResults, setColor, isOpen, handleToggle} = useGlobalContext();
     // console.log(useGlobalContext(), color)
 
   // function totalItems(){
@@ -147,11 +153,11 @@ console.log(product, producto?.titulo, producto?.precio, producto?.imagenes, pro
 
             <div className="flex flex-col gap-0 w-[50px] flex-1">
               <div className='flex items-center gap-2'>
-              <h4 className="font-semibold text-foreground/90 w-full">{`${producto?.titulo}`}</h4>
+              <h4 className="font-semibold text-foreground/90 w-full">{`${producto ? producto?.titulo : "cargando..."}`}</h4>
               {/* <p>({totalItems()})</p> */}
               </div>
               {/* <h3 className="font-semibold text-foreground/90 w-full">{`${product[0]?.titulo || product.nombre || product.titulo}`}</h3> */}
-              <p className="text-small text-foreground/80 ">${`${producto?.precio}`}</p>
+              <p className="text-small text-foreground/80 ">${`${producto ? producto?.precio : "cargando..."}`}</p>
               {/* <h1 className="text-large font-medium mt-2">{`${product[0]?.codigo || product.codigo}`}</h1> */}
               <section className="lista-colores">
 {/* {carrito.map((carro) => {
@@ -198,31 +204,7 @@ console.log(product, producto?.titulo, producto?.precio, producto?.imagenes, pro
           </div> */}
         </div>
 
-      {/* <div className="grid grid-cols-12 md:grid-cols-12 gap-6 md:gap-4 items-center justify-center h-[100px]">
-        <div className="relative col-span-6 md:col-span-4 h-full" >
-          <Image
-            alt="Album cover"
-            className="object-cover h-full"
-            // height='100%'
-            shadow="md"
-            src={product[0].imagenes[0]}
-            // width="100%"
-          />
-        </div>
 
-        <div className="flex flex-col col-span-6 md:col-span-8">
-          <div className="flex justify-between items-start">
-            <div className="flex flex-col gap-0">
-              <h3 className="font-semibold text-foreground/90">{product[0].titulo}</h3>
-              <p className="text-small text-foreground/80">{product[0].codigo}</p>
-              <h1 className="text-large font-medium mt-2">{product[0].precio}</h1>
-            </div>
-            
-          </div>
-
-          
-        </div>
-      </div> */}
     
   </Card>
   {/* </Badge> */}

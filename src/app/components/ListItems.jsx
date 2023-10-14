@@ -5,7 +5,7 @@ import ModalBuy from './ModalBuy'
 
 function ListItems({products}) {
   return (
-    <div>
+    <div  >
         {products.map(product => {
             return (
                 <div  key={product._id} className='py-1'>

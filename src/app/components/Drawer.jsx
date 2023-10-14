@@ -64,7 +64,7 @@ function Drawer() {
                               <h2>Subtotal:</h2>
                               <h1>{total} $</h1>
                             </div>
-                            <ButtonCartBuy product={carrito}r/>
+                            <ButtonCartBuy product={carrito}/>
 {/* 
                             <ReactWhatsapp
   number="+58 4124668486"

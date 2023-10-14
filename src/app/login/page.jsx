@@ -47,13 +47,13 @@ function Login() {
       const res = await signIn("credentials", {
         username,
         password,
-        redirect: true,
+        redirect: false,
       });
 
       if (res?.error == null) {
         router.push("/");
       } else {
-        // toast.error("Error occured while logging");
+        toast.error("Ha ocurrido un error, contraseña o usuario incorrecto, intente de nuevo");
         console.log("Error occured while logging")
       
       }

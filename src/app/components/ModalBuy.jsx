@@ -188,65 +188,65 @@ let isMounted = true;
     // console.log(updatedResults)
   };
 
-  function please(){
-    carrito
-    ?.map((product) => {
-      let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
-      if (product.tallas) {
-        const tallasMessage = Object.entries(product.tallas)
-          .map(([size, colors]) => {
-            const deseos = colors.filter((color) => color.deseo > 0);
-            console.log(deseos)
-            if (deseos.length > 0) {
-              console.log(deseos
-                .map((color) => console.log(color)))
-              const deseosMessage = deseos
-                .map((color) => `${size}: ${color.deseo} ${color.color}`)
-                .join(", ");
-                console.log(deseosMessage)
-              return deseosMessage;
-            }
-            return null;
-          })
-          .filter((message) => message !== null)
-          .join("\n");
-        if (tallasMessage !== "") {
-          message += `\nTallas: \n${tallasMessage} piezas\n`;
-        }
-      }
-      console.log(message)
-      return message;
-    })
-    .join("\n")
-  }
+  // function please(){
+  //   carrito
+  //   ?.map((product) => {
+  //     let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
+  //     if (product.tallas) {
+  //       const tallasMessage = Object.entries(product.tallas)
+  //         .map(([size, colors]) => {
+  //           const deseos = colors.filter((color) => color.deseo > 0);
+  //           console.log(deseos)
+  //           if (deseos.length > 0) {
+  //             console.log(deseos
+  //               .map((color) => console.log(color)))
+  //             const deseosMessage = deseos
+  //               .map((color) => `${size}: ${color.deseo} ${color.color}`)
+  //               .join(", ");
+  //               console.log(deseosMessage)
+  //             return deseosMessage;
+  //           }
+  //           return null;
+  //         })
+  //         .filter((message) => message !== null)
+  //         .join("\n");
+  //       if (tallasMessage !== "") {
+  //         message += `\nTallas: \n${tallasMessage} piezas\n`;
+  //       }
+  //     }
+  //     console.log(message)
+  //     return message;
+  //   })
+  //   .join("\n")
+  // }
 
-  console.log(please())
+  // console.log(please())
 
-  console.log(carrito
-    ?.map((product) => {
-      let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
-      if (product.tallas) {
-        const tallasMessage = Object.entries(product.tallas)
-          .map(([size, colors]) => {
-            const deseos = colors.filter((color) => color.deseo > 0);
-            if (deseos.length > 0) {
-              const deseosMessage = deseos
-                .map((color) => `${size}: ${color.deseo} ${color.color}`)
-                .join(", ");
-              return deseosMessage;
-            }
-            return null;
-          })
-          .filter((message) => message !== null)
-          .join("\n");
-        if (tallasMessage !== "") {
-          message += `\nTallas: \n${tallasMessage} piezas\n`;
-        }
-      }
+  // console.log(carrito
+  //   ?.map((product) => {
+  //     let message = `"${product.titulo}". Precio: $${product.precio}, Precio al mayor: $${product.precio_mayor}, Codigo: ${product.codigo}`;
+  //     if (product.tallas) {
+  //       const tallasMessage = Object.entries(product.tallas)
+  //         .map(([size, colors]) => {
+  //           const deseos = colors.filter((color) => color.deseo > 0);
+  //           if (deseos.length > 0) {
+  //             const deseosMessage = deseos
+  //               .map((color) => `${size}: ${color.deseo} ${color.color}`)
+  //               .join(", ");
+  //             return deseosMessage;
+  //           }
+  //           return null;
+  //         })
+  //         .filter((message) => message !== null)
+  //         .join("\n");
+  //       if (tallasMessage !== "") {
+  //         message += `\nTallas: \n${tallasMessage} piezas\n`;
+  //       }
+  //     }
       
-      return message;
-    })
-    .join("\n"))
+  //     return message;
+  //   })
+  //   .join("\n"))
 
     
 

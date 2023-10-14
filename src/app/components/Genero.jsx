@@ -6,6 +6,8 @@ import ButtonCta from './Button';
 import { getServerSession } from "next-auth/next"
 import { options } from "../api/auth/[...nextauth]/options"
 import ButtonCart2 from './ButtonCart2';
+import ButtonCartAdd from './ButtonCartAdd';
+
 
 
 async function Genero({params}) {
@@ -17,7 +19,7 @@ async function Genero({params}) {
         const controller = new AbortController();
     
         try {
-            const response = await axios.get(`/productos/gender/${params.genero}`, {
+            const response = await axios.get(`/productos/gender/${params.genero}/some`, {
                 signal: controller.signal
             });
             // console.log(response.data);
@@ -44,7 +46,7 @@ async function Genero({params}) {
 
   return (
     <>
-    <div  className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
+{products ?    <div  className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
       {products?.map((product) =>{
       
             return (
@@ -52,12 +54,17 @@ async function Genero({params}) {
                 
                 <CardItem3 key={product._id} product={product}>
                     <ButtonCta user={session?.user} product={[product]}/>
-                    <ButtonCart2 product={product}/>
+                    {/* <ButtonCart2 product={product}/> */}
+                    <ButtonCartAdd  user={session?.user?.name} product={product}/>
                 </CardItem3>
             )
         })}
     
-</div>
+</div> :
+
+<div className='h-[70vh] flex items-center justify-center'>
+    <h2>Cargando...</h2>
+    </div>}
 {/* <div className='flex justify-center w-full'>
     <Pagination isCompact showControls total={10} initialPage={1} />
 </div> */}

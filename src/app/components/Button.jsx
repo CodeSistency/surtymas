@@ -73,11 +73,11 @@ function ButtonCta({product, products, user}) {
 
   const [pago, resetPago, pagoAttribs] = useInput('pago', '')
 
-  useEffect(() => {
-    console.log(options)
-  }, [options])
+  // useEffect(() => {
+  //   console.log(options)
+  // }, [options])
 
-  useEffect
+
   
 
   return (

@@ -304,14 +304,599 @@ const data = [
     "__v": 0
 },
 
-  {
+
+
+
+
+
+
+
+
+
+
+
+//   {
+//     "tallas": {
+//         "U": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930e7"
+//             }
+//         ],
+//         "XS": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930e8"
+//             }
+//         ],
+//         "S": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 1,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930e9"
+//             }
+//         ],
+//         "M": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930ea"
+//             }
+//         ],
+//         "L": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930eb"
+//             }
+//         ],
+//         "XL": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930ec"
+//             }
+//         ],
+//         "0XL": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930ed"
+//             }
+//         ],
+//         "1XL": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930ee"
+//             }
+//         ],
+//         "2XL": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930ef"
+//             }
+//         ],
+//         "3XL": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930f0"
+//             }
+//         ],
+//         "4XL": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930f1"
+//             }
+//         ],
+//         "5XL": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930f2"
+//             }
+//         ],
+//         "FIT": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930f3"
+//             }
+//         ]
+//     },
+//     "tallas_zapatos": {
+//         "25": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930f4"
+//             }
+//         ],
+//         "26": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930f5"
+//             }
+//         ],
+//         "27": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930f6"
+//             }
+//         ],
+//         "28": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930f7"
+//             }
+//         ],
+//         "29": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930f8"
+//             }
+//         ],
+//         "30": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930f9"
+//             }
+//         ],
+//         "31": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930fa"
+//             }
+//         ],
+//         "32": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930fb"
+//             }
+//         ],
+//         "33": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930fc"
+//             }
+//         ],
+//         "34": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930fd"
+//             }
+//         ],
+//         "35": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930fe"
+//             }
+//         ],
+//         "36": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c4393930ff"
+//             }
+//         ],
+//         "37": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c439393100"
+//             }
+//         ],
+//         "38": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c439393101"
+//             }
+//         ],
+//         "39": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c439393102"
+//             }
+//         ],
+//         "40": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c439393103"
+//             }
+//         ],
+//         "41": [],
+//         "42": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c439393104"
+//             }
+//         ],
+//         "43": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c439393105"
+//             }
+//         ],
+//         "44": [
+//             {
+//                 "color": "#fff",
+//                 "quantity": 0,
+//                 "sold": 0,
+//                 "_id": "651758e8da0802c439393106"
+//             },
+//             {
+//               "tallas": {
+//                   "U": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a90"
+//                       }
+//                   ],
+//                   "XS": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a91"
+//                       }
+//                   ],
+//                   "S": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a92"
+//                       }
+//                   ],
+//                   "M": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a93"
+//                       }
+//                   ],
+//                   "L": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a94"
+//                       }
+//                   ],
+//                   "XL": [
+//                       {
+//                           "color": "#000000",
+//                           "quantity": 2,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a95"
+//                       }
+//                   ],
+//                   "0XL": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a96"
+//                       }
+//                   ],
+//                   "1XL": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a97"
+//                       }
+//                   ],
+//                   "2XL": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a98"
+//                       }
+//                   ],
+//                   "3XL": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a99"
+//                       }
+//                   ],
+//                   "4XL": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a9a"
+//                       }
+//                   ],
+//                   "5XL": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a9b"
+//                       }
+//                   ],
+//                   "FIT": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a9c"
+//                       }
+//                   ]
+//               },
+//               "tallas_zapatos": {
+//                   "25": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a9d"
+//                       }
+//                   ],
+//                   "26": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a9e"
+//                       }
+//                   ],
+//                   "27": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8a9f"
+//                       }
+//                   ],
+//                   "28": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aa0"
+//                       }
+//                   ],
+//                   "29": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aa1"
+//                       }
+//                   ],
+//                   "30": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aa2"
+//                       }
+//                   ],
+//                   "31": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aa3"
+//                       }
+//                   ],
+//                   "32": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aa4"
+//                       }
+//                   ],
+//                   "33": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aa5"
+//                       }
+//                   ],
+//                   "34": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aa6"
+//                       }
+//                   ],
+//                   "35": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aa7"
+//                       }
+//                   ],
+//                   "36": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aa8"
+//                       }
+//                   ],
+//                   "37": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aa9"
+//                       }
+//                   ],
+//                   "38": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aaa"
+//                       }
+//                   ],
+//                   "39": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aab"
+//                       }
+//                   ],
+//                   "40": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aac"
+//                       }
+//                   ],
+//                   "41": [],
+//                   "42": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aad"
+//                       }
+//                   ],
+//                   "43": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aae"
+//                       }
+//                   ],
+//                   "44": [
+//                       {
+//                           "color": "#fff",
+//                           "quantity": 0,
+//                           "sold": 0,
+//                           "_id": "65184bd2e9c057c84fcb8aaf"
+//                       }
+//                   ]
+//               },
+//               "_id": "651758e8da0802c4393930e6",
+//     "titulo": "Falda corta",
+//     "descripcion": "hermosa falda corta con estampado de blanco con negro",
+//     "precio": 10,
+//     "precio_mayor": 0,
+//     "tipo": "falda",
+//     "codigo": "0070",
+//     "comparar": 0,
+//     "descuento": false,
+//     "descuento_cantidad": 0,
+//     "sexo": "mujer",
+//     "imagen": "{}",
+//     "imagenes": [
+//         "https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696028824629Screenshot_20230627-220927_2.jpg?alt=media&token=61dca40d-67d2-474f-9339-81ccade35784",
+//         "https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696028826393Screenshot_20230627-220927_2.jpg?alt=media&token=01f6b289-bcb2-48fc-adca-110d5f5a0557",
+//         "https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696028826401Screenshot_20230627-220925_2.jpg?alt=media&token=24098fe1-0d14-4ec8-a71b-9cc863f94556"
+//     ],
+//     "comentarios": [],
+//     "createdAt": "2023-09-29T23:08:24.869Z",
+//     "updatedAt": "2023-09-29T23:08:24.869Z",
+//     "__v": 0
+//           },
+
+//         ]
+//     },
+
+//     "_id": "651758e8da0802c4393930e6",
+//     "titulo": "Falda corta",
+//     "descripcion": "hermosa falda corta con estampado de blanco con negro",
+//     "precio": 10,
+//     "precio_mayor": 0,
+//     "tipo": "falda",
+//     "codigo": "0070",
+//     "comparar": 0,
+//     "descuento": false,
+//     "descuento_cantidad": 0,
+//     "sexo": "mujer",
+//     "imagen": "{}",
+//     "imagenes": [
+//         "https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696028824629Screenshot_20230627-220927_2.jpg?alt=media&token=61dca40d-67d2-474f-9339-81ccade35784",
+//         "https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696028826393Screenshot_20230627-220927_2.jpg?alt=media&token=01f6b289-bcb2-48fc-adca-110d5f5a0557",
+//         "https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696028826401Screenshot_20230627-220925_2.jpg?alt=media&token=24098fe1-0d14-4ec8-a71b-9cc863f94556"
+//     ],
+//     "comentarios": [],
+//     "createdAt": "2023-09-29T23:08:24.869Z",
+//     "updatedAt": "2023-09-29T23:08:24.869Z",
+//     "__v": 0
+// },
+
+
+
+
+{
     "tallas": {
         "U": [
             {
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930e7"
+                "_id": "65174516da0802c43938abe2"
             }
         ],
         "XS": [
@@ -319,15 +904,15 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930e8"
+                "_id": "65174516da0802c43938abe3"
             }
         ],
         "S": [
             {
                 "color": "#fff",
-                "quantity": 1,
+                "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930e9"
+                "_id": "65174516da0802c43938abe4"
             }
         ],
         "M": [
@@ -335,7 +920,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930ea"
+                "_id": "65174516da0802c43938abe5"
             }
         ],
         "L": [
@@ -343,7 +928,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930eb"
+                "_id": "65174516da0802c43938abe6"
             }
         ],
         "XL": [
@@ -351,7 +936,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930ec"
+                "_id": "65174516da0802c43938abe7"
             }
         ],
         "0XL": [
@@ -359,7 +944,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930ed"
+                "_id": "65174516da0802c43938abe8"
             }
         ],
         "1XL": [
@@ -367,15 +952,15 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930ee"
+                "_id": "65174516da0802c43938abe9"
             }
         ],
         "2XL": [
             {
-                "color": "#fff",
-                "quantity": 0,
+                "color": "#000000",
+                "quantity": 1,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930ef"
+                "_id": "65174516da0802c43938abea"
             }
         ],
         "3XL": [
@@ -383,15 +968,15 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930f0"
+                "_id": "65174516da0802c43938abeb"
             }
         ],
         "4XL": [
             {
-                "color": "#fff",
-                "quantity": 0,
+                "color": "#000000",
+                "quantity": 1,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930f1"
+                "_id": "65174516da0802c43938abec"
             }
         ],
         "5XL": [
@@ -399,7 +984,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930f2"
+                "_id": "65174516da0802c43938abed"
             }
         ],
         "FIT": [
@@ -407,7 +992,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930f3"
+                "_id": "65174516da0802c43938abee"
             }
         ]
     },
@@ -417,7 +1002,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930f4"
+                "_id": "65174516da0802c43938abef"
             }
         ],
         "26": [
@@ -425,7 +1010,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930f5"
+                "_id": "65174516da0802c43938abf0"
             }
         ],
         "27": [
@@ -433,7 +1018,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930f6"
+                "_id": "65174516da0802c43938abf1"
             }
         ],
         "28": [
@@ -441,7 +1026,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930f7"
+                "_id": "65174516da0802c43938abf2"
             }
         ],
         "29": [
@@ -449,7 +1034,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930f8"
+                "_id": "65174516da0802c43938abf3"
             }
         ],
         "30": [
@@ -457,7 +1042,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930f9"
+                "_id": "65174516da0802c43938abf4"
             }
         ],
         "31": [
@@ -465,7 +1050,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930fa"
+                "_id": "65174516da0802c43938abf5"
             }
         ],
         "32": [
@@ -473,7 +1058,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930fb"
+                "_id": "65174516da0802c43938abf6"
             }
         ],
         "33": [
@@ -481,7 +1066,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930fc"
+                "_id": "65174516da0802c43938abf7"
             }
         ],
         "34": [
@@ -489,7 +1074,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930fd"
+                "_id": "65174516da0802c43938abf8"
             }
         ],
         "35": [
@@ -497,7 +1082,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930fe"
+                "_id": "65174516da0802c43938abf9"
             }
         ],
         "36": [
@@ -505,7 +1090,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c4393930ff"
+                "_id": "65174516da0802c43938abfa"
             }
         ],
         "37": [
@@ -513,7 +1098,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c439393100"
+                "_id": "65174516da0802c43938abfb"
             }
         ],
         "38": [
@@ -521,7 +1106,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c439393101"
+                "_id": "65174516da0802c43938abfc"
             }
         ],
         "39": [
@@ -529,7 +1114,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c439393102"
+                "_id": "65174516da0802c43938abfd"
             }
         ],
         "40": [
@@ -537,7 +1122,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c439393103"
+                "_id": "65174516da0802c43938abfe"
             }
         ],
         "41": [],
@@ -546,7 +1131,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c439393104"
+                "_id": "65174516da0802c43938abff"
             }
         ],
         "43": [
@@ -554,7 +1139,7 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c439393105"
+                "_id": "65174516da0802c43938ac00"
             }
         ],
         "44": [
@@ -562,293 +1147,8 @@ const data = [
                 "color": "#fff",
                 "quantity": 0,
                 "sold": 0,
-                "_id": "651758e8da0802c439393106"
-            },
-            {
-              "tallas": {
-                  "U": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a90"
-                      }
-                  ],
-                  "XS": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a91"
-                      }
-                  ],
-                  "S": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a92"
-                      }
-                  ],
-                  "M": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a93"
-                      }
-                  ],
-                  "L": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a94"
-                      }
-                  ],
-                  "XL": [
-                      {
-                          "color": "#000000",
-                          "quantity": 2,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a95"
-                      }
-                  ],
-                  "0XL": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a96"
-                      }
-                  ],
-                  "1XL": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a97"
-                      }
-                  ],
-                  "2XL": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a98"
-                      }
-                  ],
-                  "3XL": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a99"
-                      }
-                  ],
-                  "4XL": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a9a"
-                      }
-                  ],
-                  "5XL": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a9b"
-                      }
-                  ],
-                  "FIT": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a9c"
-                      }
-                  ]
-              },
-              "tallas_zapatos": {
-                  "25": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a9d"
-                      }
-                  ],
-                  "26": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a9e"
-                      }
-                  ],
-                  "27": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8a9f"
-                      }
-                  ],
-                  "28": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aa0"
-                      }
-                  ],
-                  "29": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aa1"
-                      }
-                  ],
-                  "30": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aa2"
-                      }
-                  ],
-                  "31": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aa3"
-                      }
-                  ],
-                  "32": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aa4"
-                      }
-                  ],
-                  "33": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aa5"
-                      }
-                  ],
-                  "34": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aa6"
-                      }
-                  ],
-                  "35": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aa7"
-                      }
-                  ],
-                  "36": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aa8"
-                      }
-                  ],
-                  "37": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aa9"
-                      }
-                  ],
-                  "38": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aaa"
-                      }
-                  ],
-                  "39": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aab"
-                      }
-                  ],
-                  "40": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aac"
-                      }
-                  ],
-                  "41": [],
-                  "42": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aad"
-                      }
-                  ],
-                  "43": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aae"
-                      }
-                  ],
-                  "44": [
-                      {
-                          "color": "#fff",
-                          "quantity": 0,
-                          "sold": 0,
-                          "_id": "65184bd2e9c057c84fcb8aaf"
-                      }
-                  ]
-              },
-              "_id": "65184bd2e9c057c84fcb8a8f",
-              "titulo": "Blusa mangas asimétricas ",
-              "descripcion": "Hermosa blusa de algodón ",
-              "precio": 10,
-              "precio_mayor": 0,
-              "tipo": "blusa",
-              "codigo": "0083",
-              "comparar": 0,
-              "descuento": false,
-              "descuento_cantidad": 0,
-              "sexo": "mujer",
-              "imagen": "{}",
-              "imagenes": [
-                  "https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/16960909666161695930374219.jpg?alt=media&token=2b467ab5-d6ad-4fd6-8a4a-e1a4b97cd994",
-                  "https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/16960909700321695930374219.jpg?alt=media&token=a3882dee-3d00-45fb-b15c-b2d7a987b400",
-                  "https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/16960909700521695930401165.jpg?alt=media&token=873cdc9d-2c6c-47ec-a566-0586c87cb11e"
-              ],
-              "comentarios": [],
-              "createdAt": "2023-09-30T16:24:50.271Z",
-              "updatedAt": "2023-09-30T16:24:50.271Z",
-              "__v": 0
-          },
-
+                "_id": "65174516da0802c43938ac01"
+            }
         ]
     },
     "_id": "651758e8da0802c4393930e6",
@@ -872,7 +1172,13 @@ const data = [
     "createdAt": "2023-09-29T23:08:24.869Z",
     "updatedAt": "2023-09-29T23:08:24.869Z",
     "__v": 0
-},
+  },
+
+
+
+
+
+
 {
   "tallas": {
       "U": [
@@ -1157,6 +1463,13 @@ const data = [
   "updatedAt": "2023-09-29T21:43:50.789Z",
   "__v": 0
 },
+
+
+
+
+
+
+
 {
   "tallas": {
       "U": [
@@ -1455,8 +1768,11 @@ const data = [
           }
       ]
   },
+
+
+
   "_id": "651734cada0802c4393874c0",
-  "titulo": "Franela Oversize",
+  "titulo" : "Franela Oversize",
   "descripcion": "franela estilo oversize, unicolor, 100% poliéster. ",
   "precio": 10,
   "precio_mayor": 0,
@@ -1524,7 +1840,7 @@ export default async function Cards() {
                     <ButtonCartAdd user={session?.user?.name} product={data[1]}/>
         </CardItem4>
 
-<CardItem4
+{/* <CardItem4
             titulo='Blusa mangas asimétricas'
             codigo="0083"
             precio="10"
@@ -1533,14 +1849,10 @@ export default async function Cards() {
         
         >
           <ButtonCta product={[data[2]]}/>
-{/*                     
-                    {session ? <Button3 user={session?.user?.name} product={[product]}/> 
-                    :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
-                    } */}
-                    {/* <ButtonCart product={[product]}/> */}
+
                     <ButtonCartAdd user={session?.user?.name} product={data[2]}/>
 
-        </CardItem4>
+        </CardItem4> */}
 
 <CardItem4
             titulo='Suéter con botones en las mangas'
@@ -1550,13 +1862,13 @@ export default async function Cards() {
             imagen={`https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/16960236998761695929879236.jpg?alt=media&token=707eb0f2-c1c3-42cc-b2b8-ca4818c9e929`}
         
         >
-          <ButtonCta user={session?.user?.name} product={[data[3]]}/>
+          <ButtonCta user={session?.user?.name} product={[data[2]]}/>
 {/*                     
                     {session ? <Button3 user={session?.user?.name} product={[product]}/> 
                     :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
                     } */}
                     {/* <ButtonCart product={[product]}/> */}
-                    <ButtonCartAdd product={data[3]}/>
+                    <ButtonCartAdd product={data[2]}/>
 
         </CardItem4>
 
@@ -1568,14 +1880,9 @@ export default async function Cards() {
             imagen={`https://firebasestorage.googleapis.com/v0/b/surtimas-18cd7.appspot.com/o/1696019097971Screenshot_20230630-081831_2.jpg?alt=media&token=191bd68f-331c-48d8-9a00-f874519d9a33`}
         
         >
-          <ButtonCta product={[data[4]]}/>
-{/*                     
-                    {session ? <Button3 user={session?.user?.name} product={[product]}/> 
-                    :   <Link href={`/login`} ><Button radius="full" color="primary"  className="w-full  self-end justify-self-end  text-white shadow-lg">Carrito</Button></Link>
-                    } */}
-                    {/* <ButtonCart product={[product]}/> */}
-                    {/* <ButtonCartAdd product={data[4]}/> */}
-                    <ButtonCartAdd  user={session?.user?.name} product={data[4]}/>
+          <ButtonCta product={[data[3]]}/>
+
+                    <ButtonCartAdd  user={session?.user?.name} product={data[3]}/>
 
         </CardItem4>
 {/*  */}

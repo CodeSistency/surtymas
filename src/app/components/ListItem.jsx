@@ -99,7 +99,9 @@ function ListItem({children, product}) {
             className="object-cover h-full w-16"
             // height='100%'
             shadow="md"
-            src={`${product[0]?.imagenes[0] || product?.imagenes[0] || product.imagen}`}
+            src={`${product.imagen}`}
+
+            // src={`${product[0]?.imagenes[0] || product?.imagenes[0] || product.imagen}`}
             // width="100%"
           />
 
