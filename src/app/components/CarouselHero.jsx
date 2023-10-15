@@ -76,7 +76,7 @@ export default function CarouselHero() {
   message={`¡Hola! 👋, Estoy interesad@ en la caja gran mayor`}
   class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 "
   >
-Consultar
+Pídelo Ya!
   </ReactWhatsapp>
         </div>
         <div class=" lg:mt-0 lg:col-span-5 lg:flex">
@@ -104,7 +104,7 @@ Consultar
             <ReactWhatsapp number="+58 4124668486"
   message={`¡Hola! 👋, Estoy interesad@ en la caja premium`}
   class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 "
-  >Consultar</ReactWhatsapp>
+  >Pídelo Ya!</ReactWhatsapp>
         </div>
         <div class=" lg:mt-0 lg:col-span-5 lg:flex">
             <img src="/2.png" alt="mockup" />
@@ -131,7 +131,7 @@ Consultar
             <ReactWhatsapp number="+58 4124668486"
   message={`¡Hola! 👋, Estoy interesad@ en la caja surtymas`}
   class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 "
-  >Consultar</ReactWhatsapp>
+  >Pídelo Ya!</ReactWhatsapp>
         </div>
         <div class=" lg:mt-0 lg:col-span-5 lg:flex">
             <img src="/3.png" alt="mockup" />
@@ -158,7 +158,7 @@ Consultar
             <ReactWhatsapp number="+58 4124668486"
   message={`¡Hola! 👋, Estoy interesad@ en la caja para emprendedores`}
   class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 "
-  >Consultar</ReactWhatsapp>
+  >Pídelo Ya!</ReactWhatsapp>
         </div>
         <div class=" lg:mt-0 lg:col-span-5 lg:flex">
             <img src="/4.png" alt="mockup" />
@@ -186,7 +186,7 @@ Consultar
             <ReactWhatsapp number="+58 4124668486"
   message={`¡Hola! 👋, Estoy interesad@ en las cajas en oferta`}
   class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2 "
-  >Consultar</ReactWhatsapp>
+  >Pídelo Ya!</ReactWhatsapp>
         </div>
         <div class=" lg:mt-0 lg:col-span-5 lg:flex">
             <img src="/5.png" alt="mockup" />
