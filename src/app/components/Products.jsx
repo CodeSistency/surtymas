@@ -9,6 +9,7 @@ import { options } from "../api/auth/[...nextauth]/options"
 import { Button } from "@nextui-org/button";
 import ButtonCart2 from './ButtonCart2';
 import ButtonCartAdd from './ButtonCartAdd';
+import NoProduct from './NoProduct';
 
 
 
@@ -76,6 +77,9 @@ async function Productos({pageNumber}) {
   return (
     <>
   {products ?  <div  className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
+
+    {/* {!products?.length && <NoProduct/>} */}
+
       {products?.map((product) =>{
       
             return (
@@ -94,7 +98,9 @@ async function Productos({pageNumber}) {
 
 <div className='h-[70vh] flex items-center justify-center'>
     <h2>Cargando...</h2>
-</div>}
+</div>
+
+}
 {/* <div className='flex justify-center w-full'>
     <Pagination isCompact showControls total={10} initialPage={1} />
 </div> */}

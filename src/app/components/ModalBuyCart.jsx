@@ -419,7 +419,8 @@ ${results
           const deseos = colors.filter((color) => color.deseo > 0);
           if (deseos.length > 0) {
             const deseosMessage = deseos
-              .map((color) => `${size}: ${color.deseo} color: ${color.color.replace('#', '')}`)
+            .map((color) => `${size}: ${color.deseo} color: ${color.color_seleccionado}`)
+              // .map((color) => `${size}: ${color.deseo} color: ${color.color.replace('#', '')}`)
               .join(", ");
             return deseosMessage;
           }
