@@ -20,13 +20,18 @@ function CerrarSesion() {
 
      {session ? 
      <div className='flex items-center gap-1'>
-     <Button className='m-0' onClick={() => {
-        
-        signOut({ redirect: false }).then(() => {
-          router.push("/"); // Redirect to the home page after signing out
-        });
-      }}
-      >Cerrar Sesion</Button> 
+      <div className='flex flex-col'>
+
+        <Button className='m-0' onClick={() => {
+            
+            signOut({ redirect: false }).then(() => {
+              router.push("/"); // Redirect to the home page after signing out
+            });
+          }}
+          >Cerrar Sesion</Button> 
+
+          <p style={{fontSize: '11px',  marginLeft: '6px'}} className=' text-black'><strong>Cuenta:</strong> {session?.user?.name}</p>
+      </div>
       
       <Link href={`/carrito`}><CartIcon size={50} /></Link>
       </div>
