@@ -76,25 +76,22 @@ async function Productos({pageNumber}) {
 
   return (
     <>
-  {products ?  <div  className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
-
-    {/* {!products?.length && <NoProduct/>} */}
-
-      {products?.map((product) =>{
+  {products ?  
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
+    {products.map((product) => { 
+      Object.entries(product?.tallas).map(([size, colors]) => 
+      colors.map((color, index) =>
       
-            return (
+      color.quantity > 0 && 
 
-                <CardItem3 key={product._id} product={product}>
-                      <ButtonCta user={session?.user} product={[product]}/>
-
-
-                    <ButtonCartAdd  user={session?.user?.name} product={product}/>
-
-                </CardItem3>
-            )
-        })}
-    
-</div> :
+      <CardItem3 key={product._id} product={product}>
+      <ButtonCta user={session?.user} product={[product]} />
+      <ButtonCartAdd user={session?.user?.name} product={product} />
+    </CardItem3>
+      ))
+     
+    })}
+  </div> :
 
 <div className='h-[70vh] flex items-center justify-center'>
     <h2>Cargando...</h2>

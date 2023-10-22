@@ -55,12 +55,19 @@ async function Tipo({params}) {
           <NoProduct />
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
-            {products.map((product) => (
+            {products.map((product) => { 
+              Object.entries(product?.tallas).map(([size, colors]) => 
+              colors.map((color, index) =>
+              
+              color.quantity > 0 && 
+
               <CardItem3 key={product._id} product={product}>
-                <ButtonCta user={session?.user} product={[product]} />
-                <ButtonCartAdd user={session?.user?.name} product={product} />
-              </CardItem3>
-            ))}
+              <ButtonCta user={session?.user} product={[product]} />
+              <ButtonCartAdd user={session?.user?.name} product={product} />
+            </CardItem3>
+              ))
+             
+            })}
           </div>
         )
       ) : (
