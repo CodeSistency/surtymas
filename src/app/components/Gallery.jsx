@@ -39,20 +39,54 @@ async function Gallery() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
 
-{products.map((product) => { 
-              Object.entries(product?.tallas).map(([size, colors]) => 
-              colors.map((color, index) =>
-              
-              color.quantity > 0 && 
-
-              <CardItem2 key={product._id} product={product}>
-              <ButtonCta user={session?.user} product={[product]} />
-            </CardItem2>
-              ))
-             
+        {products &&
+            products?.map((product) =>{
+      
+                return (
+    
+                    <CardItem2 key={product._id} product={product}>
+                        <ButtonCta user={session?.user?.name} product={product}/>
+                    </CardItem2>
+                )
             })}
         
-  
+      
+    {/* <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt=""/>
+    </div>
+    <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt=""/>
+    </div>
+    <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt=""/>
+    </div>
+    <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt=""/>
+    </div>
+    <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt=""/>
+    </div>
+    <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt=""/>
+    </div>
+    <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt=""/>
+    </div>
+    <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" alt=""/>
+    </div>
+    <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" alt=""/>
+    </div>
+    <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg" alt=""/>
+    </div>
+    <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg" alt=""/>
+    </div>
+    <div>
+        <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" alt=""/>
+    </div> */}
 </div>
   )
 }

@@ -76,22 +76,39 @@ async function Productos({pageNumber}) {
 
   return (
     <>
-  {products ?  
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
-    {products.map((product) => { 
-      Object.entries(product?.tallas).map(([size, colors]) => 
-      colors.map((color, index) =>
-      
-      color.quantity > 0 && 
+  {products ?  <div  className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
 
-      <CardItem3 key={product._id} product={product}>
-      <ButtonCta user={session?.user} product={[product]} />
-      <ButtonCartAdd user={session?.user?.name} product={product} />
-    </CardItem3>
-      ))
-     
-    })}
-  </div> :
+    {/* {!products?.length && <NoProduct/>} */}
+
+      {products?.map((product) =>{
+      
+            return (
+
+                <CardItem3 key={product._id} product={product}>
+                      <ButtonCta user={session?.user} product={[product]}/>
+
+
+                    <ButtonCartAdd  user={session?.user?.name} product={product}/>
+
+                </CardItem3>
+            )
+        })}
+
+{products.map((product, i) =>
+  Object.entries(product?.tallas).map(([size, colors]) =>
+    colors.map((color, j) => 
+    color.quantity > 0 && 
+    <li>
+           <QRcode id={product?.codigo} />
+           <p style={{ marginTop: '-5px', fontSize: '8px', maxWidth: '130px'}}>{`${product.titulo}-${size}-${color.color_seleccionado}-${product.codigo}`}
+           </p>              
+         </li>
+      
+    )
+  )
+)}
+    
+</div> :
 
 <div className='h-[70vh] flex items-center justify-center'>
     <h2>Cargando...</h2>
