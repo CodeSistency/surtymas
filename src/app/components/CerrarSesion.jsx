@@ -22,7 +22,7 @@ function CerrarSesion() {
      <div className='flex items-center gap-1'>
       <div className='flex flex-col'>
 
-        <Button className='m-0' onClick={() => {
+        <Button className='m-0' size='sm' onClick={() => {
             
             signOut({ redirect: false }).then(() => {
               router.push("/"); // Redirect to the home page after signing out
