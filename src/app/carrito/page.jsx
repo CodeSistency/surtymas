@@ -90,6 +90,7 @@ async function page() {
                               <h2>Subtotal: {total()}</h2>
                               {/* <h1>0 $</h1> */}
                             </div>
+                            <ButtonCartAddList />
                             <ButtonCartBuy2 product={products?.cartProducts}/>
                             {/* <button className="buy-total" >
                                 Comprar

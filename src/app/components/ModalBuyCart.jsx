@@ -21,7 +21,7 @@ import { Image } from "@nextui-org/image";
 import axios from "../../../axio/axios";
 import { useGlobalContext } from '../context/GlobalContext'
 
-function ModalBuy({id, user, cart}) {
+function ModalBuyCart({id, user, cart, productos}) {
 
   
     // console.log(producto)
@@ -146,67 +146,128 @@ let isMounted = true;
     
   }
 
-  const onChange = (productCode, size, index, value) => {
+  // const onChange = (productCode, size, index, value) => {
     
     
-      let total = 0
-      const intValue = parseInt(value, 10);
+  //     let total = 0
+  //     const intValue = parseInt(value, 10);
       
-        const updatedResults = producto?.map((product) => {
-          if (producto[0].codigo === productCode) {
-            const colors = producto[0].tallas[size];
-            if (!colors || index >= colors.length) return product;
+  //       const updatedResults = producto?.map((product) => {
+  //         if (producto[0].codigo === productCode) {
+  //           const colors = producto[0].tallas[size];
+  //           if (!colors || index >= colors.length) return product;
     
-            if (!isNaN(intValue)) {
-              // If the input is a number, update the sold property
-              const newSoldValue = Math.max(0, intValue);
-              const quantityChange = newSoldValue - (colors[index].deseo || 0); // Calculate the change in sold quantity
-              colors[index].deseo = intValue;
-              colors[index].quantity -= quantityChange; // Decrease the quantity
-            }
+  //           if (!isNaN(intValue)) {
+  //             // If the input is a number, update the sold property
+  //             const newSoldValue = Math.max(0, intValue);
+  //             const quantityChange = newSoldValue - (colors[index].deseo || 0); // Calculate the change in sold quantity
+  //             colors[index].deseo = intValue;
+  //             colors[index].quantity -= quantityChange; // Decrease the quantity
+  //           }
 
-            let total = 0;
-            Object.entries(product.tallas).forEach(([size, colors]) => {
-              colors.forEach((color) => {
-                total += color.deseo || 0;
-              });
-            });
+  //           let total = 0;
+  //           Object.entries(product.tallas).forEach(([size, colors]) => {
+  //             colors.forEach((color) => {
+  //               total += color.deseo || 0;
+  //             });
+  //           });
       
-            return {
-              ...product,
-              total,
-            };
+  //           return {
+  //             ...product,
+  //             total,
+  //           };
 
-          }
-
-          return product;
+  //         }
+  //         // setResults(updatedResults)
+  //         // console.log(results)
+  //         return product;
 
           
-        });
+  //       });
 
-        // if (updatedResults) {
-        //   const existingProductIndex = carrito.findIndex((item) => item.codigo === productCode);
-        //   if (existingProductIndex !== -1) {
-        //     // If the product already exists in carrito, update it
-        //     const updatedCarrito = [...carrito];
-        //     updatedCarrito[existingProductIndex] = updatedResults.find((product) => product.codigo === productCode);
-        //     setCarrito(updatedCarrito);
-        //   } else {
-        //     // If the product doesn't exist in carrito, add it
-        //     setCarrito((prev) => [...prev, ...updatedResults]);
-        //   }
-        // }
+     
 
-        setResults(updatedResults)
-        // setCarrito(prev => [...prev, ...updatedResults])
-        setCarrito(updatedResults)
-        console.log(updatedResults)
-        return updatedResults;
+  //       setResults(updatedResults)
+  //       // setCarrito(prev => [...prev, ...updatedResults])
+  //       setCarrito(updatedResults)
+  //       console.log(updatedResults)
+  //       return updatedResults;
     
   
 
-    // console.log(updatedResults)
+  //   // console.log(updatedResults)
+  // };
+
+  const onChange = (productCode, size, index, value) => {
+    const intValue = parseInt(value, 10);
+  
+    const updatedResults = producto?.map((product) => {
+      if (product.codigo === productCode) {
+        const colors = product.tallas[size];
+        if (!colors || index >= colors.length) return product;
+  
+        if (!isNaN(intValue)) {
+          const newSoldValue = Math.max(0, intValue);
+          const quantityChange = newSoldValue - (colors[index].deseo || 0);
+          colors[index].deseo = intValue;
+          colors[index].quantity -= quantityChange;
+        }
+  
+        let total = 0;
+        Object.entries(product.tallas).forEach(([size, colors]) => {
+          colors.forEach((color) => {
+            total += color.deseo || 0;
+          });
+        });
+  
+        return {
+          ...product,
+          total,
+        };
+      }
+  
+      return product;
+    });
+  
+    setResults(updatedResults);
+    console.log(updatedResults);
+  
+    // Now, check if the product is already in the cart
+    const isProductInCart = carrito.some((item) => item.codigo === productCode);
+  
+    if (!isProductInCart) {
+      // If the product is not in the cart, add it
+      setCarrito([...carrito, ...updatedResults]);
+    } else {
+      // If the product is already in the cart, update it
+      const updatedCart = carrito.map((item) => {
+        if (item.codigo === productCode) {
+          return updatedResults.find((product) => product.codigo === productCode);
+        }
+        return item;
+      });
+      setCarrito(updatedCart);
+      console.log(carrito)
+    }
+
+    const isProductInResults = results.some((item) => item.codigo === productCode);
+
+    if (!isProductInResults) {
+      // If the product is not in the cart, add it
+      setResults([...results, ...updatedResults]);
+    } else {
+      // If the product is already in the cart, update it
+      const updatedCart = results.map((item) => {
+        if (item.codigo === productCode) {
+          return updatedResults.find((product) => product.codigo === productCode);
+        }
+        return item;
+      });
+      setResults(updatedCart);
+      console.log(results)
+    }
   };
+  
 
   // function please(){
   //   carrito
@@ -461,4 +522,4 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
   )
 }
 
-export default ModalBuy
+export default ModalBuyCart

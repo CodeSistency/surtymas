@@ -179,8 +179,9 @@ let isMounted = true;
           
         });
         setResults(updatedResults)
-        // setCarrito(prev => [...prev, ...updatedResults])
-        console.log(updatedResults)
+        setCarrito(prev => [...prev, ...updatedResults])
+        console.log(carrito)
+        console.log(results)
         return updatedResults;
     
   

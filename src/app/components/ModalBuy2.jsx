@@ -19,7 +19,7 @@ import { Image } from "@nextui-org/image";
 
 function ModalBuy2({product, tallas}) {
 
-  console.log(product[0], tall)
+
 
     const {isOpen, onOpen, onOpenChange} = useDisclosure();
     const [scrollBehavior, setScrollBehavior] = useState("inside");

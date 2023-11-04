@@ -23,7 +23,7 @@ import HowToPay from "./HowToPay";
 import ListItems from './ListItems'
 
 
-function ButtonCartBuy({product, products, user}) {
+function ButtonCartBuy2({product, products, user}) {
 
   console.log(product)
 
@@ -572,4 +572,4 @@ Nuestro equipo te atenderá pronto. ¡Gracias! 🛍️`}
   )
 }
 
-export default ButtonCartBuy
+export default ButtonCartBuy2

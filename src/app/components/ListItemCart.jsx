@@ -147,7 +147,9 @@ console.log(product, producto?.titulo, producto?.precio, producto?.imagenes, pro
             className="object-cover h-full w-16"
             
             shadow="md"
-            src={`${producto?.imagenes[0]}`}
+            // src={`${producto?.imagenes[0]}`}
+            src={`${producto && producto?.imagenes[0]}`}
+
             
           />
 
