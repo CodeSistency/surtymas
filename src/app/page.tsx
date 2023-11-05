@@ -18,7 +18,12 @@ export default async function Home() {
         <Cards2 />   
       </Suspense>
        <Categories />
-      <Gallery />
+       <Suspense fallback={<div>Cargando...</div>}>
+        <Gallery />   
+      </Suspense>
+      <Suspense fallback={<div>Cargando...</div>}>
+      <Grid />  
+      </Suspense>
       <Grid /> 
       
     </>
