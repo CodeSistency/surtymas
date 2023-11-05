@@ -31,9 +31,9 @@ export default function RootLayout({
         <GlobalContextProvider>
 
             {/* <Navbar /> */}
-            {/* <Nav >
+            <Nav >
               <CerrarSesion/>
-            </Nav> */}
+            </Nav>
             {/* <main className="flex justify-center items-start p-6 min-h-screen"> */}
             <main >
               
