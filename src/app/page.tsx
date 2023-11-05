@@ -24,7 +24,7 @@ export default async function Home() {
       <Suspense fallback={<div>Cargando...</div>}>
       <Grid />  
       </Suspense>
-      <Grid /> 
+      {/* <Grid />  */}
       
     </>
   )
