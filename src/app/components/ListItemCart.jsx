@@ -148,18 +148,18 @@ console.log(product, producto?.titulo, producto?.precio, producto?.imagenes, pro
             
             shadow="md"
             // src={`${producto?.imagenes[0]}`}
-            src={`${producto && producto?.imagenes[0]}`}
+            src={`${product && producto?.imagen}`}
 
             
           />
 
             <div className="flex flex-col gap-0 w-[50px] flex-1">
               <div className='flex items-center gap-2'>
-              <h4 className="font-semibold text-foreground/90 w-full">{`${producto ? producto?.titulo : "cargando..."}`}</h4>
+              <h4 className="font-semibold text-foreground/90 w-full">{`${product ? product?.nombre : "cargando..."}`}</h4>
               {/* <p>({totalItems()})</p> */}
               </div>
               {/* <h3 className="font-semibold text-foreground/90 w-full">{`${product[0]?.titulo || product.nombre || product.titulo}`}</h3> */}
-              <p className="text-small text-foreground/80 ">${`${producto ? producto?.precio : "cargando..."}`}</p>
+              <p className="text-small text-foreground/80 ">${`${product ? product?.precio : "cargando..."}`}</p>
               {/* <h1 className="text-large font-medium mt-2">{`${product[0]?.codigo || product.codigo}`}</h1> */}
               <section className="lista-colores">
 {/* {carrito.map((carro) => {

@@ -24,14 +24,13 @@ function ButtonCartAddList({product, user}) {
   const [isLoadingCreate, setIsLoadingCreate] = useState(false)
   const [error, setError] = useState(false)
 
-  const handleCart = async (username, nombre, precio, precio_mayor, imagen, id, codigo, tallas, tallas_zapatos) => {
+  const handleCart = async (username, cart) => {
 
     // console.log(username, nombre, precio, precio_mayor)
   let isMounted = true;
     const controller = new AbortController();
     const quantity = 0
   
-    console.log(username, nombre, precio, precio_mayor, codigo)
   
     if(!username){
       router.push("/login")
@@ -40,7 +39,7 @@ function ButtonCartAddList({product, user}) {
       try {
         setError(false)
         setIsLoadingCreate(true)
-          const response = await axios.put('cart/updateCart', { username, results},
+          const response = await axios.put('cart/updateCart', { username, cart},
         //   JSON.stringify({username, nombre, precio, precio_mayor, quantity}),
           { 
               signal: controller.signal,
@@ -71,7 +70,7 @@ function ButtonCartAddList({product, user}) {
 
   return (
     <>
- { session ? <Button radius="full" onPress={() => handleCart(session.user.name, product.titulo, product.precio, product.precio_mayor, product.imagenes[0], product._id, product.codigo, product.tallas, product.tallas_zapatos)} color={`${success ? "success" : "primary"}`} variant="shadow"  className="w-full  self-end justify-self-end text-white shadow-lg">
+ { session ? <Button radius="full" onPress={() => handleCart(session.user.name, results)} color={`${success ? "success" : "primary"}`} variant="shadow"  className="w-full  self-end justify-self-end text-white shadow-lg">
     {error ? 'Intentar de nuevo' : success ? 'Agregado' : isLoadingCreate ? 'Cargando...' : 'Agregar al carro'}
   </Button> :
   

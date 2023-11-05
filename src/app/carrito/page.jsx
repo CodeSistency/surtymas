@@ -12,6 +12,8 @@ import ButtonCta2 from "../components/Button2";
 import ListItemsCart from "../components/ListItemsCart"
 import ButtonCartBuy from '../components/ButtonCartBuy';
 import ButtonCartBuy2 from '../components/ButtonCartBuy2';
+import ButtonCartAddList from '../components/ButtonCartAddList';
+
 
 
 

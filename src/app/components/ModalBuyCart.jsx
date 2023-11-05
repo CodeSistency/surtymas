@@ -21,7 +21,7 @@ import { Image } from "@nextui-org/image";
 import axios from "../../../axio/axios";
 import { useGlobalContext } from '../context/GlobalContext'
 
-function ModalBuyCart({id, user, cart, productos}) {
+function ModalBuyCart({id, user, cart, productos, producto}) {
 
   
     // console.log(producto)
@@ -33,7 +33,7 @@ function ModalBuyCart({id, user, cart, productos}) {
     const [quantityChangesModal, setQuantityChangesModal] = useState({});
   // const [results, setResults] = useState()
 
-  const [producto, setProducto] = useState()
+  const [product, setProducto] = useState()
 
   const {carrito, setCarrito, handleToggle, results, setResults} = useGlobalContext();
 
@@ -72,13 +72,13 @@ function ModalBuyCart({id, user, cart, productos}) {
 
 useEffect(() =>{
   getProduct()
-  console.log(producto)
+  // console.log(product)
 }, [id])
 
 useEffect(() =>{
   // getProduct()
-  console.log(producto)
-}, [producto])
+  console.log(product)
+}, [product])
 
 
 const handleCart = async (username, nombre, precio, precio_mayor, imagen, id, codigo, tallas, tallas_zapatos) => {
@@ -200,8 +200,9 @@ let isMounted = true;
 
   const onChange = (productCode, size, index, value) => {
     const intValue = parseInt(value, 10);
+    let productos = [producto]
   
-    const updatedResults = producto?.map((product) => {
+    const updatedResults = productos?.map((product) => {
       if (product.codigo === productCode) {
         const colors = product.tallas[size];
         if (!colors || index >= colors.length) return product;
@@ -357,13 +358,13 @@ let isMounted = true;
         <ModalContent>
         {(onClose) => (
             <>
-            {producto[0] &&  <ModalHeader className="flex flex-col gap-1" style={{color:'black'}}>
+            {producto &&  <ModalHeader className="flex flex-col gap-1" style={{color:'black'}}>
               <div className='modal-info' style={{padding:'10px', border: 'none'}}>
-      <img alt="producto" style={{width: '50px', height: '50px'}} src={`${producto[0].imagenes ? producto[0].imagenes[0] : producto[0].imagen}`}/>
-      <p >Producto: {producto[0].titulo || producto[0].nombre || producto.titulo}</p>
+      <img alt="producto" style={{width: '50px', height: '50px'}} src={`${producto && producto.imagen}`}/>
+      <p >Producto: {producto?.nombre}</p>
     </div>
               </ModalHeader>}
-              {producto[0] && producto &&  <ModalBody>
+              {producto &&  <ModalBody>
               <div>
 
     
@@ -426,10 +427,11 @@ let isMounted = true;
       
     )} */}
 
-{Object.entries(producto[0].tallas).map(([size, colors]) =>
+{Object.entries(producto?.tallas).map(([size, colors]) =>
   colors.map((color, index) =>
     (color.quantity > 0 || color.deseo > 0) && (
-      <div key={`${producto[0].codigo}-${size}`} className="size-section">
+      // ( 
+      <div key={`${producto?.codigo}-${size}`} className="size-section">
         <h3>{size}</h3>
         <div className="color-input lista-productos" key={color._id}>
           <div
@@ -448,7 +450,7 @@ let isMounted = true;
             label="Agregue Cantidad"
             style={{ fontSize: '14px', marginTop: '12px', color: 'black' }}
             value={color.deseo || 0}
-            onChange={(e) => onChange(producto[0].codigo, size, index, e.target.value)}
+            onChange={(e) => onChange(producto?.codigo, size, index, e.target.value)}
           />
           {color.quantity === 0 && <p>Ese era el ultimo, no selecciones más</p>}
           {color.quantity < 0 && <p>Ese era el ultimo, no selecciones más</p>}

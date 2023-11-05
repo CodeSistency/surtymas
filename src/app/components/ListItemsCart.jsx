@@ -56,9 +56,11 @@ async function ListItemsCart() {
         {productos?.cartProducts?.map((product, i) => {
             return (
                 <div  key={i} className='py-1'>
-                <ListItemCart product={product.product}>
+                {/* <ListItemCart product={product.product}> */}
+                <ListItemCart product={product}>
+
                   {/* <ModalBuy producto={[product]} /> */}
-                  <ModalBuyCart id={product.product} productos={productos?.cartProducts}/>
+                  <ModalBuyCart id={product.product} producto={product} productos={productos?.cartProducts}/>
 
                   <DeleteCart user={session?.user?.name} id={product.product}/>
                 </ListItemCart>

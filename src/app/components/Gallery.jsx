@@ -39,7 +39,7 @@ async function Gallery() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4 px-4 py-8">
 
-        {products &&
+        {products ?
             products?.map((product) =>{
       
                 return (
@@ -48,7 +48,9 @@ async function Gallery() {
                         <ButtonCta user={session?.user?.name} product={product}/>
                     </CardItem2>
                 )
-            })}
+            })
+        :
+        <p>Cargando...</p>}
         
       
     {/* <div>
