@@ -12,12 +12,12 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      {/* <Suspense fallback={<div>Cargando...</div>}>
+      <Suspense fallback={<div>Cargando...</div>}>
 
         <Cards2 />   
-      </Suspense> */}
+      </Suspense>
        <Categories />
-      {/* <Gallery /> */}
+      <Gallery />
       <Grid /> 
       
     </>

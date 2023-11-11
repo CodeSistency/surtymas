@@ -452,8 +452,8 @@ let isMounted = true;
             value={color.deseo || 0}
             onChange={(e) => onChange(producto?.codigo, size, index, e.target.value)}
           />
-          {color.quantity === 0 && <p>Ese era el ultimo, no selecciones más</p>}
-          {color.quantity < 0 && <p>Ese era el ultimo, no selecciones más</p>}
+          {/* {color.quantity === 0 && <p>Ese era el ultimo, no selecciones más</p>}
+          {color.quantity < 0 && <p>Ese era el ultimo, no selecciones más</p>} */}
             </div>
         </div>
       </div>
