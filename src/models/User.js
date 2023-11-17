@@ -4,17 +4,17 @@ const Schema = mongoose.Schema;
 // const cartItemSchema = require('./Cart');
 
 const colorSchema = new Schema({
-    color: {
-      type: String,
-      required: true,
-    },
-    quantity: {
-      type: Number,
-      required: true,
-      default: 0,
-    },
-    deseo: {type: Number, default: 0}
-  });
+  color: {
+    type: String,
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    required: true,
+    default: 0,
+  },
+  deseo: { type: Number, default: 0 }
+});
 
 //   const cartItemSchema = new Schema({
 //     product: {
@@ -30,28 +30,28 @@ const colorSchema = new Schema({
 
 const cartItemSchema = new Schema({
   product: {
-          type: Schema.Types.ObjectId,
-            ref: 'Product', // You can replace 'Product' with the actual model name for your products
-           
-        },
+    type: Schema.Types.ObjectId,
+    ref: 'Product', // You can replace 'Product' with the actual model name for your products
+
+  },
   nombre: {
-      type: String
+    type: String
   },
   codigo: {
     type: String
-},
+  },
   precio: {
     type: Number,
-    
-},
-precio_mayor: {
-  type: Number,
-  default: 0,
-  
-},
+
+  },
+  precio_mayor: {
+    type: Number,
+    default: 0,
+
+  },
   quantity: {
-      type: Number,
-      default: 0
+    type: Number,
+    default: 0
   },
   imagen: {
     type: String,
@@ -93,51 +93,51 @@ precio_mayor: {
     '42': [colorSchema],
     '43': [colorSchema],
     '44': [colorSchema],
-    
-    
+
+
   },
 });
-  
-  const productOrderSchema = new Schema({
-    productCode: { type: String, required: true },
-    title: { type: String, required: true },
-    price: { type: Number, required: true },
-    tallas: {
-      S: [colorSchema],
-      M: [colorSchema],
-      L: [colorSchema],
-      XL: [colorSchema],
-    },
-  });
-  
-  const orderSchema = new Schema({
-    products: [productOrderSchema],
-    totalPrice: { type: Number, required: true },
-    orderDate: { type: Date, default: Date.now },
-  });
-  
+
+const productOrderSchema = new Schema({
+  productCode: { type: String, required: true },
+  title: { type: String, required: true },
+  price: { type: Number, required: true },
+  tallas: {
+    S: [colorSchema],
+    M: [colorSchema],
+    L: [colorSchema],
+    XL: [colorSchema],
+  },
+});
+
+const orderSchema = new Schema({
+  products: [productOrderSchema],
+  totalPrice: { type: Number, required: true },
+  orderDate: { type: Date, default: Date.now },
+});
+
 
 const userSchema = new Schema({
-    username: {
-        type: String,
-        required: true,
-        unique: true,
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  roles: {
+    User: {
+      type: Number,
+      default: 2001
     },
-    roles: {
-        User: {
-            type: Number,
-            default: 2001
-        },
-        Editor: Number,
-        Admin: Number
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    refreshToken: String,
-    cart: [cartItemSchema] 
-    // pedidos: [orderSchema],
+    Editor: Number,
+    Admin: Number
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  refreshToken: String,
+  cart: [cartItemSchema]
+  // pedidos: [orderSchema],
 });
 
 export default mongoose?.models?.User || mongoose.model("User", userSchema)
