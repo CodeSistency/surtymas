@@ -3155,3 +3155,10 @@ flex-wrap: wrap;
       top: 16px;
       right: 16px;
     }
+
+    .texto-rotado{
+      position: absolute;
+      top: 50%;
+      left: 3px;
+      transform: rotate(90deg);
+    }

@@ -9,6 +9,30 @@ export default function CarouselHero() {
   return (
     <Carousel pauseOnHover>
 
+
+<section style={{
+    width: '100%',
+    height: "100%",
+    
+    background: 'radial-gradient(circle, #ff2b88 50%, #f7a618 )',
+    color: 'white',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',}}
+ class=" h-full flex flex-col justify-center relative">
+     
+          <div class="h-full w-full flex items-center justify-center">
+            <div className='flex flex-col relative'>
+                <p style={{marginBottom: "-30px"}} className='xs:text-[20px] sm:text-[20px] md:text-[60px] lg:text-[60px]'>Descuentos</p>
+                <h1 class="xs:text-[70px] sm:text-[100px] md:text-[150px] lg:text-[200px] font-extrabold text-gray-900 dark:text-white">20%</h1>
+                <p style={{marginTop: "-20px"}} className='text-[20px]'>A partir de 12 piezas</p>
+
+                <img src='/etiqueta.png' className='absolute top-5 right-0 w-10'/>
+            </div>
+          </div>  
+        <p  className='texto-rotado text-[20px]'>Por tiempo limitado</p>
+        <img src="/speaker.png" alt="mockup" className='absolute right-5 bottom-5 w-40'/>               
+        
+</section>
+
 <section style={{
     width: '100%',
     height: "100%",
@@ -32,6 +56,25 @@ export default function CarouselHero() {
         </div>                
     </div>
 </section>
+
+{/* <section style={{
+    width: '100%',
+    height: "100%",
+    
+    background: 'radial-gradient(circle, #ff2b88 50%, #f7a618 )',
+    color: 'white',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',}}
+ class=" h-full flex justify-center items-center w-full ">
+    <div className='flex flex-col '>
+        <p >Descuentos</p>
+    <h1 class="text-6xl font-extrabold text-gray-900 dark:text-white">20%</h1>
+    <p className='text-1xl'>A partir de 12 piezas</p>
+
+    <img src='/etiqueta.png' className='absolute top-5 right-0 w-10'/>
+    </div>
+    <p  className='texto-rotado'>Por tiempo limitado</p>
+    <img src="/speaker.png" alt="mockup" className='absolute right-5 bottom-5 w-10'/>
+</section> */}
 
 <section style={{
     width: '100%',
