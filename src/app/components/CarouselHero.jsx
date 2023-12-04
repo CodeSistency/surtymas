@@ -10,7 +10,7 @@ export default function CarouselHero() {
     <Carousel pauseOnHover>
 
 
-<section style={{
+{/* <section style={{
     width: '100%',
     height: "100%",
     
@@ -31,7 +31,7 @@ export default function CarouselHero() {
         <p  className='texto-rotado text-[20px]'>Por tiempo limitado</p>
         <img src="/speaker.png" alt="mockup" className='absolute right-5 bottom-5 w-40'/>               
         
-</section>
+</section> */}
 
 <section style={{
     width: '100%',
